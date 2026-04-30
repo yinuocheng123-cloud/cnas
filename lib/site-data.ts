@@ -50,7 +50,7 @@ export type Solution = {
 export const navItems: NavItem[] = [
   { label: "首页", href: "/" },
   { label: "CNAS知识库", href: "/knowledge" },
-  { label: "CNAS流程", href: "/cnas-process" },
+  { label: "CNAS认可流程", href: "/cnas-process" },
   { label: "行业方案", href: "/solutions" },
   { label: "案例解析", href: "/cases" },
   { label: "风险诊断", href: "/diagnosis" },
@@ -59,10 +59,8 @@ export const navItems: NavItem[] = [
 
 export const hotQuestions = [
   { title: "CNAS是什么", href: "/knowledge/what-is-cnas", summary: "先理解认可对象和真实能力要求。" },
-  { title: "CNAS流程", href: "/knowledge/cnas-process", summary: "看清诊断、规划、建设、申请和评审路径。" },
-  { title: "CNAS费用", href: "/knowledge/cnas-cost", summary: "拆分建设、设备、体系和整改成本。" },
-  { title: "CNAS周期", href: "/knowledge/cnas-cycle", summary: "判断哪些因素会拖慢整体进度。" },
-  { title: "CNAS风险", href: "/knowledge/cnas-risk", summary: "提前识别现场评审和体系运行风险。" },
+  { title: "CNAS认可流程", href: "/knowledge/cnas-process", summary: "看清诊断、规划、建设、申请和评审路径。" },
+  { title: "CNAS费用与周期", href: "/knowledge/cnas-cost", summary: "拆分建设、设备、体系、周期和整改成本。" },
 ];
 
 export const homeStats = [

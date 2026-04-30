@@ -28,8 +28,8 @@ export const categories: Category[] = [
   },
   {
     slug: "cnas-process",
-    title: "CNAS申请流程",
-    shortTitle: "申请流程",
+    title: "CNAS认可流程",
+    shortTitle: "认可流程",
     href: "/cnas-process",
     description: "梳理从诊断、规划、建设、体系运行到申请评审的完整路径。",
   },

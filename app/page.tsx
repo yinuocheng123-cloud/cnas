@@ -24,7 +24,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "企业做CNAS认可前，先看懂实验室能力建设",
-  description: "围绕CNAS认可、实验室建设、体系运行、评审风险与持续改进，提供系统化知识、判断工具与解决方案参考。",
+  description: "围绕CNAS认可（CNAS认证）流程、费用、周期与实验室建设，提供系统化知识与解决方案参考。",
   path: "/",
 });
 
@@ -36,14 +36,14 @@ export default function HomePage() {
       <HeroSection
         eyebrow="CNAS Recognition Knowledge Platform"
         title="企业做CNAS认可前，先看懂实验室能力建设"
-        description="围绕CNAS认可、实验室建设、体系运行、评审风险与持续改进，提供系统化知识、判断工具与解决方案参考。"
+        description="围绕CNAS认可（CNAS认证）流程、费用、周期与实验室建设，提供系统化知识与解决方案参考。"
         actions={
           <>
             <Link href="/diagnosis" className="rounded bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-moss">
-              进入启动前风险诊断
+              获取CNAS启动诊断
             </Link>
             <Link href="/knowledge" className="rounded border border-slate-300 px-5 py-3 text-sm font-semibold transition hover:border-moss hover:text-moss">
-              查看CNAS知识库
+              查看CNAS认可流程
             </Link>
           </>
         }
@@ -62,7 +62,7 @@ export default function HomePage() {
       {/* ========== 第二部分：热门问题与内容分类 ========== */}
       <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
         <SectionTitle title="热门问题入口" description="先回答企业最常搜索、最容易误判的 CNAS认可问题。" />
-        <div className="mt-6 grid gap-4 md:grid-cols-5">
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
           {hotQuestions.map((entry) => (
             <Link key={entry.href} href={entry.href} className="rounded border border-slate-200 bg-white p-5 transition hover:border-blue-900">
               <h3 className="text-lg font-semibold text-slate-950">{entry.title}</h3>
@@ -86,7 +86,7 @@ export default function HomePage() {
       {/* ========== 第三部分：风险诊断、行业方案、案例和咨询入口 ========== */}
       <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
         <RiskNotice
-          title="企业是否适合现在启动CNAS？"
+          title="企业是否适合现在启动CNAS认可？"
           items={[
             "如果认可范围尚不清晰，不建议直接进入申请。",
             "如果人员、设备、环境和方法无法支撑检测项目，应先补齐能力基础。",

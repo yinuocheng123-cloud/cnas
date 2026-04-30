@@ -32,7 +32,7 @@ export default function ServicesPage() {
       <HeroSection
         eyebrow="CNAS Service Support"
         title="CNAS认可落地支持体系"
-        description="服务咨询不是简单代办证书，不是只帮企业写材料，也不是只做流程辅导，而是围绕实验室能力、体系能力、评审通过能力和长期运行能力建立支持边界。"
+        description="提供CNAS认可实施支持、实验室能力建设与体系辅导、评审前风险排查与整改支持。"
       />
 
       {/* ========== 第二部分：服务卡片 ========== */}

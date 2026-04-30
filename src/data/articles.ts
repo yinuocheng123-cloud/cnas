@@ -37,22 +37,22 @@ export const articles: Article[] = [
   {
     slug: "what-is-cnas",
     title: "CNAS是什么？企业为什么要做CNAS认可？",
-    description: "解释 CNAS 认可的含义、企业价值，以及启动前必须判断的实验室能力基础。",
+    description: "解释 CNAS认可的含义、企业价值，以及启动前必须判断的实验室能力基础。",
     category: "cnas-basic",
     tags: ["CNAS认可", "实验室能力", "基础认知"],
     keywords: ["CNAS是什么", "CNAS认可", "CNAS认证", "实验室能力"],
     updatedAt: "2026-04-29",
-    answer: "CNAS是中国合格评定国家认可委员会的简称，核心是认可实验室真实检测能力和体系运行能力。",
+    answer: "CNAS认可（通常也称为CNAS认证）是对实验室真实检测能力和体系运行能力的认可。",
     sections: [
       {
         title: "一、CNAS认可解决的是信任问题",
         content:
-          "企业启动 CNAS 前，首先要理解它不是简单证书。CNAS 认可关注实验室是否具备稳定、可追溯、可验证的检测能力，能不能让客户、供应链和内部质量管理相信检测结果。",
+          "企业启动 CNAS认可前，首先要理解它不是简单证书。CNAS认可关注实验室是否具备稳定、可追溯、可验证的检测能力，能不能让客户、供应链和内部质量管理相信检测结果。",
       },
       {
         title: "二、CNAS认可考验哪些能力",
         content:
-          "CNAS 认可会同时考验人员、设备、环境、方法、样品、记录、体系文件和持续改进。任何一个环节只停留在纸面，都可能在现场评审中暴露风险。",
+          "CNAS认可会同时考验人员、设备、环境、方法、样品、记录、体系文件和持续改进。任何一个环节只停留在纸面，都可能在现场评审中暴露风险。",
       },
       {
         title: "三、企业为什么不能只看证书",
@@ -73,8 +73,8 @@ export const articles: Article[] = [
     ],
     faqs: [
       {
-        question: "CNAS认可和CNAS认证是不是一回事？",
-        answer: "专业表达以 CNAS 认可为主，企业搜索时常说 CNAS认证。本站兼容这两种表达，但核心讨论的是实验室认可。",
+        question: "CNAS认证和CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认证是企业常用说法，两者在实际使用中通常指同一件事。",
       },
       {
         question: "企业没有实验室能不能直接申请CNAS？",
@@ -87,17 +87,17 @@ export const articles: Article[] = [
     ],
     related: ["cnas-process", "cnas-risk", "lab-construction"],
     seoTitle: "CNAS是什么？企业做CNAS认可前先看懂实验室能力",
-    seoDescription: "CNAS不是简单办证，而是对实验室检测能力、体系运行和持续改进能力的认可。",
+    seoDescription: "CNAS认可不是简单证书结果，而是对实验室检测能力、体系运行和持续改进能力的认可。",
   },
   {
     slug: "cnas-process",
-    title: "CNAS认可流程怎么走？企业需要提前准备什么？",
-    description: "说明 CNAS 认可从诊断、规划、建设、体系运行到申请评审的完整路径。",
+    title: "CNAS认可流程怎么走？企业做CNAS认证前必须了解的步骤",
+    description: "说明 CNAS认可从诊断、规划、建设、体系运行到申请评审的完整路径。",
     category: "cnas-process",
     tags: ["申请流程", "体系运行", "现场评审"],
     keywords: ["CNAS流程", "CNAS申请流程", "CNAS认证流程", "现场评审"],
     updatedAt: "2026-04-29",
-    answer: "CNAS认可通常要经历诊断、规划、建设、体系运行、内审管理评审、申请、现场评审和整改。",
+    answer: "CNAS认可（通常也称为CNAS认证）通常要经历诊断、规划、建设、体系运行、申请评审和整改。",
     sections: [
       {
         title: "一、先做可行性诊断",
@@ -133,6 +133,10 @@ export const articles: Article[] = [
     ],
     faqs: [
       {
+        question: "CNAS认证和CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认证是企业常用说法，两者在实际使用中通常指同一件事。",
+      },
+      {
         question: "CNAS认可最快多久可以完成？",
         answer: "周期取决于基础条件。已有成熟实验室会更快，从零建设则要为规划、建设、试运行和整改预留时间。",
       },
@@ -151,18 +155,18 @@ export const articles: Article[] = [
   },
   {
     slug: "cnas-cost",
-    title: "CNAS认可大概需要多少钱？费用主要花在哪里？",
+    title: "CNAS认可费用多少？企业做CNAS认证前要看哪些成本？",
     description: "拆解 CNAS 费用构成，说明建设、设备、人员、体系运行和辅导支持的成本逻辑。",
     category: "cnas-cost",
     tags: ["费用预算", "投入重点", "预算风险"],
     keywords: ["CNAS费用", "CNAS多少钱", "CNAS认证费用", "实验室建设成本"],
     updatedAt: "2026-04-29",
-    answer: "CNAS费用没有固定答案，关键取决于实验室基础、认可范围、设备环境、人员能力和整改成本。",
+    answer: "CNAS认可（通常也称为CNAS认证）费用取决于实验室基础、认可范围、设备环境和整改成本。",
     sections: [
       {
         title: "一、为什么不能简单报价",
         content:
-          "不同企业的检测项目、场地条件、设备基础和人员能力差异很大。只问辅导费，容易忽略真正决定预算的实验室建设和体系运行成本。",
+          "不同企业的检测项目、场地条件、设备基础和人员能力差异很大。只问服务费用，容易忽略真正决定预算的实验室建设和体系运行成本。",
       },
       {
         title: "二、主要费用构成",
@@ -188,6 +192,10 @@ export const articles: Article[] = [
     ],
     faqs: [
       {
+        question: "CNAS认证和CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认证是企业常用说法，两者在实际使用中通常指同一件事。",
+      },
+      {
         question: "CNAS认可有没有固定报价？",
         answer: "没有适用于所有企业的固定报价。合理预算必须基于认可范围、实验室基础和服务深度评估。",
       },
@@ -196,7 +204,7 @@ export const articles: Article[] = [
         answer: "常见浪费来自先买设备后规划、环境重复改造、范围设定过大和体系运行返工。",
       },
       {
-        question: "辅导费是不是最大成本？",
+        question: "服务支持费用是不是最大成本？",
         answer: "不一定。很多企业真正的大头在实验室建设、设备环境和人员运行成本。",
       },
     ],
@@ -212,7 +220,7 @@ export const articles: Article[] = [
     tags: ["周期评估", "进度风险", "启动判断"],
     keywords: ["CNAS周期", "CNAS多久", "CNAS认证周期", "认可进度"],
     updatedAt: "2026-04-29",
-    answer: "CNAS周期取决于基础条件，核心影响因素是建设成熟度、体系试运行、评审安排和整改效率。",
+    answer: "CNAS认可（通常也称为CNAS认证）周期取决于建设成熟度、体系试运行、评审安排和整改效率。",
     sections: [
       {
         title: "一、周期不能只看申请时间",
@@ -238,6 +246,10 @@ export const articles: Article[] = [
     ],
     faqs: [
       {
+        question: "CNAS认证和CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认证是企业常用说法，两者在实际使用中通常指同一件事。",
+      },
+      {
         question: "能不能压缩CNAS周期？",
         answer: "可以优化准备顺序，但不建议压缩必要的试运行和整改环节，否则会增加评审风险。",
       },
@@ -254,13 +266,13 @@ export const articles: Article[] = [
   },
   {
     slug: "cnas-risk",
-    title: "CNAS评审风险主要有哪些？企业如何提前排查？",
+    title: "CNAS认可评审风险主要有哪些？企业如何提前排查？",
     description: "梳理 CNAS 现场评审常见风险，帮助企业在申请前做风险诊断和整改准备。",
     category: "cnas-risk",
     tags: ["评审风险", "风险诊断", "整改闭环"],
     keywords: ["CNAS评审风险", "CNAS现场评审", "CNAS整改", "评审前检查"],
     updatedAt: "2026-04-29",
-    answer: "CNAS评审风险通常来自能力范围不清、人员设备不匹配、体系运行证据不足和整改闭环不完整。",
+    answer: "CNAS认可（通常也称为CNAS认证）评审风险通常来自能力范围不清和体系运行证据不足。",
     sections: [
       {
         title: "一、风险不是评审当天才出现",
@@ -286,6 +298,10 @@ export const articles: Article[] = [
     ],
     faqs: [
       {
+        question: "CNAS认证和CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认证是企业常用说法，两者在实际使用中通常指同一件事。",
+      },
+      {
         question: "评审前最应该先查什么？",
         answer: "先查认可范围与真实能力是否匹配，再查人员、设备、方法、环境和记录证据是否闭环。",
       },
@@ -308,7 +324,7 @@ export const articles: Article[] = [
     tags: ["实验室建设", "认可范围", "能力建设"],
     keywords: ["实验室建设", "CNAS实验室", "认可范围规划", "实验室能力建设"],
     updatedAt: "2026-04-29",
-    answer: "实验室建设是CNAS认可的能力基础，场地、设备、人员、方法和体系必须共同支撑认可范围。",
+    answer: "CNAS认可（通常也称为CNAS认证）要求实验室建设支撑认可范围、检测方法和体系运行。",
     sections: [
       {
         title: "一、实验室建设不能脱离认可范围",
@@ -333,6 +349,10 @@ export const articles: Article[] = [
       "体系文件和运行记录是否同步规划",
     ],
     faqs: [
+      {
+        question: "CNAS认证和CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认证是企业常用说法，两者在实际使用中通常指同一件事。",
+      },
       {
         question: "先建实验室还是先做CNAS规划？",
         answer: "建议先做规划。建设应服务于认可范围和检测方法，而不是先采购设备再反推体系。",

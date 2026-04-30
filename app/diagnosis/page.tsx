@@ -31,7 +31,7 @@ export default function DiagnosisPage() {
       <Header />
       <HeroSection
         eyebrow="CNAS Diagnosis"
-        title="企业是否适合现在启动CNAS？"
+        title="企业是否适合现在启动CNAS认可？"
         description="启动 CNAS认可前，应先判断实验室基础、认可范围、资源投入和评审风险。先诊断，再规划，比直接做材料更稳。"
       />
 
@@ -56,10 +56,10 @@ export default function DiagnosisPage() {
         <div className="rounded border border-blue-900/20 bg-blue-50 p-5">
           <h2 className="text-xl font-semibold text-slate-950">建议暂缓启动的情况</h2>
           <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
-            <li>只是想尽快拿证，但没有清晰检测能力基础。</li>
+            <li>只是想尽快获得结果，但没有清晰检测能力基础。</li>
             <li>设备采购、场地建设和人员安排尚未经过范围规划。</li>
             <li>体系文件还没有真实运行记录。</li>
-            <li>预算只覆盖辅导费用，没有考虑建设和整改成本。</li>
+            <li>预算只覆盖服务支持费用，没有考虑建设和整改成本。</li>
           </ul>
         </div>
       </section>
@@ -68,10 +68,10 @@ export default function DiagnosisPage() {
         <RiskNotice
           title="哪些情况不建议盲目启动"
           items={[
-            "检测项目和标准方法尚未明确，只是想先拿证。",
+            "检测项目和标准方法尚未明确，只是想尽快获得认可结果。",
             "设备、环境、人员基础明显不足，却准备直接提交申请。",
             "体系文件还没有真实运行记录，内审和管理评审无法支撑证据链。",
-            "预算只考虑辅导费，没有考虑建设、设备、运行和整改成本。",
+            "预算只考虑服务支持费用，没有考虑建设、设备、运行和整改成本。",
           ]}
         />
       </section>
