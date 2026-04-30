@@ -1,0 +1,48 @@
+import { CaseCard } from "@/components/CaseCard";
+import { CtaBlock } from "@/components/CtaBlock";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/components/HeroSection";
+import { SectionTitle } from "@/components/SectionTitle";
+import { cases } from "@/lib/site-data";
+import { createPageMetadata } from "@/lib/seo";
+
+/*
+ * 文件说明：该文件实现案例解析页面。
+ * 功能说明：用问题、动作、结果结构展示 CNAS认可准备中的典型场景。
+ *
+ * 结构概览：
+ *   第一部分：页面头部
+ *   第二部分：案例列表
+ */
+
+export const metadata = createPageMetadata({
+  title: "案例解析",
+  description: "用问题、动作、结果结构解析制造企业实验室建设、体系风险和预算浪费等 CNAS认可准备场景。",
+  path: "/cases",
+});
+
+// ========== 第一部分：页面头部 ==========
+export default function CasesPage() {
+  return (
+    <main className="min-h-screen bg-white text-ink">
+      <Header />
+      <HeroSection
+        eyebrow="CNAS Cases"
+        title="案例解析"
+        description="不做空泛宣传，只拆解企业遇到的问题、采取的动作和产生的结果。"
+      />
+      {/* ========== 第二部分：案例列表 ========== */}
+      <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
+        <SectionTitle title="典型场景" />
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {cases.map((caseItem) => (
+            <CaseCard key={caseItem.slug} caseItem={caseItem} />
+          ))}
+        </div>
+      </section>
+      <CtaBlock />
+      <Footer />
+    </main>
+  );
+}

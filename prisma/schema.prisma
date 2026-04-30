@@ -1,0 +1,30 @@
+// 文件说明：该文件预留 Prisma 数据模型配置。
+// 功能说明：声明 PostgreSQL 数据源与内容实体草案，Demo 阶段暂不接入运行路径。
+//
+// 结构概览：
+//   第一部分：生成器与数据源
+//   第二部分：内容实体草案
+
+// ========== 第一部分：生成器与数据源 ==========
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ========== 第二部分：内容实体草案 ==========
+// 当前模型只作为后续接入参考，暂不生成迁移，避免在 Demo 阶段提前锁死数据库结构。
+model ContentItem {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  summary     String
+  category    String
+  tags        String[]
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * 文件说明：该文件定义杭育 CNAS 内容站的全局样式入口。
+ * 功能说明：接入 Tailwind 层，并补充基础排版与交互约束。
+ *
+ * 结构概览：
+ *   第一部分：全局盒模型
+ *   第二部分：页面基础样式
+ */
+
+/* ========== 第一部分：全局盒模型 ========== */
+* {
+  box-sizing: border-box;
+}
+
+/* ========== 第二部分：页面基础样式 ========== */
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #f7f4ef;
+  color: #172026;
+  font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
