@@ -12,14 +12,14 @@ import { navItems } from "@/lib/site-data";
 // ========== 第一部分：导航组件 ==========
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 border-b border-ink/10 bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between md:px-8">
-        <Link href="/" className="text-base font-semibold text-ink">
-          杭育｜CNAS专业知识与解决方案平台
+    <header className="sticky top-0 z-20 bg-paper/95 backdrop-blur">
+      <div className="site-shell flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between">
+        <Link href="/" className="text-meta font-medium text-ink">
+          CNAS专业知识与认可解决方案平台
         </Link>
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink/70">
+        <nav className="flex flex-wrap gap-x-4 gap-y-2 text-meta font-medium text-muted">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-moss">
+            <Link key={item.href} href={item.href} className="transition hover:text-primary">
               {item.label}
             </Link>
           ))}

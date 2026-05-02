@@ -23,12 +23,12 @@ export function FaqLanding() {
         title="CNAS常见问题"
         description="聚合企业启动 CNAS认可前最常见的判断型问题，帮助先看清条件、风险和投入重点。"
       />
-      <section className="mx-auto grid max-w-4xl gap-4 px-6 py-12 md:px-8">
+      <section className="site-shell grid max-w-4xl gap-4 py-12">
         {faqs.map((faq) => (
-          <article key={`${faq.articleSlug}-${faq.question}`} className="rounded border border-slate-200 bg-white p-5">
-            <h2 className="text-lg font-semibold text-slate-950">{faq.question}</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">{faq.answer}</p>
-            <Link href={`/knowledge/${faq.articleSlug}`} className="mt-3 inline-flex text-sm font-semibold text-blue-900">
+          <article key={`${faq.articleSlug}-${faq.question}`} className="card">
+            <h2 className="text-body font-semibold text-ink">{faq.question}</h2>
+            <p className="mt-2 text-copy">{faq.answer}</p>
+            <Link href={`/knowledge/${faq.articleSlug}`} className="mt-3 inline-flex text-meta font-semibold text-primary">
               来源：{faq.articleTitle}
             </Link>
           </article>

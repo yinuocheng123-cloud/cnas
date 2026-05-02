@@ -11,17 +11,17 @@ import Link from "next/link";
 // ========== 第一部分：CtaBlock 组件 ==========
 export function CtaBlock() {
   return (
-    <section className="bg-slate-950 text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-8">
+    <section className="bg-ink text-white">
+      <div className="site-shell flex flex-col gap-5 py-10 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="text-2xl font-semibold">如需进一步诊断，可联系杭育科技团队。</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-300">
+          <h2 className="text-title font-semibold">如需进一步诊断，可联系杭育科技团队。</h2>
+          <p className="mt-2 max-w-2xl text-body text-slate-300">
             先判断实验室基础、认可范围、评审风险和投入顺序，再决定是否启动 CNAS认可。
           </p>
         </div>
         <Link
           href="/services"
-          className="inline-flex w-fit rounded bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          className="inline-flex w-fit rounded-lg bg-white px-4 py-2.5 text-meta font-semibold text-ink transition hover:bg-surface"
         >
           进入服务咨询
         </Link>

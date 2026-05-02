@@ -12,16 +12,16 @@ import Link from "next/link";
 export function ConsultationCta() {
   return (
     <section className="bg-ink text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-8">
+      <div className="site-shell flex flex-col gap-5 py-10 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="text-2xl font-semibold">不确定企业现在适不适合做CNAS？</h2>
-          <p className="mt-2 text-sm leading-6 text-white/70">
+          <h2 className="text-title font-semibold">不确定企业现在适不适合做CNAS？</h2>
+          <p className="mt-2 max-w-2xl text-body text-white/70">
             先做一次初步诊断，判断基础、风险和投入顺序，再决定是否启动。
           </p>
         </div>
         <Link
           href="/services"
-          className="inline-flex w-fit rounded bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:bg-skyglass"
+          className="inline-flex w-fit rounded-lg bg-white px-4 py-2.5 text-meta font-semibold text-ink transition hover:bg-surface"
         >
           预约一次初步诊断
         </Link>

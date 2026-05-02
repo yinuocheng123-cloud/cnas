@@ -11,20 +11,20 @@ import type { ServiceItem } from "@/src/data/services";
 // ========== 第一部分：ServiceCard 组件 ==========
 export function ServiceCard({ service }: { service: ServiceItem }) {
   return (
-    <article className="rounded border border-slate-200 bg-white p-5">
-      <h3 className="text-lg font-semibold text-slate-950">{service.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">适合企业：{service.targetUser}</p>
-      <p className="mt-2 text-sm leading-6 text-slate-600">常见问题：{service.commonProblems.join("、")}</p>
-      <p className="mt-3 text-sm font-semibold text-slate-950">支持内容</p>
-      <ul className="mt-2 grid gap-2 text-sm leading-6 text-slate-600">
+    <article id={service.slug} className="card scroll-mt-28">
+      <h3 className="text-body font-semibold text-ink">{service.title}</h3>
+      <p className="mt-3 text-copy">适合企业：{service.targetUser}</p>
+      <p className="mt-2 text-copy">常见问题：{service.commonProblems.join("、")}</p>
+      <p className="mt-3 text-body font-semibold text-ink">支持内容</p>
+      <ul className="mt-2 grid gap-2 text-copy">
         {service.supportContent.map((item) => (
-          <li key={item} className="border-l-4 border-blue-900 pl-3">
+          <li key={item} className="border-l-2 border-slate-300 pl-3">
             {item}
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-sm leading-6 text-slate-600">交付结果：{service.deliverables.join("、")}</p>
-      <p className="mt-2 text-sm leading-6 text-slate-600">风险提醒：{service.riskNotice}</p>
+      <p className="mt-3 text-copy">交付结果：{service.deliverables.join("、")}</p>
+      <p className="mt-2 text-copy">风险提醒：{service.riskNotice}</p>
     </article>
   );
 }

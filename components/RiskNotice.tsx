@@ -9,11 +9,11 @@
 // ========== 第一部分：RiskNotice 组件 ==========
 export function RiskNotice({ title, items }: { title: string; items: string[] }) {
   return (
-    <section className="rounded border border-blue-900/20 bg-blue-50 p-5">
-      <h2 className="text-2xl font-semibold text-slate-950">{title}</h2>
+    <section className="card">
+      <h2 className="text-heading">{title}</h2>
       <ul className="mt-4 grid gap-3">
         {items.map((item) => (
-          <li key={item} className="text-sm leading-6 text-slate-700">
+          <li key={item} className="text-copy">
             {item}
           </li>
         ))}

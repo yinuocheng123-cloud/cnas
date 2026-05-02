@@ -14,16 +14,16 @@ export function SolutionCard({ solution }: { solution: Solution }) {
   return (
     <Link
       href={solution.href}
-      className="rounded border border-slate-200 bg-white p-5 transition hover:border-blue-900"
+      className="card-link"
     >
-      <h3 className="text-xl font-semibold text-slate-950">{solution.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{solution.summary}</p>
-      <div className="mt-5 space-y-3 text-sm leading-6 text-slate-600">
-        <p><span className="font-semibold text-slate-950">适合谁：</span>{solution.suitableFor}</p>
-        <p><span className="font-semibold text-slate-950">常见问题：</span>{solution.commonProblems.slice(0, 2).join("、")}</p>
-        <p><span className="font-semibold text-slate-950">评审风险：</span>{solution.assessmentRisks.slice(0, 2).join("、")}</p>
+      <h3 className="text-body font-semibold text-ink">{solution.title}</h3>
+      <p className="mt-3 text-copy">{solution.summary}</p>
+      <div className="mt-5 space-y-3 text-copy">
+        <p><span className="font-semibold text-ink">适合谁：</span>{solution.suitableFor}</p>
+        <p><span className="font-semibold text-ink">常见问题：</span>{solution.commonProblems.slice(0, 2).join("、")}</p>
+        <p><span className="font-semibold text-ink">评审风险：</span>{solution.assessmentRisks.slice(0, 2).join("、")}</p>
       </div>
-      <span className="mt-5 inline-flex rounded bg-slate-950 px-4 py-2 text-sm font-semibold text-white">
+      <span className="btn-secondary mt-5 inline-flex">
         查看详情
       </span>
     </Link>

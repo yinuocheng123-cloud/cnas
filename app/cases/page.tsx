@@ -33,9 +33,9 @@ export default function CasesPage() {
         description="不做空泛宣传，只拆解企业遇到的问题、采取的动作和产生的结果。"
       />
       {/* ========== 第二部分：案例列表 ========== */}
-      <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
-        <SectionTitle title="典型场景" />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <section className="site-shell section-space">
+        <SectionTitle title="典型场景" description="按案例标签承接导航入口，所有案例保持问题 / 动作 / 结果结构。" />
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {cases.map((caseItem) => (
             <CaseCard key={caseItem.slug} caseItem={caseItem} />
           ))}

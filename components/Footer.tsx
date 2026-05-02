@@ -9,8 +9,8 @@
 // ========== 第一部分：Footer 组件 ==========
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-950 text-white">
-      <div className="mx-auto max-w-6xl px-6 py-8 text-sm leading-6 text-slate-300 md:px-8">
+    <footer className="bg-ink text-white">
+      <div className="site-shell py-8 text-body text-slate-300">
         <p className="font-semibold text-white">CNAS专业知识与认可解决方案平台</p>
         <p className="mt-2">
           聚焦 CNAS认可、实验室能力建设、体系运行、评审风险与持续改进。

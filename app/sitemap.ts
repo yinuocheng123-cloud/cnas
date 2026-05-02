@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { articles, categories, getArticlesByCategory, solutions, tags } from "@/lib/site-data";
+import { articles, categories, getArticlesByCategory, getArticlesByTag, solutions, tags } from "@/lib/site-data";
 import { siteUrl } from "@/lib/seo";
 
 /*
@@ -22,7 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categories
       .filter((category) => getArticlesByCategory(category.slug).length > 0)
       .map((category) => `/categories/${category.slug}`),
-    ...tags.map((tag) => `/tags/${encodeURIComponent(tag)}`),
+    ...tags
+      .filter((tag) => getArticlesByTag(tag).length > 0)
+      .map((tag) => `/tags/${encodeURIComponent(tag)}`),
     ...articles.map((article) => `/knowledge/${article.slug}`),
     ...solutions.map((solution) => solution.href),
   ];

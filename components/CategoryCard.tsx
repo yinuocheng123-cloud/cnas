@@ -12,9 +12,9 @@ import type { Category } from "@/src/data/categories";
 // ========== 第一部分：CategoryCard 组件 ==========
 export function CategoryCard({ category }: { category: Category }) {
   return (
-    <Link href={category.href} className="rounded border border-slate-200 bg-white p-5 transition hover:border-blue-900">
-      <h3 className="text-lg font-semibold text-slate-950">{category.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{category.description}</p>
+    <Link href={category.href} className="card-link">
+      <h3 className="text-body font-semibold text-ink">{category.title}</h3>
+      <p className="mt-3 text-copy">{category.description}</p>
     </Link>
   );
 }

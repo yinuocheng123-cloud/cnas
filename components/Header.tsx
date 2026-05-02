@@ -12,16 +12,32 @@ import { navItems } from "@/lib/site-data";
 // ========== 第一部分：Header 组件 ==========
 export function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between md:px-8">
-        <Link href="/" className="text-base font-semibold text-slate-950">
+    <header className="sticky top-0 z-20 bg-paper/95 backdrop-blur">
+      <div className="site-shell flex flex-col gap-3 py-4 lg:flex-row lg:items-center lg:justify-between">
+        <Link href="/" className="text-meta font-medium text-ink">
           CNAS专业知识与认可解决方案平台
         </Link>
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
+        <nav className="flex flex-wrap gap-x-4 gap-y-2 text-meta font-medium text-muted">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-blue-900">
-              {item.label}
-            </Link>
+            <div key={item.href} className="group relative">
+              <Link href={item.href} className="inline-flex items-center gap-1 transition hover:text-ink">
+                {item.label}
+                {item.children ? <span className="text-meta text-subtle">▾</span> : null}
+              </Link>
+              {item.children ? (
+                <div className="hidden w-72 rounded-xl border border-line bg-paper p-2 shadow-card group-hover:block group-focus-within:block lg:absolute lg:left-0 lg:top-7">
+                  <p className="px-3 py-2 text-meta font-medium text-subtle">{item.intent}入口</p>
+                  <div className="grid gap-1">
+                    {item.children.map((child) => (
+                      <Link key={child.href} href={child.href} className="rounded-lg px-3 py-2 transition hover:bg-surface">
+                        <span className="block text-body font-medium text-ink">{child.label}</span>
+                        {child.description ? <span className="mt-1 block text-meta text-muted">{child.description}</span> : null}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
           ))}
         </nav>
       </div>

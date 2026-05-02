@@ -36,26 +36,49 @@ export default function DiagnosisPage() {
       />
 
       {/* ========== 第二部分：启动条件与不建议场景 ========== */}
-      <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
+      <section id="start-fit" className="site-shell section-space scroll-mt-28">
         <SectionTitle title="启动前要检查哪些条件" description="以下条件越清晰，越适合进入规划和体系建设阶段。" />
         <div className="mt-6">
-          <ProcessSteps steps={["检测需求明确", "认可范围可规划", "人员设备有基础", "体系能试运行", "预算投入可承受"]} />
+          <ProcessSteps
+            steps={[
+              {
+                title: "检测需求明确",
+                description: "先确认企业为什么需要 CNAS认可，检测项目是否稳定，报告用途是否清楚。",
+              },
+              {
+                title: "范围可规划",
+                description: "把标准方法、样品类型、检测参数和能力边界列出来，形成可落地的首批范围。",
+              },
+              {
+                title: "资源有基础",
+                description: "评估人员、设备、环境和方法是否能支撑检测活动，缺口要能被补齐。",
+              },
+              {
+                title: "体系能运行",
+                description: "文件不能只停留在模板层面，要能产生真实记录、质量控制和整改闭环。",
+              },
+              {
+                title: "投入可承受",
+                description: "预算要覆盖建设、设备、培训、运行、能力验证和评审后整改，而不只是服务支持。",
+              },
+            ]}
+          />
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-6 pb-12 md:grid-cols-2 md:px-8">
-        <div className="rounded border border-slate-200 bg-white p-5">
-          <h2 className="text-xl font-semibold text-slate-950">更适合启动的情况</h2>
-          <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-600">
+      <section id="self-check" className="site-shell grid scroll-mt-28 gap-4 pb-12 md:grid-cols-2">
+        <div className="card">
+          <h2 className="text-heading">更适合启动的情况</h2>
+          <ul className="mt-4 grid gap-3 text-copy">
             <li>检测项目和标准方法已经基本明确。</li>
             <li>人员、设备、环境已有基础，差距可以被规划。</li>
             <li>管理层愿意投入体系运行、整改和持续改进资源。</li>
             <li>企业愿意先缩小认可范围，分阶段推进。</li>
           </ul>
         </div>
-        <div className="rounded border border-blue-900/20 bg-blue-50 p-5">
-          <h2 className="text-xl font-semibold text-slate-950">建议暂缓启动的情况</h2>
-          <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
+        <div className="card">
+          <h2 className="text-heading">建议暂缓启动的情况</h2>
+          <ul className="mt-4 grid gap-3 text-copy">
             <li>只是想尽快获得结果，但没有清晰检测能力基础。</li>
             <li>设备采购、场地建设和人员安排尚未经过范围规划。</li>
             <li>体系文件还没有真实运行记录。</li>
@@ -64,7 +87,7 @@ export default function DiagnosisPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 pb-12 md:px-8">
+      <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-12">
         <RiskNotice
           title="哪些情况不建议盲目启动"
           items={[
@@ -77,7 +100,7 @@ export default function DiagnosisPage() {
       </section>
 
       {/* ========== 第三部分：资料准备与咨询入口 ========== */}
-      <section className="mx-auto max-w-4xl px-6 pb-12 md:px-8">
+      <section className="site-shell max-w-4xl pb-12">
         <ChecklistBlock
           title="需要准备哪些基础资料"
           items={[
@@ -89,10 +112,10 @@ export default function DiagnosisPage() {
           ]}
         />
       </section>
-      <section className="mx-auto max-w-4xl px-6 pb-12 md:px-8">
-        <div className="rounded border border-slate-200 bg-white p-5">
-          <h2 className="text-2xl font-semibold text-slate-950">诊断后应形成什么判断</h2>
-          <p className="mt-3 text-sm leading-6 text-slate-600">
+      <section id="diagnosis-support" className="site-shell max-w-4xl scroll-mt-28 pb-12">
+        <div className="card">
+          <h2 className="text-heading">诊断后应形成什么判断</h2>
+          <p className="mt-3 text-copy">
             诊断不是为了马上进入申请，而是形成三个结论：现在是否适合启动、先补哪些能力短板、认可范围和投入顺序如何安排。
           </p>
         </div>

@@ -28,8 +28,8 @@ export default function AboutPage() {
         title="关于平台"
         description="本平台聚焦 CNAS认可与实验室能力建设，帮助企业在启动 CNAS 前看清流程、风险、投入与建设路径。"
       />
-      <section className="mx-auto max-w-4xl px-6 py-12 md:px-8">
-        <div className="space-y-5 text-base leading-8 text-slate-700">
+      <section className="site-shell max-w-4xl section-space">
+        <div className="space-y-4 text-copy">
           <p>
             平台内容围绕 CNAS认可、实验室能力建设、体系运行、认可范围规划、评审风险和持续改进展开，重点服务企业启动前的判断与规划。
           </p>

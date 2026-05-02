@@ -18,15 +18,15 @@ type BreadcrumbItem = {
 // ========== 第二部分：Breadcrumb 组件 ==========
 export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
   return (
-    <nav className="flex flex-wrap gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
+    <nav className="flex flex-wrap gap-2 text-meta text-subtle" aria-label="Breadcrumb">
       {items.map((item, index) => (
         <span key={item.label} className="flex items-center gap-2">
           {item.href ? (
-            <Link href={item.href} className="hover:text-blue-900">
+            <Link href={item.href} className="hover:text-primary">
               {item.label}
             </Link>
           ) : (
-            <span className="text-slate-700">{item.label}</span>
+            <span className="text-muted">{item.label}</span>
           )}
           {index < items.length - 1 ? <span>/</span> : null}
         </span>

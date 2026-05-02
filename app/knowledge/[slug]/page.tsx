@@ -67,18 +67,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <main className="min-h-screen bg-white text-ink">
       <Header />
       <article>
-        <header className="border-b border-slate-200 bg-white">
-          <div className="mx-auto max-w-4xl px-6 py-12 md:px-8">
+        <header className="bg-paper">
+          <div className="site-shell max-w-4xl py-12">
             <Breadcrumb items={[{ label: "首页", href: "/" }, { label: "CNAS知识库", href: "/knowledge" }, { label: article.title }]} />
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-slate-950">{article.title}</h1>
-            <p className="mt-5 rounded border border-blue-900/20 bg-blue-50 p-4 text-base leading-7 text-slate-800">
+            <h1 className="mt-4 text-display text-ink">{article.title}</h1>
+            <p className="card mt-5 text-copy">
               {article.answer}
             </p>
-            <div className="mt-5 flex flex-col gap-3 text-sm text-slate-600">
+            <div className="mt-5 flex flex-col gap-3 text-meta text-muted">
               <p>
                 文章分类：
                 {category ? (
-                  <Link href={category.href} className="font-semibold text-blue-900">
+                  <Link href={category.href} className="font-semibold text-primary">
                     {category.title}
                   </Link>
                 ) : (
@@ -91,12 +91,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </header>
 
-        <div className="mx-auto grid max-w-4xl gap-10 px-6 py-10 md:px-8">
+        <div className="site-shell grid max-w-4xl gap-10 py-10">
           <section className="space-y-8">
             {article.sections.map((section) => (
               <div key={section.title}>
-                <h2 className="text-2xl font-semibold text-slate-950">{section.title}</h2>
-                <p className="mt-3 text-base leading-8 text-slate-700">{section.content}</p>
+                <h2 className="text-heading">{section.title}</h2>
+                <p className="mt-3 text-copy">{section.content}</p>
               </div>
             ))}
           </section>
@@ -105,7 +105,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <FaqBlock faqs={article.faqs} />
 
           <section>
-            <h2 className="text-2xl font-semibold text-slate-950">相关内容推荐</h2>
+            <h2 className="text-heading">相关内容推荐</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               {relatedArticles.map((item) => (
                 <ArticleCard key={item.slug} article={item} />

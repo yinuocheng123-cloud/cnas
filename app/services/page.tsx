@@ -36,7 +36,7 @@ export default function ServicesPage() {
       />
 
       {/* ========== 第二部分：服务卡片 ========== */}
-      <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
+      <section className="site-shell section-space">
         <SectionTitle title="支持模块" description="每项服务都明确适合企业、常见问题、支持内容、交付结果和风险提醒。" />
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {services.map((service) => (
@@ -46,7 +46,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ========== 第三部分：服务边界提示 ========== */}
-      <section className="mx-auto max-w-4xl px-6 pb-12 md:px-8">
+      <section className="site-shell max-w-4xl pb-12">
         <RiskNotice
           title="服务边界"
           items={[

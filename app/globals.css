@@ -24,9 +24,11 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background: #f7f4ef;
-  color: #172026;
+  background: #ffffff;
+  color: #1f2937;
   font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 a {
@@ -39,4 +41,46 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto max-w-6xl px-6 md:px-8;
+  }
+
+  .section-space {
+    @apply py-12 md:py-16;
+  }
+
+  .card {
+    @apply rounded-xl border border-line bg-card p-6 shadow-card;
+  }
+
+  .card-link {
+    @apply rounded-xl border border-line bg-card p-6 shadow-card transition hover:border-slate-300;
+  }
+
+  .text-heading {
+    @apply text-title text-ink;
+  }
+
+  .text-copy {
+    @apply text-body text-muted;
+  }
+
+  .text-meta-token {
+    @apply text-meta text-subtle;
+  }
+
+  .btn-primary {
+    @apply rounded-lg bg-primary px-4 py-2.5 text-meta font-semibold text-white transition hover:bg-ink;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border border-line bg-white px-4 py-2.5 text-meta font-semibold text-muted transition hover:border-primary hover:text-primary;
+  }
+
+  .hero-subline {
+    font-size: 0.9em;
+  }
 }

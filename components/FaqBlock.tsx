@@ -17,12 +17,12 @@ type FaqItem = {
 export function FaqBlock({ faqs }: { faqs: FaqItem[] }) {
   return (
     <section>
-      <h2 className="text-2xl font-semibold text-slate-950">常见问题 FAQ</h2>
+      <h2 className="text-heading">常见问题 FAQ</h2>
       <div className="mt-4 grid gap-4">
         {faqs.map((faq) => (
-          <div key={faq.question} className="rounded border border-slate-200 bg-white p-5">
-            <h3 className="font-semibold text-slate-950">{faq.question}</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-600">{faq.answer}</p>
+          <div key={faq.question} className="card">
+            <h3 className="text-body font-semibold text-ink">{faq.question}</h3>
+            <p className="mt-2 text-copy">{faq.answer}</p>
           </div>
         ))}
       </div>

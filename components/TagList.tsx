@@ -16,7 +16,7 @@ export function TagList({ tags }: { tags: string[] }) {
         <Link
           key={tag}
           href={`/tags/${encodeURIComponent(tag)}`}
-          className="rounded border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600 transition hover:border-blue-900 hover:text-blue-900"
+          className="rounded-lg border border-line bg-card px-3 py-1 text-meta text-muted transition hover:border-primary hover:text-primary"
         >
           {tag}
         </Link>

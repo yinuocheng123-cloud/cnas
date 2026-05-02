@@ -12,7 +12,7 @@ import { ArticleCard } from "./ArticleCard";
 // ========== 第一部分：ArticleList 组件 ==========
 export function ArticleList({ articles }: { articles: Article[] }) {
   if (articles.length === 0) {
-    return <p className="rounded border border-slate-200 bg-white p-5 text-sm text-slate-600">暂无匹配内容。</p>;
+    return <p className="card text-copy">暂无匹配内容。</p>;
   }
 
   return (

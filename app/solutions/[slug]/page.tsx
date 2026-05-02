@@ -64,20 +64,20 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
       <Header />
       <HeroSection eyebrow="Industry Solution" title={solution.title} description={solution.summary} />
 
-      <section className="mx-auto max-w-6xl px-6 pt-8 md:px-8">
+      <section className="site-shell pt-8">
         <Breadcrumb items={[{ label: "首页", href: "/" }, { label: "行业方案", href: "/solutions" }, { label: solution.title }]} />
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-6 py-10 md:grid-cols-2 md:px-8">
-        <div className="rounded border border-slate-200 bg-white p-5">
-          <h2 className="text-xl font-semibold text-slate-950">适合对象</h2>
-          <p className="mt-3 text-sm leading-6 text-slate-600">{solution.suitableFor}</p>
+      <section className="site-shell grid gap-4 py-10 md:grid-cols-2">
+        <div className="card">
+          <h2 className="text-heading">适合对象</h2>
+          <p className="mt-3 text-copy">{solution.suitableFor}</p>
         </div>
         <ChecklistBlock title="常见问题" items={solution.commonProblems} />
       </section>
 
       <section className="border-y border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-6 py-12 md:px-8">
+        <div className="site-shell section-space">
           <SectionTitle title="认可难点" description="行业差异最终会落到人员、设备、环境、方法、记录和体系运行证据上。" />
           <div className="mt-6">
             <ChecklistBlock title="需要重点判断的难点" items={solution.recognitionDifficulties} />
@@ -85,14 +85,14 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
+      <section className="site-shell section-space">
         <SectionTitle title="建设路径" />
         <div className="mt-6">
           <ProcessSteps steps={solution.buildPath} />
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-12 md:grid-cols-2 md:px-8">
+      <section className="site-shell grid gap-6 pb-12 md:grid-cols-2">
         <ChecklistBlock title="评审风险" items={solution.assessmentRisks} />
         <ChecklistBlock title="解决方案参考" items={solution.solutionReference} />
       </section>

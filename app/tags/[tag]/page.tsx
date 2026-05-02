@@ -20,9 +20,11 @@ import { createPageMetadata } from "@/lib/seo";
 
 // ========== 第一部分：静态参数与元信息 ==========
 export function generateStaticParams() {
-  return tags.map((tag) => ({
-    tag,
-  }));
+  return tags
+    .filter((tag) => getArticlesByTag(tag).length > 0)
+    .map((tag) => ({
+      tag,
+    }));
 }
 
 export async function generateMetadata({
@@ -45,7 +47,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
   const decodedTag = decodeURIComponent(tag);
   const matchedArticles = getArticlesByTag(decodedTag);
 
-  if (!tags.includes(decodedTag)) {
+  if (!tags.includes(decodedTag) || matchedArticles.length === 0) {
     notFound();
   }
 

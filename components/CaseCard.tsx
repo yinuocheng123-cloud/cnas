@@ -11,11 +11,18 @@ import type { CaseItem } from "@/src/data/cases";
 // ========== 第一部分：CaseCard 组件 ==========
 export function CaseCard({ caseItem }: { caseItem: CaseItem }) {
   return (
-    <article className="rounded border border-slate-200 bg-white p-5">
-      <h3 className="text-lg font-semibold text-slate-950">{caseItem.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">问题：{caseItem.problem}</p>
-      <p className="mt-2 text-sm leading-6 text-slate-600">动作：{caseItem.action}</p>
-      <p className="mt-2 text-sm leading-6 text-slate-600">结果：{caseItem.result}</p>
+    <article id={caseItem.slug} className="card scroll-mt-28">
+      <div className="mb-3 flex flex-wrap gap-2">
+        {caseItem.tags.map((tag) => (
+          <span key={tag} className="rounded-lg border border-line px-2 py-1 text-meta text-muted">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h3 className="text-body font-semibold text-ink">{caseItem.title}</h3>
+      <p className="mt-3 text-copy">问题：{caseItem.problem}</p>
+      <p className="mt-2 text-copy">动作：{caseItem.action}</p>
+      <p className="mt-2 text-copy">结果：{caseItem.result}</p>
     </article>
   );
 }

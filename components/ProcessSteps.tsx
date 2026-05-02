@@ -6,14 +6,25 @@
  *   第一部分：ProcessSteps 组件
  */
 
+type ProcessStep = string | {
+  title: string;
+  description?: string;
+};
+
 // ========== 第一部分：ProcessSteps 组件 ==========
-export function ProcessSteps({ steps }: { steps: string[] }) {
+export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
   return (
-    <ol className="grid gap-3 md:grid-cols-5">
+    <ol className="grid gap-4 md:grid-cols-5">
       {steps.map((step, index) => (
-        <li key={step} className="rounded border border-slate-200 bg-white p-4">
-          <span className="text-xs font-semibold text-blue-900">STEP {index + 1}</span>
-          <p className="mt-2 text-sm font-semibold text-slate-950">{step}</p>
+        <li
+          key={typeof step === "string" ? step : step.title}
+          className="card min-h-36 transition hover:border-slate-300"
+        >
+          <span className="text-meta-token font-semibold">STEP {index + 1}</span>
+          <p className="mt-3 text-body font-semibold text-ink">{typeof step === "string" ? step : step.title}</p>
+          {typeof step !== "string" && step.description ? (
+            <p className="mt-3 text-copy">{step.description}</p>
+          ) : null}
         </li>
       ))}
     </ol>

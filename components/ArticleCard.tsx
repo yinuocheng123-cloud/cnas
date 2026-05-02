@@ -17,21 +17,21 @@ export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/knowledge/${article.slug}`}
-      className="rounded border border-slate-200 bg-white p-5 transition hover:border-blue-900"
+      className="card-link"
     >
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-900">
+      <p className="text-meta-token font-medium uppercase tracking-[0.12em]">
         {category?.title ?? article.category}
       </p>
-      <h3 className="mt-3 text-xl font-semibold text-slate-950">{article.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{article.description}</p>
+      <h3 className="mt-3 text-body font-semibold text-ink">{article.title}</h3>
+      <p className="mt-3 text-copy">{article.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {article.tags.slice(0, 3).map((tag) => (
-          <span key={tag} className="rounded border border-slate-200 px-2 py-1 text-xs text-slate-600">
+          <span key={tag} className="rounded-lg border border-line px-2 py-1 text-meta text-muted">
             {tag}
           </span>
         ))}
       </div>
-      <p className="mt-4 text-xs text-slate-500">更新：{article.updatedAt}</p>
+      <p className="mt-4 text-meta-token">更新：{article.updatedAt}</p>
     </Link>
   );
 }
