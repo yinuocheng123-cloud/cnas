@@ -43,6 +43,7 @@ export type Solution = {
   slug: string;
   href: string;
   title: string;
+  seoTitle: string;
   summary: string;
   suitableFor: string;
   commonProblems: string[];
@@ -137,6 +138,8 @@ export const homePathways = [
   { title: "风险诊断", href: "/diagnosis", intent: "转化入口", summary: "帮助企业先判断是否适合现在启动 CNAS认可。" },
 ];
 
+export const homePathwayLead = "从了解、判断，到落地，每一步都有对应路径";
+
 export const processStages = [
   {
     id: "feasibility",
@@ -183,9 +186,9 @@ export const processStages = [
 ];
 
 export const hotQuestions = [
-  { title: "CNAS是什么", href: "/knowledge/what-is-cnas", summary: "先理解认可对象和真实能力要求。" },
-  { title: "CNAS认可流程", href: "/knowledge/cnas-process", summary: "看清诊断、规划、建设、申请和评审路径。" },
-  { title: "CNAS费用与周期", href: "/knowledge/cnas-cost", summary: "拆分建设、设备、体系、周期和整改成本。" },
+  { title: "做CNAS第一步是什么", href: "/knowledge/cnas-first-step-is-judgment", summary: "先判断路径，再决定后面的建设和申请顺序。" },
+  { title: "为什么会返工", href: "/knowledge/why-enterprises-rework-cnas", summary: "先看哪些错误会把预算和周期一起拖长。" },
+  { title: "能不能现在启动", href: "/knowledge/check-four-points-before-cnas", summary: "先看四个判断点，再决定要不要马上推进。" },
 ];
 
 export const homeStats = [
@@ -194,12 +197,90 @@ export const homeStats = [
   { label: "评审风险点", value: "30+ 个" },
 ];
 
+export const diagnosisPageCopy = {
+  heroDescription:
+    "很多企业不是做不下来，而是一开始走错。启动 CNAS认可前，先把路径、范围、投入和返工风险看清楚，往往比急着推进更重要。",
+  heroRiskNotice: "设备先采购、体系后补，是最常见也最容易返工的路径。",
+  delayLeadDescription: "先把这些情况看清楚，再决定是否现在启动，会比边做边改更省时间和成本。",
+  delayCases: [
+    "实验室检测范围不清晰。",
+    "已考虑采购设备但没有整体规划。",
+    "想尽快通过评审但不了解流程。",
+    "内部没有明确负责人。",
+  ],
+  reworkTitle: "为什么很多企业做了会返工",
+  reworkItems: [
+    "范围不合理导致重做。",
+    "设备投入无法匹配认可范围。",
+    "体系后补，周期被拉长。",
+    "评审失败需要整改甚至重走。",
+  ],
+  reworkConclusion: "很多问题，其实在启动前就可以避免。",
+  judgmentTitle: "在启动之前，建议先做一次判断",
+  judgmentDescription:
+    "不是判断能不能做，而是判断怎么做更合适。这一步可以把后面 6–12 个月路径提前看清。",
+  diagnosisValueTitle: "这次诊断会帮你看清几件事",
+  diagnosisValueItems: [
+    "是否适合现在启动。",
+    "推荐实验室能力范围。",
+    "周期与关键节点。",
+    "潜在风险点。",
+  ],
+  actionTitle: "先把路径看清，再决定要不要马上推进",
+  actionDescription: "很多企业卡在启动阶段，其实是路径问题。先做一次判断，通常比后面返工更省力。",
+  actionButton: "开始做一次判断",
+  actionMeta: "大约 3 分钟",
+  stepOneTitle: "第一步：先判断当前基础",
+  stepOneFields: [
+    {
+      label: "企业类型",
+      name: "enterpriseType",
+      options: ["制造企业", "第三方检测机构", "高校 / 科研实验室", "集团内部实验室"],
+    },
+    {
+      label: "是否已有实验室",
+      name: "hasLab",
+      options: ["已有完整实验室", "已有基础实验室", "正在规划实验室", "暂时还没有实验室"],
+    },
+    {
+      label: "当前阶段",
+      name: "stage",
+      options: ["刚开始了解", "准备规划范围", "实验室建设中", "准备申请或评审前"],
+    },
+  ],
+  stepOneButton: "继续判断",
+  stepTwoTitle: "第二步：补充关键决策信息",
+  stepTwoFields: [
+    {
+      label: "计划启动时间",
+      name: "startTime",
+      options: ["1-3 个月内", "3-6 个月内", "6-12 个月内", "还在判断阶段"],
+    },
+    {
+      label: "是否考虑设备投入",
+      name: "equipmentPlan",
+      options: ["已经在考虑投入", "已经投入一部分", "暂时还没考虑", "还不确定是否需要"],
+    },
+  ],
+  contactLabel: "联系方式（微信 / 电话）",
+  contactPlaceholder: "方便后续给你明确判断方向",
+  stepTwoTip: "填写后，会给你一个明确的判断方向。",
+  preSubmitLines: [
+    "很多企业卡在启动阶段，其实是路径问题。",
+    "这一步如果判断错，后面基本都会返工。",
+  ],
+  submitButton: "开始做一次判断",
+  successTitle: "已提交，我们会尽快联系你",
+  successLines: ["我们会结合你填写的信息给出初步判断，建议保持联系方式畅通。"],
+};
+
 // ========== 第四部分：解决方案数据 ==========
 export const solutions: Solution[] = [
   {
     slug: "manufacturing-lab",
     href: "/solutions/manufacturing-lab",
     title: "制造企业实验室 CNAS认可解决方案",
+    seoTitle: "制造企业实验室：CNAS认可怎么分步规划",
     summary: "面向制造企业自建实验室，围绕检测需求、认可范围、设备环境和体系运行规划建设路径。",
     suitableFor: "有出厂检验、供应链质量验证、研发检测或客户验厂要求的制造企业。",
     commonProblems: ["检测需求存在但认可范围不清", "设备先买后规划", "实验室运行记录薄弱", "人员授权和职责不清"],
@@ -212,6 +293,7 @@ export const solutions: Solution[] = [
     slug: "testing-lab",
     href: "/solutions/testing-lab",
     title: "检测机构实验室 CNAS认可解决方案",
+    seoTitle: "检测机构实验室：CNAS认可怎么稳住证据",
     summary: "面向已有检测业务的机构，重点关注项目扩项、体系稳定性、技术记录和监督评审准备。",
     suitableFor: "准备首次申请、扩项或迎接监督评审的检测机构实验室。",
     commonProblems: ["项目扩项证据不足", "技术记录格式不统一", "人员能力覆盖不足", "监督评审准备不充分"],
@@ -221,9 +303,43 @@ export const solutions: Solution[] = [
     solutionReference: ["优先核查扩项项目", "统一技术记录模板", "复核人员设备覆盖关系", "提前准备监督评审证据"],
   },
   {
+    slug: "new-energy-lab",
+    href: "/solutions/new-energy-lab",
+    title: "新能源 / 储能检测实验室 CNAS认可路径",
+    seoTitle: "新能源 / 储能检测实验室：CNAS认可前先判断能力边界",
+    summary: "适用场景：新能源检测、储能系统测试、高要求实验室建设。",
+    suitableFor:
+      "计划建设或扩充新能源检测、储能电池检测、电性能与安全性检测能力的企业实验室，以及准备承接相关项目的高要求实验室。",
+    commonProblems: [
+      "检测项目范围未先收敛就启动设备采购",
+      "关键检测项与设备能力不匹配",
+      "实验室安全条件和环境稳定性评估不足",
+      "人员有基础操作经验但缺少对应检测方法经验",
+    ],
+    recognitionDifficulties: [
+      "是否已有明确的检测项目清单",
+      "设备能力是否覆盖关键检测项",
+      "实验室环境是否满足安全及稳定要求",
+      "人员是否具备对应检测经验",
+    ],
+    buildPath: ["项目范围判断", "能力边界确认", "设备规划", "实验室建设", "方法准备与试运行"],
+    assessmentRisks: [
+      "在未明确检测项目的情况下先采购设备，导致能力与项目不匹配",
+      "参考同行配置，但不适用于自身业务",
+      "忽略评审对“方法和人员能力”的要求",
+      "一旦路径判断错误，往往不是局部调整，而是设备和能力需要整体重来",
+    ],
+    solutionReference: [
+      "先明确检测项目与能力边界，再做设备与实验室规划",
+      "如果不确定当前是否适合启动，建议先做一次判断，再决定是否进入建设阶段",
+      "适用场景：新能源检测、储能系统测试、高要求实验室建设",
+    ],
+  },
+  {
     slug: "regulated-lab",
     href: "/solutions/regulated-lab",
     title: "食品 / 材料 / 医疗相关实验室 CNAS认可解决方案",
+    seoTitle: "高要求行业实验室：CNAS认可怎么准备",
     summary: "面向高要求行业实验室，重点处理标准方法、样品管理、环境控制和质量记录风险。",
     suitableFor: "食品、材料、医疗相关行业中需要建立或提升检测能力的企业实验室。",
     commonProblems: ["行业标准识别不完整", "方法确认不充分", "环境控制要求复杂", "样品和记录追溯压力高"],
@@ -236,6 +352,7 @@ export const solutions: Solution[] = [
     slug: "research-lab",
     href: "/solutions/research-lab",
     title: "高校 / 科研实验室 CNAS认可解决方案",
+    seoTitle: "科研实验室：CNAS认可前先补哪些基础",
     summary: "面向高校、研究院所和科研平台实验室，重点处理科研检测向规范化检测能力转化的问题。",
     suitableFor: "需要对外出具检测结果、承接科研平台测试或提升检测管理规范性的高校和科研实验室。",
     commonProblems: ["科研任务多但检测流程不稳定", "人员流动导致授权和培训证据不足", "设备共享使用记录不完整", "方法确认和质控安排薄弱"],
@@ -248,6 +365,7 @@ export const solutions: Solution[] = [
     slug: "group-internal-lab",
     href: "/solutions/group-internal-lab",
     title: "集团内部实验室 CNAS认可解决方案",
+    seoTitle: "集团内部实验室：CNAS认可怎么分阶段推进",
     summary: "面向集团多基地或内部共享检测平台，重点处理范围统一、能力协同和总部管控问题。",
     suitableFor: "有多个生产基地、事业部或内部检测中心，需要统一检测能力和管理体系的集团企业。",
     commonProblems: ["多基地检测能力差异大", "标准方法和记录模板不统一", "总部与实验室职责边界不清", "内部报告公信力不足"],

@@ -7,14 +7,15 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { getArticlesByCategory, getCategoryBySlug, processStages } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
 
+const category = getCategoryBySlug("cnas-process")!;
+
 export const metadata = createPageMetadata({
-  title: "CNAS认可流程",
-  description: "梳理从诊断、规划、建设、体系运行到申请评审的完整路径。",
-  path: "/cnas-process",
+  title: category.seoTitle,
+  description: category.description,
+  path: category.href,
 });
 
 export default function CnasProcessPage() {
-  const category = getCategoryBySlug("cnas-process")!;
   const articles = getArticlesByCategory(category.slug);
 
   return (

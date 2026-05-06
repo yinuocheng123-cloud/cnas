@@ -17,8 +17,8 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "行业方案",
-  description: "面向制造企业、检测机构、食品/材料/医疗、高校科研和集团内部实验室的 CNAS认可解决方案参考。",
+  title: "行业方案：不同实验室该怎么判断实施路径",
+  description: "面向制造企业、检测机构、新能源 / 储能、高校科研和高要求实验室的 CNAS认可解决方案参考。",
   path: "/solutions",
 });
 
@@ -30,7 +30,7 @@ export default function SolutionsPage() {
       <HeroSection
         eyebrow="Industry Solutions"
         title="行业方案"
-        description="不同行业实验室的基础、认可范围、评审风险不同，解决方案要先从真实能力和建设路径判断。"
+        description="不同行业实验室的检测项目、能力边界和评审风险不同，尤其是新能源 / 储能等高要求场景，更需要先判断再规划。"
       />
 
       {/* ========== 第二部分：方案列表 ========== */}

@@ -13,7 +13,7 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "关于平台",
+  title: "关于平台：为什么这里先讲判断边界与路径",
   description: "本平台聚焦 CNAS认可与实验室能力建设，帮助企业在启动 CNAS 前看清流程、风险、投入与建设路径。",
   path: "/about",
 });

@@ -20,7 +20,7 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "CNAS知识库",
+  title: "CNAS认可知识库：流程、费用与风险判断",
   description: "聚合 CNAS认可、实验室能力建设、申请流程、费用周期、评审风险和常见问题内容。",
   path: "/knowledge",
 });

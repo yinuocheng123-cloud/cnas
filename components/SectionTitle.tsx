@@ -7,11 +7,19 @@
  */
 
 // ========== 第一部分：SectionTitle 组件 ==========
-export function SectionTitle({ title, description }: { title: string; description?: string }) {
+export function SectionTitle({
+  title,
+  description,
+  descriptionClassName,
+}: {
+  title: string;
+  description?: string;
+  descriptionClassName?: string;
+}) {
   return (
     <div className="flex flex-col gap-2">
       <h2 className="text-heading">{title}</h2>
-      {description ? <p className="max-w-2xl text-copy">{description}</p> : null}
+      {description ? <p className={descriptionClassName ?? "max-w-2xl text-copy"}>{description}</p> : null}
     </div>
   );
 }

@@ -19,7 +19,7 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "CNAS认可落地支持体系",
+  title: "咨询支持：CNAS认可该从哪一步落地",
   description: "说明 CNAS启动前诊断、实验室建设与认可范围规划、体系运行辅导、评审前风险排查与整改支持。",
   path: "/services",
 });

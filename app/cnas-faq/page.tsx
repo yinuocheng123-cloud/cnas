@@ -1,10 +1,13 @@
 import { FaqLanding } from "@/components/FaqLanding";
+import { getCategoryBySlug } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
 
+const category = getCategoryBySlug("cnas-faq")!;
+
 export const metadata = createPageMetadata({
-  title: "CNAS常见问题",
-  description: "聚合企业启动 CNAS认可前最常见的判断型问题。",
-  path: "/cnas-faq",
+  title: category.seoTitle,
+  description: category.description,
+  path: category.href,
 });
 
 export default function CnasFaqPage() {

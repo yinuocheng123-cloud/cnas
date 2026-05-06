@@ -10,11 +10,12 @@ import type { Metadata } from "next";
  */
 
 // ========== 第一部分：站点常量 ==========
-export const siteName = "CNAS专业知识与认可解决方案平台";
-export const siteUrl = "https://www.hangyukeji.com";
+export const siteName = "CNAS认可指南";
+export const siteUrl = process.env.SITE_URL?.trim() || "http://localhost:3000";
+export const defaultPageTitle = "CNAS认可指南｜专业知识与认可解决方案平台";
 
 // ========== 第二部分：元信息生成函数 ==========
-// canonical 需要绝对 URL；这里先使用品牌域名占位，正式上线前应替换为真实生产域名。
+// canonical 需要绝对 URL；统一通过 SITE_URL 环境变量控制，避免本地与线上混用旧域名。
 export function createPageMetadata({
   title,
   description,

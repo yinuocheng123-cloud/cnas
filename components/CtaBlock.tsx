@@ -12,7 +12,7 @@ import Link from "next/link";
 export function CtaBlock() {
   return (
     <section className="bg-ink text-white">
-      <div className="site-shell flex flex-col gap-5 py-10 md:flex-row md:items-center md:justify-between">
+      <div className="site-shell flex flex-col gap-5 pt-10 pb-4 md:flex-row md:items-center md:justify-between md:pt-10 md:pb-4">
         <div>
           <h2 className="text-title font-semibold">如需进一步诊断，可联系杭育科技团队。</h2>
           <p className="mt-2 max-w-2xl text-body text-slate-300">

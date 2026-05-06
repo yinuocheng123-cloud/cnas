@@ -1,0 +1,597 @@
+ ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '3999536216'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ⨯ Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '3999536216'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '3999536216'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '3999536216'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '4202685278'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '3999536216'
+}
+ ⨯ Error: Could not find the module "C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '534910111'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+Error: Cannot find module './331.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7409)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\app\page.js:2:7471) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './611.js'
+Require stack:
+- C:\Users\Administrator\Documents\New project 10\.next\server\webpack-runtime.js
+- C:\Users\Administrator\Documents\New project 10\.next\server\app\cases\page.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\require.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\load-components.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\utils.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\options.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\swc\index.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\parse-module.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\build\analysis\get-page-static-info.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Administrator\Documents\New project 10\node_modules\next\dist\server\lib\start-server.js
+    at <unknown> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:325)
+    at Object.<anonymous> (C:\Users\Administrator\Documents\New project 10\.next\server\pages\_document.js:1:371) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]

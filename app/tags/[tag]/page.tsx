@@ -33,10 +33,11 @@ export async function generateMetadata({
   params: Promise<{ tag: string }>;
 }): Promise<Metadata> {
   const { tag } = await params;
+  const decodedTag = decodeURIComponent(tag);
 
   return createPageMetadata({
-    title: `${decodeURIComponent(tag)}相关内容`,
-    description: `聚合 ${decodeURIComponent(tag)} 相关的 CNAS认可文章、判断清单和常见问题。`,
+    title: `${decodedTag}标签页：相关问题和文章整理`,
+    description: `聚合 ${decodedTag} 相关的 CNAS认可文章、判断清单和常见问题。`,
     path: `/tags/${encodeURIComponent(tag)}`,
   });
 }

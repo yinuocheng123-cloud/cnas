@@ -37,14 +37,14 @@ export async function generateMetadata({
 
   if (!solution) {
     return createPageMetadata({
-      title: "行业方案",
+      title: "行业方案：继续查看不同实验室实施路径",
       description: "CNAS认可行业解决方案。",
       path: "/solutions",
     });
   }
 
   return createPageMetadata({
-    title: solution.title,
+    title: solution.seoTitle,
     description: solution.summary,
     path: solution.href,
   });
@@ -69,7 +69,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
       </section>
 
       <section className="site-shell grid gap-4 py-10 md:grid-cols-2">
-        <div className="card">
+        <div className="card h-full">
           <h2 className="text-heading">适合对象</h2>
           <p className="mt-3 text-copy">{solution.suitableFor}</p>
         </div>

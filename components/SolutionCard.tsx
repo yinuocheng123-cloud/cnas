@@ -12,10 +12,7 @@ import type { Solution } from "@/lib/site-data";
 // ========== 第一部分：SolutionCard 组件 ==========
 export function SolutionCard({ solution }: { solution: Solution }) {
   return (
-    <Link
-      href={solution.href}
-      className="card-link"
-    >
+    <Link href={solution.href} className="card-link">
       <h3 className="text-body font-semibold text-ink">{solution.title}</h3>
       <p className="mt-3 text-copy">{solution.summary}</p>
       <div className="mt-5 space-y-3 text-copy">
@@ -23,7 +20,7 @@ export function SolutionCard({ solution }: { solution: Solution }) {
         <p><span className="font-semibold text-ink">常见问题：</span>{solution.commonProblems.slice(0, 2).join("、")}</p>
         <p><span className="font-semibold text-ink">评审风险：</span>{solution.assessmentRisks.slice(0, 2).join("、")}</p>
       </div>
-      <span className="btn-secondary mt-5 inline-flex">
+      <span className="btn-secondary mt-auto inline-flex w-fit pt-5">
         查看详情
       </span>
     </Link>

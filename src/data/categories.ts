@@ -15,6 +15,7 @@ export type Category = {
   shortTitle: string;
   href: string;
   description: string;
+  seoTitle: string;
 };
 
 // ========== 第二部分：分类数据 ==========
@@ -25,6 +26,7 @@ export const categories: Category[] = [
     shortTitle: "基础认知",
     href: "/cnas-basic",
     description: "解释 CNAS认可、实验室能力、认可价值和启动前基础判断。",
+    seoTitle: "CNAS认可入门：先理解要求和能力基础",
   },
   {
     slug: "cnas-process",
@@ -32,6 +34,7 @@ export const categories: Category[] = [
     shortTitle: "认可流程",
     href: "/cnas-process",
     description: "梳理从诊断、规划、建设、体系运行到申请评审的完整路径。",
+    seoTitle: "CNAS认可流程：从诊断到评审怎么走",
   },
   {
     slug: "cnas-cost",
@@ -39,6 +42,7 @@ export const categories: Category[] = [
     shortTitle: "费用周期",
     href: "/cnas-cost",
     description: "拆解费用构成、周期影响因素和预算投入重点。",
+    seoTitle: "CNAS认可费用与周期：先看投入和进度",
   },
   {
     slug: "cnas-risk",
@@ -46,6 +50,7 @@ export const categories: Category[] = [
     shortTitle: "评审风险",
     href: "/cnas-risk",
     description: "识别现场评审、体系运行和整改闭环中的常见风险。",
+    seoTitle: "CNAS认可评审风险：哪些问题最易返工",
   },
   {
     slug: "cnas-lab",
@@ -53,6 +58,7 @@ export const categories: Category[] = [
     shortTitle: "实验室建设",
     href: "/cnas-lab",
     description: "围绕认可范围、人员、设备、环境和方法规划实验室能力。",
+    seoTitle: "实验室建设准备：怎样衔接CNAS认可申请",
   },
   {
     slug: "cnas-faq",
@@ -60,6 +66,7 @@ export const categories: Category[] = [
     shortTitle: "常见问题",
     href: "/cnas-faq",
     description: "聚合企业在启动 CNAS认可前最常问的判断型问题。",
+    seoTitle: "CNAS认可常见问题：先把误区想清楚",
   },
 ];
 

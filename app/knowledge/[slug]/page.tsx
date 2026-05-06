@@ -38,7 +38,7 @@ export async function generateMetadata({
 
   if (!article) {
     return createPageMetadata({
-      title: "CNAS知识库",
+      title: "CNAS认可知识库：继续查看相关文章",
       description: "CNAS专业知识库文章。",
       path: "/knowledge",
     });

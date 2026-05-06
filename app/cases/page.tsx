@@ -17,7 +17,7 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "案例解析",
+  title: "案例解析：看看企业为什么会返工和走弯路",
   description: "用问题、动作、结果结构解析制造企业实验室建设、体系风险和预算浪费等 CNAS认可准备场景。",
   path: "/cases",
 });

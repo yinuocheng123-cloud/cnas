@@ -1,0 +1,66 @@
+
+> new-project-10@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.15
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.5.42:3000
+   - Experiments (use with caution):
+     ✓ authInterrupts
+
+ ✓ Starting...
+ ✓ Ready in 6.9s
+ ○ Compiling /solutions/[slug] ...
+ ✓ Compiled /solutions/[slug] in 12.8s (673 modules)
+ GET / 200 in 14474ms
+ GET /solutions/new-energy-lab 200 in 15205ms
+ GET / 200 in 414ms
+ GET / 200 in 1131ms
+ ✓ Compiled in 865ms (661 modules)
+ GET / 200 in 514ms
+ GET / 200 in 155ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 3.1s (1007 modules)
+ GET / 500 in 8453ms
+ GET / 500 in 2165ms
+ ✓ Compiled in 2.3s (1007 modules)
+ GET / 200 in 99ms
+ ✓ Compiled in 1938ms (402 modules)
+ GET / 200 in 1826ms
+ GET / 200 in 403ms
+ GET / 200 in 740ms
+ GET / 500 in 9877ms
+ GET / 500 in 5069ms
+ GET / 500 in 4072ms
+ GET / 500 in 3858ms
+ GET / 200 in 578ms
+ GET / 200 in 547ms
+ ✓ Compiled in 1957ms (1007 modules)
+ GET / 200 in 895ms
+ GET / 200 in 2498ms
+ ○ Compiling /diagnosis ...
+ ✓ Compiled /diagnosis in 1175ms (1036 modules)
+ GET /diagnosis 200 in 2378ms
+ GET / 200 in 953ms
+ GET /diagnosis 200 in 106ms
+ GET / 200 in 141ms
+ GET /diagnosis 200 in 91ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 617ms (1025 modules)
+ GET /services 200 in 935ms
+ ○ Compiling /cases ...
+ ✓ Compiled /cases in 520ms (1027 modules)
+ GET /cases 200 in 768ms
+ GET /cases 200 in 100ms
+ GET /cases 200 in 84ms
+ GET /cases 200 in 85ms
+ GET /cases 200 in 119ms
+ ✓ Compiled in 2s (1041 modules)
+ GET /cases 200 in 389ms
+ GET / 500 in 245ms
+ GET / 500 in 61ms
+ GET / 500 in 335ms
+ GET / 500 in 71ms
+ GET / 500 in 204ms
+ GET / 500 in 72ms
+ ✓ Compiled in 1899ms (1041 modules)

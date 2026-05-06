@@ -133,15 +133,70 @@ Prisma / PostgreSQL 预留位于：
 - `app/sitemap.ts` 生成 sitemap。
 - `app/robots.ts` 生成 robots。
 
-当前 canonical 基准域名在 `lib/seo.ts` 中配置：
+当前 canonical、Open Graph、robots 与 sitemap 的基准域名由环境变量控制：
 
-```ts
-export const siteUrl = "https://www.hangyukeji.com";
+```bash
+SITE_URL=https://your-domain.com
 ```
 
-上线前需要确认并替换为真实生产域名。
+上线前需要确认并填入真实生产域名。
 
-## 7. 当前版本记录
+## 7. 线索通知配置
+
+当前诊断表单在提交后会执行三件事：
+
+1. 写入本地 `data/leads.json`
+2. 推送飞书群机器人 webhook
+3. 推送企业微信群机器人 webhook
+
+### 7.1 需要配置的环境变量
+
+```bash
+SITE_URL=https://your-domain.com
+ADMIN_KEY=your-admin-key
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+LEAD_WEBHOOK_FEISHU=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+LEAD_WEBHOOK_WECHAT=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+```
+
+### 7.2 如何创建飞书群机器人
+
+1. 打开需要接收线索通知的飞书群。
+2. 在群设置中添加自定义机器人。
+3. 复制生成的 webhook 地址。
+4. 将地址填入 `LEAD_WEBHOOK_FEISHU`。
+
+### 7.3 如何创建企业微信群机器人
+
+1. 打开需要接收线索通知的企业微信群。
+2. 在群工具中添加群机器人。
+3. 复制生成的 webhook 地址。
+4. 将地址填入 `LEAD_WEBHOOK_WECHAT`。
+
+### 7.4 如何测试
+
+启动项目后，可直接调用诊断接口测试：
+
+```bash
+curl -X POST http://127.0.0.1:3000/api/lead \
+  -H "Content-Type: application/json" \
+  -d '{
+    "enterpriseType": "制造企业",
+    "hasLab": "已有基础实验室",
+    "stage": "准备规划范围",
+    "startTime": "3-6 个月内",
+    "equipmentPlan": "已经在考虑投入",
+    "contact": "wechat-demo-001"
+  }'
+```
+
+测试成功后应满足：
+
+- 页面或接口返回 `success: true`
+- 飞书群收到线索消息
+- 企业微信群收到线索消息
+- `data/leads.json` 中保留一份本地备份
+## 8. 当前版本记录
 
 当前可上线前检查版本：
 
@@ -165,7 +220,7 @@ dfb747180dcd5375044bd3897719339e79a6497b
 - 全站 CNAS 用词统一：以“CNAS认可”为主，“CNAS认证”仅作为搜索兼容词。
 - 上线前自检覆盖：核心页面、知识库文章、栏目页、分类页、标签页、sitemap、robots、移动端主要页面。
 
-## 8. 后续开发建议
+## 9. 后续开发建议
 
 建议优先级：
 

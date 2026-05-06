@@ -32,14 +32,14 @@ export async function generateMetadata({
 
   if (!category) {
     return createPageMetadata({
-      title: "CNAS内容分类",
+      title: "内容分类页：继续查看栏目文章和判断路径",
       description: "CNAS专业内容分类聚合页。",
       path: "/knowledge",
     });
   }
 
   return createPageMetadata({
-    title: category.title,
+    title: category.seoTitle,
     description: category.description,
     path: `/categories/${category.slug}`,
   });
