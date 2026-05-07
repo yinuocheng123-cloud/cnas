@@ -11,56 +11,56 @@ import { createPageMetadata } from "@/lib/seo";
 
 /*
  * 文件说明：该文件实现 CNAS 启动前风险诊断页。
- * 功能说明：按风险、后果、判断与行动链路承接高意图用户，并提供轻量诊断表单入口。
+ * 功能说明：按风险、后果、判断和表单提交顺序承接高意向用户。
  *
  * 结构概览：
- *   第一部分：风险感首屏
- *   第二部分：不建议急着启动的场景与后果
- *   第三部分：判断价值、行动引导与两步式表单
+ *   第一部分：页面元信息
+ *   第二部分：诊断页主体
  */
 
 export const metadata = createPageMetadata({
   title: "启动前诊断：哪些情况建议暂缓CNAS认可",
-  description: "判断企业是否适合现在启动 CNAS认可，先看路径是否正确、风险会不会返工，再决定是否进入建设与申请阶段。",
+  description: "判断企业是否适合现在启动 CNAS 认可，先看路径是否正确、会不会返工，再决定是否进入建设与申请阶段。",
   path: "/diagnosis",
 });
 
-// ========== 第一部分：风险感首屏 ==========
+// ========== 第一部分：诊断页主体 ==========
 export default function DiagnosisPage() {
   return (
     <main className="min-h-screen bg-white text-ink">
       <Header />
       <HeroSection
+        variant="balanced"
         eyebrow="CNAS Diagnosis"
-        title="企业是否适合现在启动CNAS认可？"
-        description={diagnosisPageCopy.heroDescription}
-        riskNotice={diagnosisPageCopy.heroRiskNotice}
+        title="很多企业不是做不下来，而是一开始走错。"
+        description={<p>设备先采购、体系后补，是最容易返工的路径。启动前先判断范围、投入和节奏，通常比后面整改更重要。</p>}
+        actions={<a href="#self-check" className="btn-primary">开始诊断</a>}
+        riskNotice="很多问题，其实在启动前就可以避免。"
       />
 
-      {/* ========== 第二部分：不建议急着启动的场景与后果 ========== */}
       <section id="start-fit" className="site-shell section-space scroll-mt-28">
-        <SectionTitle title="如果你有以下情况，建议先别急着启动" description={diagnosisPageCopy.delayLeadDescription} />
-        <div className="mt-6">
-          <ChecklistBlock title="先把这些情况判断清楚" items={diagnosisPageCopy.delayCases} />
+        <SectionTitle title="如果你有以下情况，建议先别急着启动" description="先把这些前提看清楚，再决定是否推进，会比边做边改更省时间和成本。" />
+        <div className="mt-4 md:mt-6">
+          <ChecklistBlock title="先判断这几件事" items={diagnosisPageCopy.delayCases} />
         </div>
       </section>
 
-      <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-12">
-        <RiskNotice title={diagnosisPageCopy.reworkTitle} items={diagnosisPageCopy.reworkItems} />
-        <p className="mt-4 text-copy">{diagnosisPageCopy.reworkConclusion}</p>
+      <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-8 md:pb-12">
+        <RiskNotice title="为什么很多企业会走弯路" items={diagnosisPageCopy.reworkItems} />
+        <p className="mt-3 text-copy">{diagnosisPageCopy.reworkConclusion}</p>
       </section>
 
-      {/* ========== 第三部分：判断价值、行动引导与两步式表单 ========== */}
-      <section id="diagnosis-support" className="site-shell max-w-4xl scroll-mt-28 pb-12">
+      <section id="diagnosis-support" className="site-shell max-w-4xl scroll-mt-28 pb-6 md:pb-8">
         <div className="card">
-          <h2 className="text-heading">{diagnosisPageCopy.judgmentTitle}</h2>
-          <p className="mt-3 text-copy">{diagnosisPageCopy.judgmentDescription}</p>
+          <h2 className="text-heading">在启动之前，建议先做一次判断</h2>
+          <p className="mt-2 text-copy">不是判断能不能做，而是判断怎么做更合适。这一步可以把后面 6 到 12 个月的路径提前看清。</p>
         </div>
       </section>
 
-      <section className="site-shell max-w-4xl pb-12">
-        <ChecklistBlock title={diagnosisPageCopy.diagnosisValueTitle} items={diagnosisPageCopy.diagnosisValueItems} />
+      <section className="site-shell max-w-4xl pb-6 md:pb-8">
+        <ChecklistBlock title="这次诊断会帮你看清几件事" items={diagnosisPageCopy.diagnosisValueItems} />
       </section>
+
       <LeadCaptureForm />
 
       <CtaBlock />

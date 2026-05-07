@@ -45,6 +45,8 @@ export type Solution = {
   title: string;
   seoTitle: string;
   summary: string;
+  imageSrc: string;
+  imageAlt: string;
   suitableFor: string;
   commonProblems: string[];
   recognitionDifficulties: string[];
@@ -197,6 +199,16 @@ export const homeStats = [
   { label: "评审风险点", value: "30+ 个" },
 ];
 
+export const homeHeroImage = {
+  src: "/images/hero/home-hero.webp",
+  alt: "实验人员在实验室内检查设备与检测流程。",
+};
+
+export const diagnosisHeroImage = {
+  src: "/images/diagnosis/diagnosis-review.webp",
+  alt: "实验人员在记录检测信息并核对现场资料。",
+};
+
 export const diagnosisPageCopy = {
   heroDescription:
     "很多企业不是做不下来，而是一开始走错。启动 CNAS认可前，先把路径、范围、投入和返工风险看清楚，往往比急着推进更重要。",
@@ -279,6 +291,8 @@ export const solutions: Solution[] = [
   {
     slug: "manufacturing-lab",
     href: "/solutions/manufacturing-lab",
+    imageSrc: "/images/solutions/manufacturing-lab.webp",
+    imageAlt: "制造企业实验室内，实验人员正在进行样品检测。",
     title: "制造企业实验室 CNAS认可解决方案",
     seoTitle: "制造企业实验室：CNAS认可怎么分步规划",
     summary: "面向制造企业自建实验室，围绕检测需求、认可范围、设备环境和体系运行规划建设路径。",
@@ -292,6 +306,8 @@ export const solutions: Solution[] = [
   {
     slug: "testing-lab",
     href: "/solutions/testing-lab",
+    imageSrc: "/images/solutions/testing-lab.webp",
+    imageAlt: "检测实验室中，实验人员在显微设备前进行检测。",
     title: "检测机构实验室 CNAS认可解决方案",
     seoTitle: "检测机构实验室：CNAS认可怎么稳住证据",
     summary: "面向已有检测业务的机构，重点关注项目扩项、体系稳定性、技术记录和监督评审准备。",
@@ -305,6 +321,8 @@ export const solutions: Solution[] = [
   {
     slug: "new-energy-lab",
     href: "/solutions/new-energy-lab",
+    imageSrc: "/images/solutions/new-energy-lab.webp",
+    imageAlt: "高要求检测设备与复杂接线环境，适合新能源与储能实验室场景。",
     title: "新能源 / 储能检测实验室 CNAS认可路径",
     seoTitle: "新能源 / 储能检测实验室：CNAS认可前先判断能力边界",
     summary: "适用场景：新能源检测、储能系统测试、高要求实验室建设。",
@@ -338,6 +356,8 @@ export const solutions: Solution[] = [
   {
     slug: "regulated-lab",
     href: "/solutions/regulated-lab",
+    imageSrc: "/images/solutions/regulated-lab.webp",
+    imageAlt: "实验人员在高要求实验室内处理样品与记录。",
     title: "食品 / 材料 / 医疗相关实验室 CNAS认可解决方案",
     seoTitle: "高要求行业实验室：CNAS认可怎么准备",
     summary: "面向高要求行业实验室，重点处理标准方法、样品管理、环境控制和质量记录风险。",
@@ -351,6 +371,8 @@ export const solutions: Solution[] = [
   {
     slug: "research-lab",
     href: "/solutions/research-lab",
+    imageSrc: "/images/solutions/research-lab.webp",
+    imageAlt: "科研实验室内，研究人员在设备前核对实验结果。",
     title: "高校 / 科研实验室 CNAS认可解决方案",
     seoTitle: "科研实验室：CNAS认可前先补哪些基础",
     summary: "面向高校、研究院所和科研平台实验室，重点处理科研检测向规范化检测能力转化的问题。",
@@ -364,6 +386,8 @@ export const solutions: Solution[] = [
   {
     slug: "group-internal-lab",
     href: "/solutions/group-internal-lab",
+    imageSrc: "/images/solutions/group-internal-lab.webp",
+    imageAlt: "多位实验人员在同一实验室环境中协同作业。",
     title: "集团内部实验室 CNAS认可解决方案",
     seoTitle: "集团内部实验室：CNAS认可怎么分阶段推进",
     summary: "面向集团多基地或内部共享检测平台，重点处理范围统一、能力协同和总部管控问题。",

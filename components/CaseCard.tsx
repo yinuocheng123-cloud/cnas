@@ -1,8 +1,10 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { CaseItem } from "@/src/data/cases";
 
 /*
  * 文件说明：该文件实现案例卡片组件。
- * 功能说明：用问题、解决、结果三段结构拆解案例。
+ * 功能说明：用问题、动作、结果的三段结构展示返工和整改场景，并提供统一 CTA。
  *
  * 结构概览：
  *   第一部分：CaseCard 组件
@@ -12,6 +14,15 @@ import type { CaseItem } from "@/src/data/cases";
 export function CaseCard({ caseItem }: { caseItem: CaseItem }) {
   return (
     <article id={caseItem.slug} className="card scroll-mt-28">
+      <div className="relative mb-4 h-40 overflow-hidden rounded-xl border border-line bg-slate-100 md:h-auto md:aspect-[4/3]">
+        <Image
+          src={caseItem.imageSrc}
+          alt={caseItem.imageAlt}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          className="object-cover"
+        />
+      </div>
       <div className="mb-3 flex flex-wrap gap-2">
         {caseItem.tags.map((tag) => (
           <span key={tag} className="rounded-lg border border-line px-2 py-1 text-meta text-muted">
@@ -23,6 +34,11 @@ export function CaseCard({ caseItem }: { caseItem: CaseItem }) {
       <p className="mt-3 text-copy">问题：{caseItem.problem}</p>
       <p className="mt-2 text-copy">动作：{caseItem.action}</p>
       <p className="mt-2 text-copy">结果：{caseItem.result}</p>
+      <div className="mt-4">
+        <Link href={`/cases#${caseItem.slug}`} className="btn-secondary w-full sm:w-fit">
+          查看案例
+        </Link>
+      </div>
     </article>
   );
 }

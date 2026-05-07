@@ -595,3 +595,5 @@ Require stack:
 [TypeError: Cannot read properties of undefined (reading '/_app')]
  ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
 [TypeError: Cannot read properties of undefined (reading '/_app')]
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Administrator\Documents\New project 10\.next\cache\webpack\server-development\0.pack.gz_' -> 'C:\Users\Administrator\Documents\New project 10\.next\cache\webpack\server-development\0.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Administrator\Documents\New project 10\.next\cache\webpack\client-development\4.pack.gz_' -> 'C:\Users\Administrator\Documents\New project 10\.next\cache\webpack\client-development\4.pack.gz'

@@ -21,9 +21,9 @@ const config: Config = {
         sans: ["var(--font-geist-sans)", "Arial", "sans-serif"],
       },
       fontSize: {
-        display: ["2.25rem", { lineHeight: "1.25", fontWeight: "600" }],
-        title: ["1.375rem", { lineHeight: "1.35", fontWeight: "600" }],
-        body: ["0.9375rem", { lineHeight: "1.6", fontWeight: "400" }],
+        display: ["1.875rem", { lineHeight: "1.2", fontWeight: "600" }],
+        title: ["1.25rem", { lineHeight: "1.35", fontWeight: "600" }],
+        body: ["0.9375rem", { lineHeight: "1.72", fontWeight: "400" }],
         meta: ["0.8125rem", { lineHeight: "1.5", fontWeight: "400" }],
       },
       boxShadow: {

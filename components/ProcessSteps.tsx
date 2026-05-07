@@ -14,11 +14,11 @@ type ProcessStep = string | {
 // ========== 第一部分：ProcessSteps 组件 ==========
 export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
   return (
-    <ol className="grid gap-4 md:grid-cols-5">
+    <ol className="grid gap-3 md:grid-cols-5 md:gap-4">
       {steps.map((step, index) => (
         <li
           key={typeof step === "string" ? step : step.title}
-          className="card min-h-36 transition hover:border-slate-300"
+          className="card transition hover:border-slate-300 md:min-h-36"
         >
           <span className="text-meta-token font-semibold">STEP {index + 1}</span>
           <p className="mt-3 text-body font-semibold text-ink">{typeof step === "string" ? step : step.title}</p>

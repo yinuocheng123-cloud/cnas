@@ -39,7 +39,7 @@ export default function KnowledgePage() {
       {/* ========== 第二部分：分类与标签 ========== */}
       <section className="site-shell section-space">
         <SectionTitle title="内容分类" description="按企业决策路径组织内容，方便后续持续扩展。" />
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-4">
           {categories.map((category) => (
             <CategoryCard key={category.slug} category={category} />
           ))}
@@ -47,9 +47,9 @@ export default function KnowledgePage() {
       </section>
 
       <section className="bg-surface">
-        <div className="site-shell py-10">
+        <div className="site-shell py-6 md:py-8">
           <SectionTitle title="标签索引" description="按认可范围、评审风险、实验室建设等主题交叉查找内容。" />
-          <div className="mt-5">
+          <div className="mt-4 md:mt-5">
             <TagList tags={tags} />
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function KnowledgePage() {
       {/* ========== 第三部分：文章列表 ========== */}
       <section className="site-shell section-space">
         <SectionTitle title="文章列表" description="每篇文章都包含直接回答、判断清单、FAQ 和相关内容推荐。" />
-        <div className="mt-6">
+        <div className="mt-4 md:mt-6">
           <ArticleList articles={articles} />
         </div>
       </section>

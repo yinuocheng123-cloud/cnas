@@ -11,9 +11,9 @@ export function RiskNotice({ title, items }: { title: string; items: string[] })
   return (
     <section className="card">
       <h2 className="text-heading">{title}</h2>
-      <ul className="mt-4 grid gap-3">
+      <ul className="mt-3 grid gap-3 md:mt-4">
         {items.map((item) => (
-          <li key={item} className="text-copy">
+          <li key={item} className="text-copy leading-7">
             {item}
           </li>
         ))}

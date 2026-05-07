@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 /*
- * 文件说明：该文件实现咨询转化区块。
- * 功能说明：统一页面底部咨询入口，承接初步诊断需求。
+ * 文件说明：该文件实现站点统一的底部 CTA 区块。
+ * 功能说明：在不增加复杂结构的前提下，提供轻量咨询入口与清晰的下一步动作。
  *
  * 结构概览：
  *   第一部分：CtaBlock 组件
@@ -12,19 +12,19 @@ import Link from "next/link";
 export function CtaBlock() {
   return (
     <section className="bg-ink text-white">
-      <div className="site-shell flex flex-col gap-5 pt-10 pb-4 md:flex-row md:items-center md:justify-between md:pt-10 md:pb-4">
+      <div className="site-shell py-8 md:py-12">
         <div>
-          <h2 className="text-title font-semibold">如需进一步诊断，可联系杭育科技团队。</h2>
-          <p className="mt-2 max-w-2xl text-body text-slate-300">
-            先判断实验室基础、认可范围、评审风险和投入顺序，再决定是否启动 CNAS认可。
-          </p>
+          <h2 className="text-title font-semibold">如果已经进入判断阶段，可以继续往下走一步。</h2>
+          <p className="mt-2 max-w-xl text-body text-slate-300">先看路径，再决定是否启动，会比直接投入更稳妥。</p>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <Link href="/solutions" className="btn-primary bg-white text-ink hover:bg-surface">
+              获取方案
+            </Link>
+            <Link href="/diagnosis" className="btn-secondary border-slate-500 bg-transparent text-white hover:border-white hover:text-white">
+              立即咨询
+            </Link>
+          </div>
         </div>
-        <Link
-          href="/services"
-          className="inline-flex w-fit rounded-lg bg-white px-4 py-2.5 text-meta font-semibold text-ink transition hover:bg-surface"
-        >
-          进入服务咨询
-        </Link>
       </div>
     </section>
   );

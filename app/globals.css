@@ -3,20 +3,21 @@
 @tailwind utilities;
 
 /*
- * 文件说明：该文件定义杭育 CNAS 内容站的全局样式入口。
- * 功能说明：接入 Tailwind 层，并补充基础排版与交互约束。
+ * 文件说明：该文件定义站点全局样式入口。
+ * 功能说明：接入 Tailwind，并统一站点的排版、间距和按钮基础规则。
  *
  * 结构概览：
- *   第一部分：全局盒模型
- *   第二部分：页面基础样式
+ *   第一部分：基础盒模型
+ *   第二部分：根变量与页面基础样式
+ *   第三部分：组件层 token
  */
 
-/* ========== 第一部分：全局盒模型 ========== */
+/* ========== 第一部分：基础盒模型 ========== */
 * {
   box-sizing: border-box;
 }
 
-/* ========== 第二部分：页面基础样式 ========== */
+/* ========== 第二部分：根变量与页面基础样式 ========== */
 html {
   min-height: 100%;
 }
@@ -51,25 +52,26 @@ select {
   font: inherit;
 }
 
+/* ========== 第三部分：组件层 token ========== */
 @layer components {
   .site-shell {
-    @apply mx-auto max-w-6xl px-6 md:px-8;
+    @apply mx-auto max-w-6xl px-4 sm:px-5 md:px-8;
   }
 
   .section-space {
-    @apply py-8 md:py-10;
+    @apply py-10 md:py-16;
   }
 
   .card {
-    @apply rounded-xl border border-line bg-card p-6 shadow-card;
+    @apply rounded-xl border border-line bg-card p-4 shadow-card md:p-6;
   }
 
   .card-link {
-    @apply flex h-full flex-col rounded-xl border border-line bg-card p-6 shadow-card transition hover:border-slate-300;
+    @apply flex h-full flex-col rounded-xl border border-line bg-card p-4 shadow-card transition hover:border-slate-300 md:p-6;
   }
 
   .text-heading {
-    @apply text-title text-ink;
+    @apply text-title text-ink md:text-[1.375rem];
   }
 
   .text-copy {
@@ -81,11 +83,11 @@ select {
   }
 
   .btn-primary {
-    @apply rounded-lg bg-primary px-4 py-2.5 text-meta font-semibold text-white transition hover:bg-ink;
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg bg-primary px-4 py-3 text-meta font-semibold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:opacity-70;
   }
 
   .btn-secondary {
-    @apply rounded-lg border border-line bg-white px-4 py-2.5 text-meta font-semibold text-muted transition hover:border-primary hover:text-primary;
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg border border-line bg-white px-4 py-3 text-meta font-semibold text-muted transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-70;
   }
 
   .hero-subline {

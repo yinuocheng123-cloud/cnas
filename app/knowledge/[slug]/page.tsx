@@ -14,32 +14,28 @@ import { createPageMetadata } from "@/lib/seo";
 
 /*
  * 文件说明：该文件实现知识库文章详情页。
- * 功能说明：按 GEO 结构生成文章页，包含直接回答、分类标签、正文、清单、FAQ、相关推荐和咨询入口。
+ * 功能说明：输出文章正文、判断清单、FAQ 和相关推荐，并优化移动端阅读节奏。
  *
  * 结构概览：
- *   第一部分：静态路由与元信息
- *   第二部分：文章详情页面
+ *   第一部分：静态参数与元信息
+ *   第二部分：文章详情页
  */
 
-// ========== 第一部分：静态路由与元信息 ==========
+// ========== 第一部分：静态参数与元信息 ==========
 export function generateStaticParams() {
   return articles.map((article) => ({
     slug: article.slug,
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
 
   if (!article) {
     return createPageMetadata({
       title: "CNAS认可知识库：继续查看相关文章",
-      description: "CNAS专业知识库文章。",
+      description: "CNAS 专业知识库文章。",
       path: "/knowledge",
     });
   }
@@ -51,7 +47,7 @@ export async function generateMetadata({
   });
 }
 
-// ========== 第二部分：文章详情页面 ==========
+// ========== 第二部分：文章详情页 ==========
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
@@ -68,13 +64,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Header />
       <article>
         <header className="bg-paper">
-          <div className="site-shell max-w-4xl py-12">
+          <div className="site-shell max-w-[680px] px-5 py-7 md:py-12">
             <Breadcrumb items={[{ label: "首页", href: "/" }, { label: "CNAS知识库", href: "/knowledge" }, { label: article.title }]} />
-            <h1 className="mt-4 text-display text-ink">{article.title}</h1>
-            <p className="card mt-5 text-copy">
-              {article.answer}
-            </p>
-            <div className="mt-5 flex flex-col gap-3 text-meta text-muted">
+            <h1 className="mt-3 text-[1.8rem] leading-tight text-ink md:mt-4 md:text-display">{article.title}</h1>
+            <p className="card mt-4 text-[16px] leading-7">{article.answer}</p>
+            <div className="mt-4 flex flex-col gap-2.5 text-meta text-muted">
               <p>
                 文章分类：
                 {category ? (
@@ -91,22 +85,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </header>
 
-        <div className="site-shell grid max-w-4xl gap-10 py-10">
-          <section className="space-y-8">
+        <div className="site-shell max-w-[680px] px-5 py-8 md:py-12">
+          <section className="space-y-7">
             {article.sections.map((section) => (
               <div key={section.title}>
                 <h2 className="text-heading">{section.title}</h2>
-                <p className="mt-3 text-copy">{section.content}</p>
+                <p className="mt-3 text-[16px] leading-7 text-muted">{section.content}</p>
               </div>
             ))}
           </section>
 
-          <ChecklistBlock title="关键判断清单" items={article.checklist ?? []} />
-          <FaqBlock faqs={article.faqs} />
+          <div className="mt-8 grid gap-5">
+            <ChecklistBlock title="关键判断清单" items={article.checklist ?? []} />
+            <FaqBlock faqs={article.faqs} />
+          </div>
 
-          <section>
-            <h2 className="text-heading">相关内容推荐</h2>
-            <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <section className="mt-8">
+            <h2 className="text-heading">相关阅读</h2>
+            <div className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
               {relatedArticles.map((item) => (
                 <ArticleCard key={item.slug} article={item} />
               ))}
