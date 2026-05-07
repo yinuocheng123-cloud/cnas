@@ -68,10 +68,10 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
         actions={
           <>
             <a href="#solution-content" className="btn-primary">
-              获取方案
+              获取建议
             </a>
             <Link href="/diagnosis" className="btn-secondary">
-              开始诊断
+              获取诊断结果
             </Link>
           </>
         }
@@ -104,7 +104,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
 
       <section className="border-y border-slate-200 bg-slate-50">
         <div className="site-shell max-w-[680px] px-5 py-8 md:py-12">
-          <SectionTitle title="真正决定能不能顺利推进的难点" description="行业差异最后都会落到人员、设备、环境、方法、记录和体系运行证据上。" />
+          <SectionTitle title="真正决定能不能顺利推进的难点" description="行业差异最后都会落到人员、设备、环境、方法、记录和体系运行证据上，判断错了，后面通常就是返工。" />
           <div className="mt-4 md:mt-6">
             <ChecklistBlock title="需要重点判断的地方" items={solution.recognitionDifficulties} />
           </div>

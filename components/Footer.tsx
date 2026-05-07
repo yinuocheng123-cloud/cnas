@@ -27,7 +27,7 @@ export function Footer() {
         <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Image src="/brand/cnas-logo.png" alt="CNAS认可指南" width={1151} height={445} sizes="148px" className="h-auto w-[148px]" />
-            <p className="mt-2 text-body text-slate-300">CNAS专业知识与认可解决方案平台，帮助企业先判断路径，再决定怎么推进。</p>
+            <p className="mt-2 text-body text-slate-300">很多问题，在项目启动前就已经决定了后面的难度。先判断路径，再决定怎么推进。</p>
           </div>
 
           <div className="grid gap-1.5 text-body text-slate-300">
@@ -43,7 +43,7 @@ export function Footer() {
             <p>咨询承接方：杭育科技</p>
             <p>建议先通过诊断页提交需求。</p>
             <Link href="/diagnosis" className="text-slate-100 underline underline-offset-4">
-              开始诊断
+              获取诊断结果
             </Link>
           </div>
         </div>

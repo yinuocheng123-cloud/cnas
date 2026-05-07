@@ -101,7 +101,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
 
           <section className="mt-8">
-            <h2 className="text-heading">继续看这些判断文章</h2>
+            <h2 className="text-heading">继续看这些返工判断文章</h2>
             <div className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
               {relatedArticles.map((item) => (
                 <ArticleCard key={item.slug} article={item} />

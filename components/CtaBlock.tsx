@@ -14,14 +14,14 @@ export function CtaBlock() {
     <section className="bg-ink text-white">
       <div className="site-shell py-8 md:py-12">
         <div>
-          <h2 className="text-title font-semibold">如果已经进入判断阶段，就不要再靠边做边改推进</h2>
-          <p className="mt-2 max-w-xl text-body text-slate-300">先看路径，再决定是否启动，会比直接投入更稳，也更容易控制返工风险。</p>
+          <h2 className="text-title font-semibold">很多时间浪费的，不是认可动作，而是错误路径带来的返工</h2>
+          <p className="mt-2 max-w-xl text-body text-slate-300">先把风险看清，再决定要不要启动，通常比边做边改更稳，也更容易控制时间和投入。</p>
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <Link href="/solutions" className="btn-primary bg-white text-ink hover:bg-surface">
-              获取方案
+            <Link href="/diagnosis" className="btn-primary bg-white text-ink hover:bg-surface">
+              获取诊断结果
             </Link>
-            <Link href="/diagnosis" className="btn-secondary border-slate-500 bg-transparent text-white hover:border-white hover:text-white">
-              立即咨询
+            <Link href="/solutions" className="btn-secondary border-slate-500 bg-transparent text-white hover:border-white hover:text-white">
+              获取建议
             </Link>
           </div>
         </div>

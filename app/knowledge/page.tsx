@@ -32,12 +32,12 @@ export default function KnowledgePage() {
       <Header />
       <HeroSection
         eyebrow="CNAS Knowledge Center"
-        title="先看清判断，再决定怎么启动"
-        description="这里不是单纯的内容目录，而是把企业在启动 CNAS认可前最容易判断错的问题拆开，方便你先找到最关键的一步。"
+        title="很多实验室卡住，不是因为资料少"
+        description="这里不是单纯的内容目录，而是把企业在启动 CNAS认可前最容易判断错、最容易返工的环节拆开，方便你先找到真正的问题。"
       />
 
       <section className="site-shell section-space">
-        <SectionTitle title="按决策路径找内容" description="先判断你卡在哪一段，再去读对应内容，会比从头到尾看一遍更快。" />
+        <SectionTitle title="按决策路径找内容" description="先判断你卡在哪一段，再去读对应内容，会比从头到尾看一遍更快，也更不容易继续走错。" />
         <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-4">
           {categories.map((category) => (
             <CategoryCard key={category.slug} category={category} />
@@ -55,7 +55,7 @@ export default function KnowledgePage() {
       </section>
 
       <section className="site-shell section-space">
-        <SectionTitle title="从这些文章开始更容易看清" description="每篇文章都尽量直接回答一个关键问题，减少空泛说明和重复解释。" />
+        <SectionTitle title="从这些文章开始更容易看清" description="每篇文章都尽量直接回答一个关键判断问题，减少空泛说明和重复解释。" />
         <div className="mt-4 md:mt-6">
           <ArticleList articles={articles} />
         </div>

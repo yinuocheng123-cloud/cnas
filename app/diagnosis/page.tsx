@@ -32,14 +32,14 @@ export default function DiagnosisPage() {
       <HeroSection
         variant="balanced"
         eyebrow="CNAS Diagnosis"
-        title="很多企业不是做不下来，而是一开始就走错"
-        description={<p>设备先采购、体系后补，是最常见也最容易返工的路径。很多问题不是评审当天才出现，而是在启动前就已经决定了后面的成本和周期。</p>}
+        title="很多返工，其实在启动前就已经决定了"
+        description={<p>设备先采购、体系后补，是最常见也最容易返工的路径。很多企业浪费的不是申请动作，而是错误判断带来的几个月重做时间。</p>}
         actions={
           <a href="#self-check" className="btn-primary">
-            开始诊断
+            获取诊断结果
           </a>
         }
-        riskNotice="先把路径看清，再决定要不要启动，通常比后面返工更省时间。"
+        riskNotice="先识别风险，再决定要不要启动，通常比后面返工更省时间。"
       />
 
       <section id="start-fit" className="site-shell section-space scroll-mt-28">
@@ -48,19 +48,19 @@ export default function DiagnosisPage() {
           description="先把这些前提看清楚，再决定是否现在推进，会比边做边改更省时间和成本。"
         />
         <div className="mt-4 md:mt-6">
-          <ChecklistBlock title="先判断这几件事" items={diagnosisPageCopy.delayCases} />
+          <ChecklistBlock title="先识别这几类风险" items={diagnosisPageCopy.delayCases} />
         </div>
       </section>
 
       <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-8 md:pb-12">
         <RiskNotice title="为什么很多企业会走弯路" items={diagnosisPageCopy.reworkItems} />
-        <p className="mt-3 text-copy">很多问题，其实在启动前就可以避免。</p>
+        <p className="mt-3 text-copy">很多问题，其实在启动前就可以避免。越晚发现，返工代价通常越高。</p>
       </section>
 
       <section id="diagnosis-support" className="site-shell max-w-4xl scroll-mt-28 pb-6 md:pb-8">
         <div className="card">
           <h2 className="text-heading">在启动之前，建议先做一次判断</h2>
-          <p className="mt-2 text-copy">不是判断能不能做，而是判断怎么做更合适。这一步可以把后面 6 到 12 个月的路径提前看清。</p>
+          <p className="mt-2 text-copy">不是判断能不能做，而是判断哪里最容易做错、先改哪一步更划算。这一步可以把后面 6 到 12 个月的风险提前看清。</p>
         </div>
       </section>
 

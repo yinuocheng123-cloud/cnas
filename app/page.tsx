@@ -14,7 +14,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 /*
  * 文件说明：该文件实现 CNAS 认可指南首页。
- * 功能说明：围绕启动返工、判断路径、案例结果和行动入口组织首页内容。
+ * 功能说明：围绕启动误判、返工成本、路径识别和行动入口组织首页内容。
  *
  * 结构概览：
  *   第一部分：页面元信息
@@ -22,8 +22,8 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "CNAS认可为什么总返工｜先把启动路径判断清楚",
-  description: "围绕启动判断、流程、费用、周期和实验室建设，帮助企业先看清哪里最容易走错，再决定是否启动 CNAS认可。",
+  title: "CNAS认可为什么总返工｜很多问题出在启动阶段",
+  description: "围绕风险判断、返工成本、流程、周期和实验室建设，帮助企业先看清误判代价，再决定是否启动 CNAS认可。",
   path: "/",
 });
 
@@ -39,33 +39,33 @@ export default function HomePage() {
           <>
             为什么很多实验室
             <br />
-            <span className="hero-subline block">准备了很久</span>
+            <span className="hero-subline block">问题不是出在认可</span>
             <br />
-            <span className="hero-subline block">还是在启动阶段返工</span>
+            <span className="hero-subline block">而是出在启动阶段</span>
           </>
         }
-        description={<p>现在难的往往不是申请，而是一开始就没有把范围、投入和建设顺序判断清楚。先把路径看明白，通常比后面返工更重要。</p>}
+        description={<p>很多返工，其实在项目开始前就已经决定了。真正容易浪费的，不只是认可费用，而是错误方向带来的几个月重做时间。</p>}
         actions={
           <>
             <Link href="/diagnosis" className="btn-primary" data-track-event="start_judgment_click" data-track-location="home-hero">
-              开始诊断
+              开始路径判断
             </Link>
-            <Link href="/solutions" className="btn-secondary">
-              获取方案
+            <Link href="/cases" className="btn-secondary">
+              查看返工案例
             </Link>
           </>
         }
         riskNotice={
           <>
-            <span className="text-amber-500">⚠</span> 很多企业不是做不下来，而是一开始走错。设备先采购、体系后补，往往就是返工的起点。
+            <span className="text-amber-500">⚠</span> 很多企业不是做不下来，而是一开始走错。设备先采购、体系后补，往往就是返工真正开始的地方。
           </>
         }
       />
 
       <section className="site-shell pt-3 pb-10 md:pt-6 md:pb-16">
         <SectionTitle
-          title="行业问题不会等评审当天才出现"
-          description="很多返工不是出在最后一步，而是启动前就已经埋下。范围不清、投入顺序错误、内部负责人缺位，都会把后面的周期和成本一起拉长。"
+          title="很多返工，不是评审时才发生"
+          description="很多实验室真正浪费的，不是认可费用，而是错误启动带来的返工时间。一次能力范围误判，往往就意味着几个月重新调整。"
           descriptionClassName="max-w-5xl text-copy leading-7"
         />
         <p className="mt-2 max-w-xl text-copy md:mt-4">{homePathwayLead}</p>
@@ -82,8 +82,8 @@ export default function HomePage() {
       <section className="border-y border-slate-200 bg-slate-50">
         <div className="site-shell py-10 md:py-16">
           <SectionTitle
-            title="为什么传统推进方式越来越容易失效"
-            description="先回答几个最容易让企业误判的问题。看清这些判断点，后面的流程、投入和建设节奏才更稳。"
+            title="大家通常怎么做错"
+            description="很多实验室一开始急着搭体系，但真正的问题往往不是资料不够，而是能力范围、投入顺序和负责人判断错了。"
           />
           <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-3">
             {hotQuestions.map((entry) => (
@@ -99,8 +99,8 @@ export default function HomePage() {
       <section>
         <div className="site-shell py-10 md:py-16">
           <SectionTitle
-            title="先看别人是怎么把弯路走直的"
-            description="真正有参考价值的，不是概念解释，而是别人原来卡在哪里、先改了什么、最后发生了什么变化。"
+            title="先看别人怎么提前发现风险"
+            description="真正有参考价值的，不是完成了什么，而是原本准备怎么做、哪里先暴露风险、怎么及时调整，最后避免了什么返工。"
           />
           <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-2 md:gap-3 xl:grid-cols-4">
             {cases.map((caseItem) => (
@@ -113,7 +113,7 @@ export default function HomePage() {
       <section className="border-y border-slate-200 bg-white">
         <div className="site-shell py-10 md:py-16">
           <SectionTitle
-            title="系统化判断，比边做边改更省成本"
+            title="先判断方向，比边做边改更省成本"
             description="不是把模块摆出来，而是把企业真正会遇到的判断节点拆开。先知道自己处在哪一段，再决定下一步最合适做什么。"
           />
           <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-3">
@@ -184,11 +184,11 @@ export default function HomePage() {
           <div className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-5 md:mt-10 md:flex-row md:items-center md:justify-between md:pt-8">
             <p className="max-w-xl text-copy">如果看完仍不确定自己属于哪条路径，建议先做一次判断，再决定是否继续投入。</p>
             <div className="flex w-full flex-col gap-3 sm:flex-row md:w-auto">
-              <Link href="/cases" className="btn-secondary w-full sm:w-auto">
-                查看案例
-              </Link>
               <Link href="/diagnosis" className="btn-primary w-full sm:w-auto" data-track-event="start_judgment_click" data-track-location="home-results-matrix">
-                开始诊断
+                获取诊断结果
+              </Link>
+              <Link href="/solutions" className="btn-secondary w-full sm:w-auto">
+                获取建议
               </Link>
             </div>
           </div>
