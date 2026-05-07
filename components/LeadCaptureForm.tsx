@@ -119,7 +119,7 @@ export function LeadCaptureForm() {
           <h2 className="text-heading">已提交，我们会尽快联系你</h2>
           <div className="mt-3 grid gap-2 text-copy">
             <p>我们会根据你提供的信息给出初步判断。</p>
-            <p>信息越完整，判断越准确，建议保持联系方式畅通。</p>
+            <p>建议保持联系方式畅通，信息越完整，判断越准确。</p>
           </div>
         </div>
       </section>
@@ -130,8 +130,8 @@ export function LeadCaptureForm() {
     <>
       <section className="site-shell max-w-4xl pb-6 md:pb-10">
         <div className="card">
-          <h2 className="text-heading">先判断路径，再决定要不要马上启动。</h2>
-          <p className="mt-2 text-copy">很多企业卡在启动阶段，问题往往不在执行，而在路径。</p>
+          <h2 className="text-heading">先判断路径，再决定要不要马上启动</h2>
+          <p className="mt-2 text-copy">很多企业卡在启动阶段，问题往往不在执行，而在路径。先把这一步看清，后面的投入才更稳。</p>
           <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
               type="button"
@@ -186,7 +186,7 @@ export function LeadCaptureForm() {
           {step === 2 ? (
             <article id="diagnosis-step-two" className="card scroll-mt-28">
               <p className="text-meta-token font-semibold">STEP 2</p>
-              <h2 className="mt-2 text-heading">补充关键信息</h2>
+              <h2 className="mt-2 text-heading">补充关键决策信息</h2>
               <div className="mt-4 grid gap-3 md:mt-5 md:grid-cols-2 md:gap-4">
                 {diagnosisPageCopy.stepTwoFields.map((field) => (
                   <label key={field.name} className="grid gap-2 text-body font-medium text-ink">
@@ -209,7 +209,7 @@ export function LeadCaptureForm() {
                   </label>
                 ))}
                 <label className="grid gap-2 text-body font-medium text-ink md:col-span-2">
-                  {diagnosisPageCopy.contactLabel}
+                  联系方式（微信 / 电话）
                   <input
                     type="text"
                     name="contact"
@@ -232,7 +232,7 @@ export function LeadCaptureForm() {
               <div className="sticky bottom-3 mt-4 rounded-2xl border border-line bg-white/95 p-3 backdrop-blur sm:static sm:border-0 sm:bg-transparent sm:p-0">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                   <button type="submit" className="btn-primary w-full sm:w-auto" disabled={isSubmitting}>
-                    {isSubmitting ? "提交中..." : "立即咨询"}
+                    {isSubmitting ? "提交中..." : "获取诊断结果"}
                   </button>
                   <p className="text-meta-token">大约 3 分钟</p>
                 </div>

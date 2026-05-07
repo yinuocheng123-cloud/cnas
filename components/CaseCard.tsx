@@ -4,7 +4,7 @@ import type { CaseItem } from "@/src/data/cases";
 
 /*
  * 文件说明：该文件实现案例卡片组件。
- * 功能说明：用问题、动作、结果的三段结构展示返工和整改场景，并提供统一 CTA。
+ * 功能说明：用原来状态、关键动作和结果变化的三段结构展示企业少走弯路的真实路径。
  *
  * 结构概览：
  *   第一部分：CaseCard 组件
@@ -31,9 +31,9 @@ export function CaseCard({ caseItem }: { caseItem: CaseItem }) {
         ))}
       </div>
       <h3 className="text-body font-semibold text-ink">{caseItem.title}</h3>
-      <p className="mt-3 text-copy">问题：{caseItem.problem}</p>
-      <p className="mt-2 text-copy">动作：{caseItem.action}</p>
-      <p className="mt-2 text-copy">结果：{caseItem.result}</p>
+      <p className="mt-3 text-copy">原来状态：{caseItem.problem}</p>
+      <p className="mt-2 text-copy">关键动作：{caseItem.action}</p>
+      <p className="mt-2 text-copy">结果变化：{caseItem.result}</p>
       <div className="mt-4">
         <Link href={`/cases#${caseItem.slug}`} className="btn-secondary w-full sm:w-fit">
           查看案例

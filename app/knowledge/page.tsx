@@ -11,7 +11,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 /*
  * 文件说明：该文件实现 CNAS 知识库聚合页。
- * 功能说明：展示分类、标签、热门问题和文章列表，支撑长期内容扩展。
+ * 功能说明：展示分类、标签和文章列表，并把知识入口改成判断型阅读入口。
  *
  * 结构概览：
  *   第一部分：知识库头部
@@ -32,13 +32,12 @@ export default function KnowledgePage() {
       <Header />
       <HeroSection
         eyebrow="CNAS Knowledge Center"
-        title="CNAS知识库"
-        description="用判断型、解释型、问答型内容，帮助企业在启动 CNAS认可前看清基础、流程、风险和投入重点。"
+        title="先看清判断，再决定怎么启动"
+        description="这里不是单纯的内容目录，而是把企业在启动 CNAS认可前最容易判断错的问题拆开，方便你先找到最关键的一步。"
       />
 
-      {/* ========== 第二部分：分类与标签 ========== */}
       <section className="site-shell section-space">
-        <SectionTitle title="内容分类" description="按企业决策路径组织内容，方便后续持续扩展。" />
+        <SectionTitle title="按决策路径找内容" description="先判断你卡在哪一段，再去读对应内容，会比从头到尾看一遍更快。" />
         <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-4">
           {categories.map((category) => (
             <CategoryCard key={category.slug} category={category} />
@@ -48,16 +47,15 @@ export default function KnowledgePage() {
 
       <section className="bg-surface">
         <div className="site-shell py-6 md:py-8">
-          <SectionTitle title="标签索引" description="按认可范围、评审风险、实验室建设等主题交叉查找内容。" />
+          <SectionTitle title="按问题标签继续判断" description="按认可范围、评审风险、实验室建设和返工问题交叉查找内容。" />
           <div className="mt-4 md:mt-5">
             <TagList tags={tags} />
           </div>
         </div>
       </section>
 
-      {/* ========== 第三部分：文章列表 ========== */}
       <section className="site-shell section-space">
-        <SectionTitle title="文章列表" description="每篇文章都包含直接回答、判断清单、FAQ 和相关内容推荐。" />
+        <SectionTitle title="从这些文章开始更容易看清" description="每篇文章都尽量直接回答一个关键问题，减少空泛说明和重复解释。" />
         <div className="mt-4 md:mt-6">
           <ArticleList articles={articles} />
         </div>

@@ -14,8 +14,8 @@ export function CtaBlock() {
     <section className="bg-ink text-white">
       <div className="site-shell py-8 md:py-12">
         <div>
-          <h2 className="text-title font-semibold">如果已经进入判断阶段，可以继续往下走一步。</h2>
-          <p className="mt-2 max-w-xl text-body text-slate-300">先看路径，再决定是否启动，会比直接投入更稳妥。</p>
+          <h2 className="text-title font-semibold">如果已经进入判断阶段，就不要再靠边做边改推进</h2>
+          <p className="mt-2 max-w-xl text-body text-slate-300">先看路径，再决定是否启动，会比直接投入更稳，也更容易控制返工风险。</p>
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">
             <Link href="/solutions" className="btn-primary bg-white text-ink hover:bg-surface">
               获取方案

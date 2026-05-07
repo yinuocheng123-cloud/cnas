@@ -19,8 +19,8 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 export const metadata = createPageMetadata({
-  title: "启动前诊断：哪些情况建议暂缓CNAS认可",
-  description: "判断企业是否适合现在启动 CNAS 认可，先看路径是否正确、会不会返工，再决定是否进入建设与申请阶段。",
+  title: "启动前先判断：哪些情况建议暂缓CNAS认可",
+  description: "判断企业是否适合现在启动 CNAS认可，先看路径是否正确、会不会返工，再决定是否进入建设与申请阶段。",
   path: "/diagnosis",
 });
 
@@ -32,14 +32,21 @@ export default function DiagnosisPage() {
       <HeroSection
         variant="balanced"
         eyebrow="CNAS Diagnosis"
-        title="很多企业不是做不下来，而是一开始走错。"
-        description={<p>设备先采购、体系后补，是最容易返工的路径。启动前先判断范围、投入和节奏，通常比后面整改更重要。</p>}
-        actions={<a href="#self-check" className="btn-primary">开始诊断</a>}
-        riskNotice="很多问题，其实在启动前就可以避免。"
+        title="很多企业不是做不下来，而是一开始就走错"
+        description={<p>设备先采购、体系后补，是最常见也最容易返工的路径。很多问题不是评审当天才出现，而是在启动前就已经决定了后面的成本和周期。</p>}
+        actions={
+          <a href="#self-check" className="btn-primary">
+            开始诊断
+          </a>
+        }
+        riskNotice="先把路径看清，再决定要不要启动，通常比后面返工更省时间。"
       />
 
       <section id="start-fit" className="site-shell section-space scroll-mt-28">
-        <SectionTitle title="如果你有以下情况，建议先别急着启动" description="先把这些前提看清楚，再决定是否推进，会比边做边改更省时间和成本。" />
+        <SectionTitle
+          title="如果你有以下情况，建议先别急着启动"
+          description="先把这些前提看清楚，再决定是否现在推进，会比边做边改更省时间和成本。"
+        />
         <div className="mt-4 md:mt-6">
           <ChecklistBlock title="先判断这几件事" items={diagnosisPageCopy.delayCases} />
         </div>
@@ -47,7 +54,7 @@ export default function DiagnosisPage() {
 
       <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-8 md:pb-12">
         <RiskNotice title="为什么很多企业会走弯路" items={diagnosisPageCopy.reworkItems} />
-        <p className="mt-3 text-copy">{diagnosisPageCopy.reworkConclusion}</p>
+        <p className="mt-3 text-copy">很多问题，其实在启动前就可以避免。</p>
       </section>
 
       <section id="diagnosis-support" className="site-shell max-w-4xl scroll-mt-28 pb-6 md:pb-8">

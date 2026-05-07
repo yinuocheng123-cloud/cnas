@@ -95,24 +95,24 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
       <section id="solution-content" className="site-shell max-w-[680px] px-5 py-8 md:py-12">
         <div className="grid gap-4">
           <div className="card h-full">
-            <h2 className="text-heading">适合对象</h2>
+            <h2 className="text-heading">适合什么基础下启动</h2>
             <p className="mt-3 text-[16px] leading-7 text-muted">{solution.suitableFor}</p>
           </div>
-          <ChecklistBlock title="常见问题" items={solution.commonProblems} />
+          <ChecklistBlock title="这类实验室常卡住的问题" items={solution.commonProblems} />
         </div>
       </section>
 
       <section className="border-y border-slate-200 bg-slate-50">
         <div className="site-shell max-w-[680px] px-5 py-8 md:py-12">
-          <SectionTitle title="认可难点" description="行业差异最终都会落到人员、设备、环境、方法、记录和体系运行证据上。" />
+          <SectionTitle title="真正决定能不能顺利推进的难点" description="行业差异最后都会落到人员、设备、环境、方法、记录和体系运行证据上。" />
           <div className="mt-4 md:mt-6">
-            <ChecklistBlock title="需要重点判断的难点" items={solution.recognitionDifficulties} />
+            <ChecklistBlock title="需要重点判断的地方" items={solution.recognitionDifficulties} />
           </div>
         </div>
       </section>
 
       <section className="site-shell max-w-[680px] px-5 py-8 md:py-12">
-        <SectionTitle title="建设路径" />
+        <SectionTitle title="更稳妥的建设路径" />
         <div className="mt-4 md:mt-6">
           <ProcessSteps steps={solution.buildPath} />
         </div>
@@ -120,8 +120,8 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
 
       <section className="site-shell max-w-[680px] px-5 pb-10 md:pb-16">
         <div className="grid gap-4">
-          <ChecklistBlock title="评审风险" items={solution.assessmentRisks} />
-          <ChecklistBlock title="方案建议" items={solution.solutionReference} />
+          <ChecklistBlock title="如果判断错了，后面最容易出现什么风险" items={solution.assessmentRisks} />
+          <ChecklistBlock title="启动前更建议怎么做" items={solution.solutionReference} />
         </div>
       </section>
 

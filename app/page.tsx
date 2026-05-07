@@ -13,17 +13,17 @@ import { cases, categories, homePathwayLead, homePathways, hotQuestions, solutio
 import { createPageMetadata } from "@/lib/seo";
 
 /*
- * 文件说明：该文件实现 CNAS 专业内容平台首页。
- * 功能说明：承接用户的首轮判断、内容浏览、案例查看与诊断转化入口。
+ * 文件说明：该文件实现 CNAS 认可指南首页。
+ * 功能说明：围绕启动返工、判断路径、案例结果和行动入口组织首页内容。
  *
  * 结构概览：
- *   第一部分：首页元信息
+ *   第一部分：页面元信息
  *   第二部分：首页主体内容
  */
 
 export const metadata = createPageMetadata({
-  title: "把CNAS认可讲清楚｜少走弯路，避免返工",
-  description: "围绕流程、费用、周期、实验室建设和评审风险，帮助企业先判断是否适合启动 CNAS 认可，再决定怎么推进。",
+  title: "CNAS认可为什么总返工｜先把启动路径判断清楚",
+  description: "围绕启动判断、流程、费用、周期和实验室建设，帮助企业先看清哪里最容易走错，再决定是否启动 CNAS认可。",
   path: "/",
 });
 
@@ -37,14 +37,14 @@ export default function HomePage() {
         eyebrow="CNAS Recognition Knowledge Platform"
         title={
           <>
-            把CNAS认可
+            为什么很多实验室
             <br />
-            <span className="hero-subline block">讲清楚、走对路</span>
+            <span className="hero-subline block">准备了很久</span>
             <br />
-            <span className="hero-subline block">避免返工</span>
+            <span className="hero-subline block">还是在启动阶段返工</span>
           </>
         }
-        description={<p>围绕流程、费用、周期和实验室建设，先把启动前最容易做错的判断讲清楚。</p>}
+        description={<p>现在难的往往不是申请，而是一开始就没有把范围、投入和建设顺序判断清楚。先把路径看明白，通常比后面返工更重要。</p>}
         actions={
           <>
             <Link href="/diagnosis" className="btn-primary" data-track-event="start_judgment_click" data-track-location="home-hero">
@@ -57,15 +57,15 @@ export default function HomePage() {
         }
         riskNotice={
           <>
-            <span className="text-amber-500">⚠</span> 很多企业不是做不下来，而是一开始走错。设备先采购、体系后补，是最容易返工的路径。
+            <span className="text-amber-500">⚠</span> 很多企业不是做不下来，而是一开始走错。设备先采购、体系后补，往往就是返工的起点。
           </>
         }
       />
 
       <section className="site-shell pt-3 pb-10 md:pt-6 md:pb-16">
         <SectionTitle
-          title="平台路径"
-          description="首页结构对应导航入口：知识库承接流量，流程承接强需求，方案承接成交，案例建立信任，诊断推动转化。"
+          title="行业问题不会等评审当天才出现"
+          description="很多返工不是出在最后一步，而是启动前就已经埋下。范围不清、投入顺序错误、内部负责人缺位，都会把后面的周期和成本一起拉长。"
           descriptionClassName="max-w-5xl text-copy leading-7"
         />
         <p className="mt-2 max-w-xl text-copy md:mt-4">{homePathwayLead}</p>
@@ -81,7 +81,10 @@ export default function HomePage() {
 
       <section className="border-y border-slate-200 bg-slate-50">
         <div className="site-shell py-10 md:py-16">
-          <SectionTitle title="热门问题入口" description="先回答企业最常搜索、也最容易判断失误的几个问题。" />
+          <SectionTitle
+            title="为什么传统推进方式越来越容易失效"
+            description="先回答几个最容易让企业误判的问题。看清这些判断点，后面的流程、投入和建设节奏才更稳。"
+          />
           <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-3">
             {hotQuestions.map((entry) => (
               <Link key={entry.href} href={entry.href} className="card-link gap-2">
@@ -95,7 +98,24 @@ export default function HomePage() {
 
       <section>
         <div className="site-shell py-10 md:py-16">
-          <SectionTitle title="内容分类入口" description="围绕基础认知、流程、费用周期、评审风险和实验室建设持续扩展。" />
+          <SectionTitle
+            title="先看别人是怎么把弯路走直的"
+            description="真正有参考价值的，不是概念解释，而是别人原来卡在哪里、先改了什么、最后发生了什么变化。"
+          />
+          <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-2 md:gap-3 xl:grid-cols-4">
+            {cases.map((caseItem) => (
+              <CaseCard key={caseItem.slug} caseItem={caseItem} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-slate-200 bg-white">
+        <div className="site-shell py-10 md:py-16">
+          <SectionTitle
+            title="系统化判断，比边做边改更省成本"
+            description="不是把模块摆出来，而是把企业真正会遇到的判断节点拆开。先知道自己处在哪一段，再决定下一步最合适做什么。"
+          />
           <div className="mt-4 grid gap-3 md:mt-6 md:grid-cols-3 md:gap-3">
             {categories.map((category) => (
               <CategoryCard key={category.slug} category={category} />
@@ -106,36 +126,36 @@ export default function HomePage() {
 
       <section className="site-shell py-10 md:py-16">
         <RiskNotice
-          title="企业是否适合现在启动CNAS认可？"
+          title="不是所有企业都适合现在马上启动"
           items={[
-            "如果认可范围尚不清晰，不建议直接进入申请。先把检测项目、标准方法、样品类型和报告用途梳理清楚。",
-            "如果人员、设备、环境和方法无法支撑检测项目，应先补齐能力基础。现场评审看的不是计划书，而是人员会不会做、设备能不能用、环境能不能支撑检测。",
-            "如果体系只停留在文件层面，没有试运行记录，现场评审风险会明显增加。",
-            "先做诊断，再规划，再建设，再辅导，再评审，通常比边做边改更省成本。",
+            "如果认可范围还没有收清，先别急着进入申请。检测项目、方法标准、样品类型和报告用途要先梳理清楚。",
+            "如果人员、设备、环境和方法还撑不住检测项目，就先补能力基础。评审看的是能不能做，不是计划写得多完整。",
+            "如果体系还停留在文件层，没有试运行记录，后面往往只能边补边改，周期会被明显拉长。",
+            "先做判断，再规划，再建设，再进入评审，通常比边做边改更稳，也更省投入。",
           ]}
         />
         <div className="mt-4 md:mt-6">
           <ProcessSteps
             steps={[
               {
-                title: "启动诊断",
-                description: "先盘点需求、资源和管理基础，判断现在能不能启动。",
+                title: "先判断",
+                description: "先盘点需求、资源和管理基础，判断现在能不能启动、该不该马上启动。",
               },
               {
-                title: "范围规划",
-                description: "从项目和标准方法倒推认可范围，避免一开始铺得过大。",
+                title: "再收范围",
+                description: "从项目和标准方法倒推认可范围，避免一开始铺得过大，后面资源跟不上。",
               },
               {
-                title: "实验室建设",
-                description: "围绕认可范围配置人员、设备、环境和方法。",
+                title: "再建能力",
+                description: "围绕认可范围配置人员、设备、环境和方法，把能力补到能真实运行。",
               },
               {
-                title: "体系运行",
-                description: "形成原始记录、质控记录、内审和管理评审等证据链。",
+                title: "再跑体系",
+                description: "形成原始记录、质控记录、内审和管理评审等证据链，让体系真的跑起来。",
               },
               {
-                title: "现场评审",
-                description: "评审前集中排查不符合风险，准备检测演示和记录追溯。",
+                title: "最后进评审",
+                description: "评审前集中排查不符合风险，准备检测演示和记录追溯，尽量把返工留在现场前。",
               },
             ]}
           />
@@ -144,7 +164,10 @@ export default function HomePage() {
 
       <section className="border-y border-slate-200 bg-white">
         <div className="site-shell py-10 md:py-16">
-          <SectionTitle title="先看你更接近哪一种情况" description="先判断实验室属于哪类场景，再对照典型问题和错误路径，会更快看清下一步。" />
+          <SectionTitle
+            title="先看你更接近哪一种启动路径"
+            description="同样是做 CNAS认可，不同行业、不同基础、不同检测范围，判断重点完全不同。先看清自己属于哪一类，再决定下一步。"
+          />
 
           <div className="mt-4 md:mt-6">
             <div className="flex flex-col gap-1.5">
@@ -158,20 +181,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-6 border-t border-slate-200 pt-6 md:mt-10 md:pt-10">
-            <div className="flex flex-col gap-1.5">
-              <h3 className="text-body font-semibold text-ink">按典型问题判断风险</h3>
-              <p className="max-w-xl text-copy">再看别人通常在哪一步出问题，以及会带来什么后果。</p>
-            </div>
-            <div className="mt-3 grid gap-3 md:mt-4 md:grid-cols-2 md:gap-3 xl:grid-cols-4">
-              {cases.map((caseItem) => (
-                <CaseCard key={caseItem.slug} caseItem={caseItem} />
-              ))}
-            </div>
-          </div>
-
           <div className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-5 md:mt-10 md:flex-row md:items-center md:justify-between md:pt-8">
-            <p className="max-w-xl text-copy">如果看完仍不确定自己属于哪种路径，建议先做一次判断。</p>
+            <p className="max-w-xl text-copy">如果看完仍不确定自己属于哪条路径，建议先做一次判断，再决定是否继续投入。</p>
             <div className="flex w-full flex-col gap-3 sm:flex-row md:w-auto">
               <Link href="/cases" className="btn-secondary w-full sm:w-auto">
                 查看案例

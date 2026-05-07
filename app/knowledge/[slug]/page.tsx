@@ -67,7 +67,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="site-shell max-w-[680px] px-5 py-7 md:py-12">
             <Breadcrumb items={[{ label: "首页", href: "/" }, { label: "CNAS知识库", href: "/knowledge" }, { label: article.title }]} />
             <h1 className="mt-3 text-[1.8rem] leading-tight text-ink md:mt-4 md:text-display">{article.title}</h1>
-            <p className="card mt-4 text-[16px] leading-7">{article.answer}</p>
+            <p className="card mt-4 text-[16px] leading-7">先给结论：{article.answer}</p>
             <div className="mt-4 flex flex-col gap-2.5 text-meta text-muted">
               <p>
                 文章分类：
@@ -101,7 +101,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
 
           <section className="mt-8">
-            <h2 className="text-heading">相关阅读</h2>
+            <h2 className="text-heading">继续看这些判断文章</h2>
             <div className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
               {relatedArticles.map((item) => (
                 <ArticleCard key={item.slug} article={item} />
