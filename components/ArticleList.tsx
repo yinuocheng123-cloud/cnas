@@ -16,7 +16,7 @@ export function ArticleList({ articles }: { articles: Article[] }) {
   }
 
   return (
-    <div className="grid gap-4">
+    <div className="grid items-start gap-4">
       {articles.map((article) => (
         <ArticleCard key={article.slug} article={article} />
       ))}

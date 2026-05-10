@@ -28,7 +28,7 @@ export default function CasesPage() {
     <main className="min-h-screen bg-white text-ink">
       <Header />
       <HeroSection variant="balanced" eyebrow="CNAS Cases" title="案例解析" description={<p>不做空泛宣传，只拆解企业遇到的问题、采取的动作和最后产生的结果。</p>} />
-      <section className="site-shell py-10 md:py-16">
+      <section className="site-shell py-8 md:py-10">
         <SectionTitle title="典型场景" description="按案例标签承接导航入口，所有案例保持问题、动作、结果结构。" />
         <div className="mt-4 grid gap-3 md:grid-cols-2 md:gap-3">
           {cases.map((caseItem) => (

@@ -9,7 +9,7 @@
 // ========== 第一部分：ChecklistBlock 组件 ==========
 export function ChecklistBlock({ title, items }: { title: string; items: string[] }) {
   return (
-    <section className="card h-full">
+    <section className="card">
       <h2 className="text-heading">{title}</h2>
       <ul className="mt-3 grid gap-3 md:mt-4">
         {items.map((item) => (

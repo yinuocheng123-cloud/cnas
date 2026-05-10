@@ -59,15 +59,15 @@ select {
   }
 
   .section-space {
-    @apply py-10 md:py-16;
+    @apply py-6 md:py-10;
   }
 
   .card {
-    @apply rounded-xl border border-line bg-card p-4 shadow-card md:p-6;
+    @apply rounded-xl border border-line bg-card p-4 shadow-card md:p-5;
   }
 
   .card-link {
-    @apply flex h-full flex-col rounded-xl border border-line bg-card p-4 shadow-card transition hover:border-slate-300 md:p-6;
+    @apply flex flex-col rounded-xl border border-line bg-card p-4 shadow-card transition hover:border-slate-300 md:p-5;
   }
 
   .text-heading {

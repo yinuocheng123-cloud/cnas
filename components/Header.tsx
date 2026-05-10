@@ -17,11 +17,10 @@ import { navItems } from "@/lib/site-data";
 
 // ========== 第一部分：移动端导航配置 ==========
 const mobileNavItems = [
+  { label: "首页", href: "/" },
   { label: "知识库", href: "/knowledge" },
-  { label: "流程", href: "/cnas-process" },
   { label: "方案", href: "/solutions" },
   { label: "案例", href: "/cases" },
-  { label: "FAQ", href: "/faqs" },
   { label: "诊断", href: "/diagnosis" },
 ];
 
@@ -33,17 +32,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 bg-paper/95 backdrop-blur">
       <div className="site-shell flex min-h-14 items-center justify-between gap-4 py-2.5 md:min-h-16 md:py-3">
-        <Link href="/" className="flex w-fit flex-col gap-1">
+        <Link href="/" className="flex w-fit items-center">
+          <span className="text-base font-semibold text-ink md:hidden">CNAS认可指南</span>
           <Image
             src="/brand/cnas-logo.png"
             alt="CNAS认可指南"
-            width={1151}
-            height={445}
+            width={1415}
+            height={404}
             priority
             sizes="(max-width: 767px) 156px, 220px"
-            className="h-auto w-[156px] md:w-[210px]"
+            className="hidden h-auto w-[156px] md:block md:w-[220px]"
           />
-          <span className="hidden text-meta-token lg:block">CNAS专业知识与认可解决方案平台</span>
         </Link>
 
         <button

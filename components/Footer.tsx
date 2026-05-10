@@ -23,11 +23,12 @@ const footerLinks = [
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
-      <div className="site-shell border-t border-slate-700 py-6 md:py-10">
+      <div className="site-shell border-t border-slate-700 py-6 md:py-8">
         <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <Image src="/brand/cnas-logo.png" alt="CNAS认可指南" width={1151} height={445} sizes="148px" className="h-auto w-[148px]" />
-            <p className="mt-2 text-body text-slate-300">很多问题，在项目启动前就已经决定了后面的难度。先判断路径，再决定怎么推进。</p>
+            <p className="text-base font-semibold text-white md:hidden">CNAS认可指南</p>
+            <Image src="/brand/cnas-logo.png" alt="CNAS认可指南" width={1415} height={404} sizes="148px" className="hidden h-auto w-[148px] md:block" />
+            <p className="mt-2 text-body text-slate-300">先判断路径，再决定怎么推进。</p>
           </div>
 
           <div className="grid gap-1.5 text-body text-slate-300">

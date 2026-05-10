@@ -10,7 +10,8 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { SectionTitle } from "@/components/SectionTitle";
-import { getSolutionBySlug, solutions } from "@/lib/site-data";
+import { getIndustryBySlug } from "@/lib/industry-taxonomy";
+import { getRelatedCases, getRelatedSolutions, getSolutionBySlug, solutions } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
 
 /*
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return createPageMetadata({
     title: solution.seoTitle,
-    description: solution.summary,
+    description: solution.seoDescription ?? solution.summary,
     path: solution.href,
   });
 }
@@ -57,6 +58,10 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
     notFound();
   }
 
+  const relatedSolutions = getRelatedSolutions(solution.slug, 2);
+  const relatedCases = getRelatedCases([solution.slug], undefined, 2);
+  const industry = getIndustryBySlug(solution.slug);
+
   return (
     <main className="min-h-screen bg-white text-ink">
       <Header />
@@ -64,14 +69,15 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
         variant="balanced"
         eyebrow="Industry Solution"
         title={solution.title}
+        emphasis={industry?.judgment}
         description={<p>{solution.summary}</p>}
         actions={
           <>
             <a href="#solution-content" className="btn-primary">
-              获取建议
+              获取实验室认可路径
             </a>
             <Link href="/diagnosis" className="btn-secondary">
-              获取诊断结果
+              开始路径诊断
             </Link>
           </>
         }
@@ -92,9 +98,9 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
         <Breadcrumb items={[{ label: "首页", href: "/" }, { label: "行业方案", href: "/solutions" }, { label: solution.title }]} />
       </section>
 
-      <section id="solution-content" className="site-shell max-w-[680px] px-5 py-8 md:py-12">
+      <section id="solution-content" className="site-shell max-w-[680px] px-5 py-6 md:py-10">
         <div className="grid gap-4">
-          <div className="card h-full">
+          <div className="card">
             <h2 className="text-heading">适合什么基础下启动</h2>
             <p className="mt-3 text-[16px] leading-7 text-muted">{solution.suitableFor}</p>
           </div>
@@ -103,27 +109,76 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
       </section>
 
       <section className="border-y border-slate-200 bg-slate-50">
-        <div className="site-shell max-w-[680px] px-5 py-8 md:py-12">
-          <SectionTitle title="真正决定能不能顺利推进的难点" description="行业差异最后都会落到人员、设备、环境、方法、记录和体系运行证据上，判断错了，后面通常就是返工。" />
+        <div className="site-shell max-w-[680px] px-5 py-6 md:py-10">
+          <SectionTitle
+            title="真正决定能不能顺利推进的难点"
+            description="行业差异最后都会落到人员、设备、环境、方法、记录和体系运行证据上，判断错了，后面通常就是返工。"
+            descriptionClassName="text-copy leading-7 md:max-w-5xl md:text-[17px] md:leading-normal"
+          />
           <div className="mt-4 md:mt-6">
             <ChecklistBlock title="需要重点判断的地方" items={solution.recognitionDifficulties} />
           </div>
         </div>
       </section>
 
-      <section className="site-shell max-w-[680px] px-5 py-8 md:py-12">
+      <section className="site-shell max-w-[680px] px-5 py-6 md:py-10">
         <SectionTitle title="更稳妥的建设路径" />
         <div className="mt-4 md:mt-6">
           <ProcessSteps steps={solution.buildPath} />
         </div>
       </section>
 
-      <section className="site-shell max-w-[680px] px-5 pb-10 md:pb-16">
+      <section className="site-shell max-w-[680px] px-5 pb-6 md:pb-8">
         <div className="grid gap-4">
           <ChecklistBlock title="如果判断错了，后面最容易出现什么风险" items={solution.assessmentRisks} />
           <ChecklistBlock title="启动前更建议怎么做" items={solution.solutionReference} />
         </div>
       </section>
+
+      {relatedSolutions.length ? (
+        <section className="site-shell max-w-[680px] px-5 pb-6 md:pb-8">
+          <SectionTitle
+            title="相关行业方案"
+            description="如果当前场景还在判断边界，可以顺手对比相近实验室的启动路径。"
+            descriptionClassName="text-copy leading-7 md:max-w-5xl md:text-[17px] md:leading-normal"
+          />
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {relatedSolutions.map((relatedSolution) => (
+              <Link key={relatedSolution.slug} href={relatedSolution.href} className="card-link h-full gap-3">
+                <div className="flex flex-wrap gap-2">
+                  {relatedSolution.tags?.slice(0, 3).map((tag) => (
+                    <span key={tag} className="rounded-full border border-line px-2 py-1 text-[11px] leading-4 text-muted">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="text-body font-semibold text-ink">{relatedSolution.title}</h3>
+                <p className="text-copy">{relatedSolution.summary}</p>
+                <span className="btn-secondary w-full sm:w-fit">获取实验室认可路径</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {relatedCases.length ? (
+        <section className="site-shell max-w-[680px] px-5 pb-6 md:pb-8">
+          <SectionTitle
+            title="相关案例"
+            description="先看相近实验室是怎么提前暴露风险、修正路径，再决定当前阶段该怎么推进。"
+            descriptionClassName="text-copy leading-7 md:max-w-5xl md:text-[17px] md:leading-normal"
+          />
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {relatedCases.map((caseItem: (typeof relatedCases)[number]) => (
+              <Link key={caseItem.slug} href={`/cases#${caseItem.slug}`} className="card-link h-full gap-2">
+                <h3 className="text-body font-semibold text-ink">{caseItem.title}</h3>
+                <p className="text-copy">原本计划：{caseItem.problem}</p>
+                <span className="btn-secondary w-full sm:w-fit">查看问题路径</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <CtaBlock />
       <Footer />

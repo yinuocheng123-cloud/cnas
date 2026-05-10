@@ -53,7 +53,7 @@ export default async function AdminLeadsPage({
           <p className="mt-4 text-copy">当前展示本地 `data/leads.json` 中的已提交线索，供上线初期快速查看与跟进。</p>
         </div>
 
-        <div className="mt-8 overflow-x-auto rounded-3xl border border-line bg-white">
+        <div className="mt-6 overflow-x-auto rounded-3xl border border-line bg-white">
           <table className="min-w-full divide-y divide-line text-left">
             <thead className="bg-surface">
               <tr className="text-meta-token">

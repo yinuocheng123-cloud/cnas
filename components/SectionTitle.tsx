@@ -17,9 +17,9 @@ export function SectionTitle({
   descriptionClassName?: string;
 }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2.5 md:gap-3">
       <h2 className="text-heading">{title}</h2>
-      {description ? <p className={descriptionClassName ?? "max-w-2xl text-copy"}>{description}</p> : null}
+      {description ? <p className={descriptionClassName ?? "max-w-4xl text-copy leading-7 md:max-w-6xl md:text-[17px] md:leading-normal"}>{description}</p> : null}
     </div>
   );
 }

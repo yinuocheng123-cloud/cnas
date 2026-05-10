@@ -60,7 +60,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
         title={`${decodedTag}相关内容`}
         description={`围绕 ${decodedTag} 聚合文章、判断清单、FAQ 和相关解决方案入口。`}
       />
-      <section className="mx-auto max-w-6xl px-6 py-12 md:px-8">
+      <section className="mx-auto max-w-6xl px-6 py-8 md:px-8 md:py-10">
         <SectionTitle title="标签文章" />
         <div className="mt-6">
           <ArticleList articles={matchedArticles} />

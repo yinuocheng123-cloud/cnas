@@ -25,6 +25,7 @@ type ArticleSource = {
   title: string;
   summary: string;
   category: string;
+  industries?: string[];
   tags: string[];
   keywords: string[];
   updatedAt: string;
@@ -74,6 +75,33 @@ function createArticle(article: ArticleSource): Article {
     sections: article.content,
   };
 }
+
+const articleIndustryMap: Record<string, string[]> = {
+  "cnas-recognition-cost": ["manufacturing-lab", "new-energy-lab", "group-internal-lab"],
+  "cnas-recognition-process-entry": ["manufacturing-lab", "testing-lab", "new-energy-lab"],
+  "cnas-recognition-cycle": ["manufacturing-lab", "testing-lab", "new-energy-lab"],
+  "suitable-companies-for-cnas": ["manufacturing-lab", "testing-lab", "research-lab"],
+  "when-to-delay-cnas": ["manufacturing-lab", "new-energy-lab", "group-internal-lab"],
+  "why-cnas-assessment-fails": ["testing-lab", "regulated-lab", "group-internal-lab"],
+  "can-start-cnas-before-lab-ready": ["manufacturing-lab", "new-energy-lab"],
+  "cnas-required-documents": ["testing-lab", "group-internal-lab"],
+  "cnas-application-mistakes": ["manufacturing-lab", "testing-lab"],
+  "before-cnas-three-judgments": ["manufacturing-lab", "new-energy-lab", "group-internal-lab"],
+  "what-is-cnas": ["manufacturing-lab", "testing-lab", "research-lab"],
+  "cnas-process": ["manufacturing-lab", "testing-lab", "new-energy-lab"],
+  "cnas-cost": ["manufacturing-lab", "new-energy-lab"],
+  "cnas-cycle": ["manufacturing-lab", "testing-lab", "new-energy-lab"],
+  "cnas-risk": ["testing-lab", "regulated-lab", "group-internal-lab"],
+  "lab-construction": ["manufacturing-lab", "new-energy-lab", "regulated-lab"],
+  "why-enterprises-rework-cnas": ["manufacturing-lab", "new-energy-lab", "group-internal-lab"],
+  "cnas-doing-it-wrong-costs-more": ["manufacturing-lab", "new-energy-lab"],
+  "which-companies-should-not-start-cnas-now": ["manufacturing-lab", "new-energy-lab", "group-internal-lab"],
+  "lab-not-planned-cannot-start-cnas": ["manufacturing-lab", "new-energy-lab", "regulated-lab"],
+  "cnas-first-step-is-judgment": ["manufacturing-lab", "new-energy-lab", "testing-lab"],
+  "manufacturing-enterprise-cnas-path": ["manufacturing-lab"],
+  "three-things-before-cnas-start": ["manufacturing-lab", "new-energy-lab", "group-internal-lab"],
+  "check-four-points-before-cnas": ["manufacturing-lab", "testing-lab", "new-energy-lab"],
+};
 
 // ========== 第三部分：文章源数据 ==========
 const articleSources: ArticleSource[] = [
@@ -920,7 +948,12 @@ const articleSources: ArticleSource[] = [
 ];
 
 // ========== 第四部分：兼容导出与查询函数 ==========
-export const articles: Article[] = articleSources.map(createArticle);
+export const articles: Article[] = articleSources.map((article) =>
+  createArticle({
+    ...article,
+    industries: article.industries ?? articleIndustryMap[article.slug] ?? [],
+  }),
+);
 
 export function getArticleBySlug(slug: string) {
   return articles.find((article) => article.slug === slug);
@@ -938,4 +971,28 @@ export function getRelatedArticles(article: Article) {
   return (article.related ?? [])
     .map((slug) => getArticleBySlug(slug))
     .filter((item): item is Article => Boolean(item));
+}
+
+export function getArticlesByIndustries(industrySlugs: string[] = [], excludeSlug?: string, limit = 3) {
+  if (!industrySlugs.length) {
+    return articles
+      .filter((article) => article.slug !== excludeSlug)
+      .slice(0, limit);
+  }
+
+  const matched = articles.filter(
+    (article) =>
+      article.slug !== excludeSlug &&
+      article.industries?.some((industry) => industrySlugs.includes(industry)),
+  );
+
+  if (matched.length >= limit) {
+    return matched.slice(0, limit);
+  }
+
+  const fallback = articles.filter(
+    (article) => article.slug !== excludeSlug && !matched.some((item) => item.slug === article.slug),
+  );
+
+  return [...matched, ...fallback].slice(0, limit);
 }

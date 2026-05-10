@@ -32,8 +32,8 @@ export default function DiagnosisPage() {
       <HeroSection
         variant="balanced"
         eyebrow="CNAS Diagnosis"
-        title="很多返工，其实在启动前就已经决定了"
-        description={<p>设备先采购、体系后补，是最常见也最容易返工的路径。很多企业浪费的不是申请动作，而是错误判断带来的几个月重做时间。</p>}
+        title="启动 CNAS 认可前，先判断风险"
+        description={<p>先看路径是否正确、会不会返工，再决定是否进入建设与申请阶段。</p>}
         actions={
           <a href="#self-check" className="btn-primary">
             获取诊断结果
@@ -41,6 +41,8 @@ export default function DiagnosisPage() {
         }
         riskNotice="先识别风险，再决定要不要启动，通常比后面返工更省时间。"
       />
+
+      <LeadCaptureForm />
 
       <section id="start-fit" className="site-shell section-space scroll-mt-28">
         <SectionTitle
@@ -52,7 +54,7 @@ export default function DiagnosisPage() {
         </div>
       </section>
 
-      <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-8 md:pb-12">
+      <section id="failure-reasons" className="site-shell max-w-4xl scroll-mt-28 pb-6 md:pb-8">
         <RiskNotice title="为什么很多企业会走弯路" items={diagnosisPageCopy.reworkItems} />
         <p className="mt-3 text-copy">很多问题，其实在启动前就可以避免。越晚发现，返工代价通常越高。</p>
       </section>
@@ -67,8 +69,6 @@ export default function DiagnosisPage() {
       <section className="site-shell max-w-4xl pb-6 md:pb-8">
         <ChecklistBlock title="这次诊断会帮你看清几件事" items={diagnosisPageCopy.diagnosisValueItems} />
       </section>
-
-      <LeadCaptureForm />
 
       <CtaBlock />
       <Footer />

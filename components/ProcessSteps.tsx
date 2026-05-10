@@ -18,10 +18,10 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
       {steps.map((step, index) => (
         <li
           key={typeof step === "string" ? step : step.title}
-          className="card transition hover:border-slate-300 md:min-h-36"
+          className="card flex flex-col transition hover:border-slate-300"
         >
           <span className="text-meta-token font-semibold">STEP {index + 1}</span>
-          <p className="mt-3 text-body font-semibold text-ink">{typeof step === "string" ? step : step.title}</p>
+          <p className="mt-3 text-body font-semibold leading-snug text-ink">{typeof step === "string" ? step : step.title}</p>
           {typeof step !== "string" && step.description ? (
             <p className="mt-3 text-copy">{step.description}</p>
           ) : null}

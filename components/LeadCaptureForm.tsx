@@ -114,7 +114,7 @@ export function LeadCaptureForm() {
 
   if (step === "success") {
     return (
-      <section id="diagnosis-result" className="site-shell max-w-4xl scroll-mt-28 pb-10 md:pb-16">
+      <section id="diagnosis-result" className="site-shell max-w-4xl scroll-mt-28 pb-6 md:pb-8">
         <div className="card">
           <h2 className="text-heading">已提交，我们会尽快联系你</h2>
           <div className="mt-3 grid gap-2 text-copy">
@@ -128,7 +128,7 @@ export function LeadCaptureForm() {
 
   return (
     <>
-      <section className="site-shell max-w-4xl pb-6 md:pb-10">
+      <section className="site-shell hidden max-w-4xl pb-6 md:block md:pb-8">
         <div className="card">
           <h2 className="text-heading">先识别风险，再决定要不要马上启动</h2>
           <p className="mt-2 text-copy">很多企业卡在启动阶段，问题往往不在执行，而在路径。越早看清误判代价，越能避免后面重复投入。</p>
@@ -148,7 +148,7 @@ export function LeadCaptureForm() {
         </div>
       </section>
 
-      <section id="self-check" className="site-shell max-w-4xl pb-10 md:pb-16">
+      <section id="self-check" className="site-shell max-w-4xl pb-6 md:pb-8">
         <form onSubmit={handleSubmit} className="grid gap-4">
           <article id="diagnosis-step-one" className="card scroll-mt-28">
             <p className="text-meta-token font-semibold">STEP 1</p>

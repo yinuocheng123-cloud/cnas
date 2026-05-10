@@ -38,7 +38,7 @@ export default function ServicesPage() {
       {/* ========== 第二部分：服务卡片 ========== */}
       <section className="site-shell section-space">
         <SectionTitle title="支持模块" description="每项服务都明确适合企业、常见问题、支持内容、交付结果和风险提醒。" />
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-5 grid gap-4 md:mt-6 md:grid-cols-2">
           {services.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}

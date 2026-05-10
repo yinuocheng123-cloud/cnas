@@ -1,3 +1,7 @@
+import { getArticlesByIndustries } from "@/src/data/articles";
+import { getCasesByIndustries } from "@/src/data/cases";
+import { getIndustryBySlug, getRelatedIndustries, industryTaxonomy } from "@/lib/industry-taxonomy";
+
 /*
  * 文件说明：该文件聚合 CNAS 专业内容平台的站点级数据。
  * 功能说明：维护导航、首页入口和解决方案数据，并转发文章、分类、标签、案例、服务与 FAQ 数据。
@@ -14,6 +18,7 @@ export {
   articles,
   getArticleBySlug,
   getArticlesByCategory,
+  getArticlesByIndustries,
   getArticlesByTag,
   getRelatedArticles,
 } from "@/src/data/articles";
@@ -22,10 +27,13 @@ export { categories, getCategoryBySlug } from "@/src/data/categories";
 export type { Category } from "@/src/data/categories";
 export { tags } from "@/src/data/tags";
 export { faqs } from "@/src/data/faqs";
-export { cases } from "@/src/data/cases";
+export { cases, getCasesByIndustries } from "@/src/data/cases";
+export { riskEntries } from "@/src/data/riskEntries";
 export type { CaseItem } from "@/src/data/cases";
+export type { RiskEntry } from "@/src/data/riskEntries";
 export { services } from "@/src/data/services";
 export type { ServiceItem } from "@/src/data/services";
+export { getFeaturedIndustries, getIndustryBySlug, getRelatedIndustries, industryTaxonomy } from "@/lib/industry-taxonomy";
 
 // ========== 第二部分：类型定义 ==========
 export type NavItem = {
@@ -44,6 +52,7 @@ export type Solution = {
   href: string;
   title: string;
   seoTitle: string;
+  seoDescription?: string;
   summary: string;
   imageSrc: string;
   imageAlt: string;
@@ -53,6 +62,7 @@ export type Solution = {
   buildPath: string[];
   assessmentRisks: string[];
   solutionReference: string[];
+  tags?: string[];
 };
 
 // ========== 第三部分：导航与首页入口 ==========
@@ -89,13 +99,11 @@ export const navItems: NavItem[] = [
     label: "行业方案",
     href: "/solutions",
     intent: "成交",
-    children: [
-      { label: "制造企业实验室", href: "/solutions/manufacturing-lab", description: "自建实验室能力路径" },
-      { label: "第三方检测机构", href: "/solutions/testing-lab", description: "首次申请、扩项与监督评审" },
-      { label: "食品/材料/医疗实验室", href: "/solutions/regulated-lab", description: "高要求行业检测场景" },
-      { label: "高校/科研实验室", href: "/solutions/research-lab", description: "科研检测能力规范化" },
-      { label: "集团内部实验室", href: "/solutions/group-internal-lab", description: "多基地内部检测能力协同" },
-    ],
+    children: industryTaxonomy.map((industry) => ({
+      label: industry.navTitle,
+      href: industry.solutionHref,
+      description: industry.judgment,
+    })),
   },
   {
     label: "案例解析",
@@ -247,7 +255,7 @@ export const diagnosisPageCopy = {
     {
       label: "企业类型",
       name: "enterpriseType",
-      options: ["制造企业", "第三方检测机构", "高校 / 科研实验室", "集团内部实验室"],
+      options: industryTaxonomy.map((industry) => industry.diagnosisLabel),
     },
     {
       label: "是否已有实验室",
@@ -287,7 +295,7 @@ export const diagnosisPageCopy = {
 };
 
 // ========== 第四部分：解决方案数据 ==========
-export const solutions: Solution[] = [
+const baseSolutions: Solution[] = [
   {
     slug: "manufacturing-lab",
     href: "/solutions/manufacturing-lab",
@@ -324,7 +332,9 @@ export const solutions: Solution[] = [
     imageSrc: "/images/solutions/new-energy-lab.webp",
     imageAlt: "高要求检测设备与复杂接线环境，适合新能源与储能实验室场景。",
     title: "新能源 / 储能检测实验室 CNAS认可路径",
-    seoTitle: "新能源 / 储能检测实验室：CNAS认可前先判断能力边界",
+    seoTitle: "新能源 / 储能检测实验室 CNAS认可路径",
+    seoDescription:
+      "面向新能源检测实验室和储能实验室，重点判断设备投入、能力建设、前期路径选择与返工风险，避免在高投入场景里先建设后返工。",
     summary: "适用场景：新能源检测、储能系统测试、高要求实验室建设。",
     suitableFor:
       "计划建设或扩充新能源检测、储能电池检测、电性能与安全性检测能力的企业实验室，以及准备承接相关项目的高要求实验室。",
@@ -399,6 +409,35 @@ export const solutions: Solution[] = [
     solutionReference: ["先做集团层面的能力地图", "按基地成熟度分阶段推进", "统一关键文件和记录模板", "建立总部监督与整改闭环"],
   },
 ];
+
+export const solutions: Solution[] = baseSolutions.map((solution) => ({
+  ...solution,
+  tags: getIndustryBySlug(solution.slug)?.tags ?? solution.tags ?? [],
+}));
+
+export function getOrderedSolutions() {
+  const ordered = industryTaxonomy
+    .map((industry) => solutions.find((solution) => solution.slug === industry.slug))
+    .filter((solution): solution is Solution => Boolean(solution));
+
+  const remaining = solutions.filter((solution) => !ordered.some((item) => item.slug === solution.slug));
+
+  return [...ordered, ...remaining];
+}
+
+export function getRelatedSolutions(currentSlug: string, limit = 2) {
+  return getRelatedIndustries(currentSlug, limit)
+    .map((industry) => solutions.find((solution) => solution.slug === industry.slug))
+    .filter((solution): solution is Solution => Boolean(solution));
+}
+
+export function getRelatedKnowledge(industrySlugs: string[] = [], excludeSlug?: string, limit = 3) {
+  return getArticlesByIndustries(industrySlugs, excludeSlug, limit);
+}
+
+export function getRelatedCases(industrySlugs: string[] = [], excludeSlug?: string, limit = 2) {
+  return getCasesByIndustries(industrySlugs, excludeSlug, limit);
+}
 
 export function getSolutionBySlug(slug: string) {
   return solutions.find((solution) => solution.slug === slug);
