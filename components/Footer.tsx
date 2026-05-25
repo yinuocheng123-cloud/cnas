@@ -48,6 +48,12 @@ export function Footer() {
             </Link>
           </div>
         </div>
+
+        <div className="mt-5 border-t border-slate-700 pt-4 text-center text-body text-slate-400">
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+            浙ICP备2020044218号-3
+          </a>
+        </div>
       </div>
     </footer>
   );

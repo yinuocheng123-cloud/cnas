@@ -25,22 +25,40 @@ function hasSuspiciousContent(value: string) {
 }
 
 function validateLeadInput(body: Record<string, unknown>): LeadInput | null {
+  const utm = typeof body.utm === "object" && body.utm !== null ? (body.utm as Record<string, unknown>) : {};
+  const concerns = Array.isArray(body.concerns) ? body.concerns.map((item) => normalizeField(item, 40)).filter(Boolean) : [];
+  const diagnosisSummary =
+    typeof body.diagnosisSummary === "object" && body.diagnosisSummary !== null
+      ? (body.diagnosisSummary as Record<string, unknown>)
+      : {};
+  const diagnosisGrade =
+    typeof diagnosisSummary.grade === "object" && diagnosisSummary.grade !== null
+      ? normalizeField((diagnosisSummary.grade as Record<string, unknown>).title, 80)
+      : "";
+  const fallbackDemand = [
+    normalizeField(body.notes, 160),
+    concerns.length > 0 ? `关注问题：${concerns.join("、")}` : "",
+    diagnosisGrade ? `诊断等级：${diagnosisGrade}` : "",
+  ]
+    .filter(Boolean)
+    .join("；");
+
   const payload: LeadInput = {
-    name: normalizeField(body.name, 40),
+    name: normalizeField(body.name, 40) || normalizeField(body.contact, 40),
     company: normalizeField(body.company, 80),
-    enterpriseType: normalizeField(body.enterpriseType, 80),
-    hasLab: normalizeField(body.hasLab, 80),
+    enterpriseType: normalizeField(body.enterpriseType, 80) || normalizeField(body.labType, 80),
+    hasLab: normalizeField(body.hasLab, 80) || normalizeField(body.resourceReadiness, 80) || "成交页未填写",
     stage: normalizeField(body.stage, 80),
-    startTime: normalizeField(body.startTime, 80),
-    equipmentPlan: normalizeField(body.equipmentPlan, 80),
+    startTime: normalizeField(body.startTime, 80) || normalizeField(body.timeline, 80),
+    equipmentPlan: normalizeField(body.equipmentPlan, 80) || normalizeField(body.resourceReadiness, 80) || normalizeField(body.scopeClarity, 80),
     contact: normalizeField(body.contact, 120),
     phone: normalizeField(body.phone, 30),
     wechat: normalizeField(body.wechat, 60),
-    demand: normalizeField(body.demand, 300),
+    demand: normalizeField(body.demand, 300) || fallbackDemand || "成交页路径判断提交",
     sourcePage: normalizeField(body.sourcePage, 160) || "/diagnosis",
-    utmSource: normalizeField(body.utmSource, 80),
-    utmMedium: normalizeField(body.utmMedium, 80),
-    utmCampaign: normalizeField(body.utmCampaign, 120),
+    utmSource: normalizeField(body.utmSource, 80) || normalizeField(utm.utm_source, 80),
+    utmMedium: normalizeField(body.utmMedium, 80) || normalizeField(utm.utm_medium, 80),
+    utmCampaign: normalizeField(body.utmCampaign, 120) || normalizeField(utm.utm_campaign, 120),
   };
 
   const requiredFields = [
