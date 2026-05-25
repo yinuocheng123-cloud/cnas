@@ -58,6 +58,8 @@ export default async function AdminLeadsPage({
             <thead className="bg-surface">
               <tr className="text-meta-token">
                 <th className="px-4 py-3 font-semibold">提交时间</th>
+                <th className="px-4 py-3 font-semibold">称呼</th>
+                <th className="px-4 py-3 font-semibold">企业名称</th>
                 <th className="px-4 py-3 font-semibold">企业类型</th>
                 <th className="px-4 py-3 font-semibold">当前阶段</th>
                 <th className="px-4 py-3 font-semibold">联系方式</th>
@@ -68,14 +70,16 @@ export default async function AdminLeadsPage({
                 leads.map((lead) => (
                   <tr key={lead.id} className="text-copy">
                     <td className="px-4 py-4">{formatLeadTime(lead.createdAt)}</td>
+                    <td className="px-4 py-4">{lead.name || "-"}</td>
+                    <td className="px-4 py-4">{lead.company || "-"}</td>
                     <td className="px-4 py-4">{lead.enterpriseType}</td>
                     <td className="px-4 py-4">{lead.stage}</td>
-                    <td className="px-4 py-4">{lead.contact}</td>
+                    <td className="px-4 py-4">{lead.contact || [lead.phone, lead.wechat].filter(Boolean).join(" / ")}</td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={4} className="px-4 py-8 text-copy">
+                  <td colSpan={6} className="px-4 py-8 text-copy">
                     暂无已提交线索。
                   </td>
                 </tr>

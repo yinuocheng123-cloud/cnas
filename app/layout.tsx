@@ -34,11 +34,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    url: siteUrl,
+    description: "围绕 CNAS 认可、实验室建设、体系运行、评审风险与持续改进的专业知识与解决方案平台。",
+    inLanguage: "zh-CN",
+  };
 
   return (
     <html lang="zh-CN">
       <body>
         {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         {gaId ? <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" /> : null}
         {gaId ? (
           <Script id="ga-init" strategy="afterInteractive">

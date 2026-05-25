@@ -15,13 +15,19 @@ type LeadWebhookPayload = LeadInput | LeadRecord;
 
 function formatLeadMessage(data: LeadWebhookPayload) {
   return [
-    "【CNAS线索】",
+    "【CNAS认可路径诊断线索】",
+    `称呼：${data.name}`,
+    `企业名称：${data.company}`,
     `企业类型：${data.enterpriseType}`,
     `阶段：${data.stage}`,
     `是否已有实验室：${data.hasLab}`,
     `启动时间：${data.startTime}`,
     `设备规划：${data.equipmentPlan}`,
-    `联系方式：${data.contact}`,
+    `电话：${data.phone || "未填写"}`,
+    `微信：${data.wechat || "未填写"}`,
+    `需求描述：${data.demand}`,
+    `来源页面：${data.sourcePage}`,
+    `UTM：${data.utmSource || "-"} / ${data.utmMedium || "-"} / ${data.utmCampaign || "-"}`,
   ].join("\n");
 }
 
@@ -86,4 +92,20 @@ export async function sendToWechat(data: LeadWebhookPayload) {
     },
     "wechat",
   );
+}
+
+export function hasLeadWebhookConfigured() {
+  return Boolean(process.env.LEAD_WEBHOOK_FEISHU?.trim() || process.env.LEAD_WEBHOOK_WECHAT?.trim());
+}
+
+export async function sendLeadNotifications(data: LeadWebhookPayload) {
+  const results = await Promise.all([
+    process.env.LEAD_WEBHOOK_FEISHU?.trim() ? sendToFeishu(data) : Promise.resolve(false),
+    process.env.LEAD_WEBHOOK_WECHAT?.trim() ? sendToWechat(data) : Promise.resolve(false),
+  ]);
+
+  return {
+    configured: hasLeadWebhookConfigured(),
+    delivered: results.some(Boolean),
+  };
 }

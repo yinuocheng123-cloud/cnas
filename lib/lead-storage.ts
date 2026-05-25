@@ -13,12 +13,21 @@ import path from "node:path";
 
 // ========== 第一部分：类型定义与路径常量 ==========
 export type LeadInput = {
+  name: string;
+  company: string;
   enterpriseType: string;
   hasLab: string;
   stage: string;
   startTime: string;
   equipmentPlan: string;
   contact: string;
+  phone: string;
+  wechat: string;
+  demand: string;
+  sourcePage: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
 };
 
 export type LeadRecord = LeadInput & {
@@ -55,6 +64,22 @@ async function readLeadFile(): Promise<LeadRecord[]> {
 // ========== 第三部分：对外存储接口 ==========
 export async function getLeads() {
   return readLeadFile();
+}
+
+export async function hasRecentDuplicateLead(contactKey: string, windowMs = 10 * 60 * 1000) {
+  if (!contactKey) {
+    return false;
+  }
+
+  const leads = await readLeadFile();
+  const now = Date.now();
+
+  return leads.some((lead) => {
+    const leadContactKey = `${lead.phone || ""}|${lead.wechat || ""}|${lead.contact || ""}`;
+    const createdAt = new Date(lead.createdAt).getTime();
+
+    return leadContactKey.includes(contactKey) && Number.isFinite(createdAt) && now - createdAt < windowMs;
+  });
 }
 
 export async function appendLead(input: LeadInput) {

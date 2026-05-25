@@ -6,33 +6,69 @@ import { diagnosisPageCopy } from "@/lib/site-data";
 
 /*
  * 文件说明：该文件实现诊断页线索表单组件。
- * 功能说明：提供两步式表单、轻量校验、提交状态和成功提示，承接真实咨询线索。
+ * 功能说明：提供两步式诊断表单、基础字段校验、重复点击防护、来源追踪和隐私提示。
  *
  * 结构概览：
  *   第一部分：类型定义与初始状态
- *   第二部分：LeadCaptureForm 组件
+ *   第二部分：字段归一化与追踪参数
+ *   第三部分：LeadCaptureForm 组件
  */
 
 // ========== 第一部分：类型定义与初始状态 ==========
 type LeadFormData = {
+  name: string;
+  company: string;
   enterpriseType: string;
   hasLab: string;
   stage: string;
   startTime: string;
   equipmentPlan: string;
+  phone: string;
+  wechat: string;
+  demand: string;
   contact: string;
 };
 
 const initialFormData: LeadFormData = {
+  name: "",
+  company: "",
   enterpriseType: "",
   hasLab: "",
   stage: "",
   startTime: "",
   equipmentPlan: "",
+  phone: "",
+  wechat: "",
+  demand: "",
   contact: "",
 };
 
-// ========== 第二部分：LeadCaptureForm 组件 ==========
+// ========== 第二部分：字段归一化与追踪参数 ==========
+function normalizeInput(value: string, maxLength: number) {
+  return value.trim().slice(0, maxLength);
+}
+
+function getTrackingPayload() {
+  if (typeof window === "undefined") {
+    return {
+      sourcePage: "/diagnosis",
+      utmSource: "",
+      utmMedium: "",
+      utmCampaign: "",
+    };
+  }
+
+  const params = new URLSearchParams(window.location.search);
+
+  return {
+    sourcePage: `${window.location.pathname}${window.location.search}`,
+    utmSource: params.get("utm_source") ?? "",
+    utmMedium: params.get("utm_medium") ?? "",
+    utmCampaign: params.get("utm_campaign") ?? "",
+  };
+}
+
+// ========== 第三部分：LeadCaptureForm 组件 ==========
 export function LeadCaptureForm() {
   const [step, setStep] = useState<1 | 2 | "success">(1);
   const [formData, setFormData] = useState<LeadFormData>(initialFormData);
@@ -55,7 +91,14 @@ export function LeadCaptureForm() {
   }
 
   function validateStepTwo() {
-    return formData.startTime && formData.equipmentPlan && formData.contact.trim().length >= 5;
+    return (
+      normalizeInput(formData.name, 40) &&
+      normalizeInput(formData.company, 80) &&
+      formData.startTime &&
+      formData.equipmentPlan &&
+      normalizeInput(formData.demand, 300) &&
+      (normalizeInput(formData.phone, 30) || normalizeInput(formData.wechat, 60))
+    );
   }
 
   function handleContinue() {
@@ -75,13 +118,32 @@ export function LeadCaptureForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    if (isSubmitting || step === "success") {
+      return;
+    }
+
     if (!validateStepTwo()) {
-      setErrorMessage("请填写有效的联系方式后再提交。");
+      setErrorMessage("请填写称呼、企业名称、需求描述，并至少填写电话或微信中的一项。");
       return;
     }
 
     setIsSubmitting(true);
     setErrorMessage("");
+
+    const normalizedPayload = {
+      name: normalizeInput(formData.name, 40),
+      company: normalizeInput(formData.company, 80),
+      enterpriseType: formData.enterpriseType,
+      hasLab: formData.hasLab,
+      stage: formData.stage,
+      startTime: formData.startTime,
+      equipmentPlan: formData.equipmentPlan,
+      phone: normalizeInput(formData.phone, 30),
+      wechat: normalizeInput(formData.wechat, 60),
+      demand: normalizeInput(formData.demand, 300),
+      contact: [normalizeInput(formData.phone, 30), normalizeInput(formData.wechat, 60)].filter(Boolean).join(" / "),
+      ...getTrackingPayload(),
+    };
 
     try {
       const response = await fetch("/api/lead", {
@@ -89,7 +151,7 @@ export function LeadCaptureForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(normalizedPayload),
       });
 
       const result = (await response.json()) as { success?: boolean; message?: string };
@@ -188,6 +250,30 @@ export function LeadCaptureForm() {
               <p className="text-meta-token font-semibold">STEP 2</p>
               <h2 className="mt-2 text-heading">补充关键决策信息</h2>
               <div className="mt-4 grid gap-3 md:mt-5 md:grid-cols-2 md:gap-4">
+                <label className="grid gap-2 text-body font-medium text-ink">
+                  称呼
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={(event) => updateField("name", event.target.value)}
+                    placeholder="例如：张先生"
+                    maxLength={40}
+                    className="min-h-12 rounded-xl border border-line bg-card px-4 py-3 text-copy text-ink outline-none transition placeholder:text-muted focus:border-primary"
+                  />
+                </label>
+                <label className="grid gap-2 text-body font-medium text-ink">
+                  企业名称
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={(event) => updateField("company", event.target.value)}
+                    placeholder="用于判断行业和实验室场景"
+                    maxLength={80}
+                    className="min-h-12 rounded-xl border border-line bg-card px-4 py-3 text-copy text-ink outline-none transition placeholder:text-muted focus:border-primary"
+                  />
+                </label>
                 {diagnosisPageCopy.stepTwoFields.map((field) => (
                   <label key={field.name} className="grid gap-2 text-body font-medium text-ink">
                     {field.label}
@@ -208,19 +294,45 @@ export function LeadCaptureForm() {
                     </select>
                   </label>
                 ))}
-                <label className="grid gap-2 text-body font-medium text-ink md:col-span-2">
-                  联系方式（微信 / 电话）
+                <label className="grid gap-2 text-body font-medium text-ink">
+                  电话
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={(event) => updateField("phone", event.target.value)}
+                    placeholder="电话和微信至少填一项"
+                    maxLength={30}
+                    className="min-h-12 rounded-xl border border-line bg-card px-4 py-3 text-copy text-ink outline-none transition placeholder:text-muted focus:border-primary"
+                  />
+                </label>
+                <label className="grid gap-2 text-body font-medium text-ink">
+                  微信
                   <input
                     type="text"
-                    name="contact"
-                    value={formData.contact}
-                    onChange={(event) => updateField("contact", event.target.value)}
-                    placeholder="方便后续给你明确判断方向"
+                    name="wechat"
+                    value={formData.wechat}
+                    onChange={(event) => updateField("wechat", event.target.value)}
+                    placeholder="电话不方便时可填写微信"
+                    maxLength={60}
                     className="min-h-12 rounded-xl border border-line bg-card px-4 py-3 text-copy text-ink outline-none transition placeholder:text-muted focus:border-primary"
+                  />
+                </label>
+                <label className="grid gap-2 text-body font-medium text-ink md:col-span-2">
+                  需求描述或当前问题
+                  <textarea
+                    name="demand"
+                    value={formData.demand}
+                    onChange={(event) => updateField("demand", event.target.value)}
+                    placeholder="例如：已有实验室，想判断认可范围和评审前风险"
+                    maxLength={300}
+                    rows={3}
+                    className="rounded-xl border border-line bg-card px-4 py-3 text-copy text-ink outline-none transition placeholder:text-muted focus:border-primary"
                   />
                 </label>
               </div>
               <p className="mt-3 text-copy">填写后，会给你一个明确的风险判断方向。</p>
+              <p className="mt-2 text-meta-token">提交信息仅用于 CNAS 认可路径判断与顾问联系，不会公开展示。</p>
               <div className="mt-4 rounded-2xl border border-line bg-surface p-4">
                 <p className="text-meta-token font-semibold">提交前再确认一次</p>
                 <div className="mt-2 grid gap-2 text-copy">

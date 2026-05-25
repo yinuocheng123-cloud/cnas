@@ -11,7 +11,18 @@ import type { Metadata } from "next";
 
 // ========== 第一部分：站点常量 ==========
 export const siteName = "CNAS认可指南";
-export const siteUrl = process.env.SITE_URL?.trim() || "http://localhost:3000";
+const rawSiteUrl = process.env.SITE_URL?.trim();
+const isDeploymentBuild = process.env.CI === "true" || process.env.VERCEL === "1";
+
+if (process.env.NODE_ENV === "production" && !rawSiteUrl) {
+  if (isDeploymentBuild) {
+    throw new Error("SITE_URL is required for production deployment builds.");
+  }
+
+  console.warn("[seo:site-url:missing] SITE_URL is not configured. Production metadata will fall back to localhost.");
+}
+
+export const siteUrl = rawSiteUrl || "http://localhost:3000";
 export const defaultPageTitle = "CNAS认可指南｜专业知识与认可解决方案平台";
 
 // ========== 第二部分：元信息生成函数 ==========

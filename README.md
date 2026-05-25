@@ -230,3 +230,25 @@ dfb747180dcd5375044bd3897719339e79a6497b
 4. 再考虑轻量内容发布后台，不建议一开始做复杂 CMS。
 5. 如需转化闭环，优先新增咨询表单、线索存储和基础防垃圾提交机制。
 6. 暂不建议引入会员登录、在线支付、多语言和复杂动画。
+
+## 10. v0.59 上线前生产化配置提醒
+
+正式上线试运行前，部署平台必须配置以下环境变量：
+
+```bash
+SITE_URL=https://your-real-production-domain.com
+ADMIN_KEY=use-a-long-random-secret
+LEAD_WEBHOOK_FEISHU=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+LEAD_WEBHOOK_WECHAT=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+说明：
+
+- `SITE_URL` 用于 canonical、Open Graph、JSON-LD、sitemap 和 robots，生产环境必须替换为真实正式域名，不要使用 localhost、预览域名或占位域名。
+- 部署平台构建时如果缺少 `SITE_URL`，项目会主动失败，避免正式站输出错误 canonical、Open Graph、sitemap 或 robots 域名。
+- `ADMIN_KEY` 只在服务端读取，未配置或 key 错误时 `/admin/leads` 返回 403。
+- `LEAD_WEBHOOK_FEISHU` 和 `LEAD_WEBHOOK_WECHAT` 至少必须配置一个，否则线索只能落到本地兜底文件，无法稳定外发到顾问跟进渠道。
+- `data/leads.json` 仅作为本地开发和上线初期兜底，不适合作为 serverless 环境的长期主存储，也不应进入 Git 仓库。
+- 上线前不要提交 `.env`、本地日志、截图、cloudflared 工具和真实线索数据。
+- 依赖安全检查已通过 `npm audit fix --omit=dev` 降低风险；如仍有 `npm audit` 残余项，不要直接执行 `npm audit fix --force`，需先评估 Next.js 版本变更风险并重新执行 `npm run typecheck` 与 `npm run build`。
