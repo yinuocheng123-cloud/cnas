@@ -139,3 +139,31 @@
 - 未修改 LEAD_WEBHOOK_FEISHU / LEAD_WEBHOOK_WECHAT。
 - 未修改其它网站目录。
 - 未新增数据库。
+
+## 主站路径判断整合记录：2026-05-26
+
+本轮只处理 CNAS认可指南主站，不继续优化 `path.cnaszhinan.com` 成交页内容。
+
+### 整合状态
+
+- 主站首页已整合原成交页核心路径判断逻辑。
+- 首页新增 `#path-check` 路径判断锚点，用于承接用户填写基础信息并生成 A/B/C 初步诊断。
+- 企业微信二维码已复制到主站公开资源目录 `public/wecom-qr.png`，不直接引用成交页目录。
+- Footer 已调整为品牌信任、服务内容、企业微信承接和备案号结构。
+- 备案号仍为：`浙ICP备2020044218号-3`。
+- 备案链接仍为：`https://beian.miit.gov.cn/`。
+
+### 旧成交页处理策略
+
+- `path.cnaszhinan.com` 不再作为独立成交系统继续运营。
+- 旧成交页目录保留为服务器备份，不物理删除。
+- 主站部署验证通过后，计划仅通过 `path.cnaszhinan.com` 对应 Nginx 配置做 301 跳转到 `https://cnaszhinan.com/#path-check`。
+- 不改动其它网站 Nginx 配置。
+
+### 待部署后补充
+
+- 主站线上首页是否正常显示。
+- 主站表单是否能提交到 `/api/lead`。
+- 后台是否能看到主站测试线索。
+- `path.cnaszhinan.com` 是否已经 301 到主站路径判断区。
+- PM2 `cnas-main` 是否 online。

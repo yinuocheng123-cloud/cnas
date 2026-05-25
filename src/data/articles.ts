@@ -111,7 +111,7 @@ const articleSources: ArticleSource[] = [
     summary: "拆开看 CNAS认可的预算结构，才能判断钱花在能力建设、体系运行，还是返工补救上。",
     category: "cnas-cost",
     tags: ["CNAS认可", "费用预算", "启动判断", "返工风险"],
-    keywords: ["CNAS认可费用是多少", "CNAS费用", "CNAS认证费用", "实验室建设成本"],
+    keywords: ["CNAS认可费用是多少", "CNAS费用", "CNAS认可费用", "实验室建设成本"],
     updatedAt: "2026-05-06",
     answer: "CNAS认可没有统一报价，真正决定预算的通常不是单一服务费，而是实验室基础、认可范围和后续整改成本。",
     content: buildDecisionSections(
@@ -146,7 +146,7 @@ const articleSources: ArticleSource[] = [
     summary: "流程的关键不在于背步骤，而在于知道第一步不是申请，而是先判断自己能不能启动。",
     category: "cnas-process",
     tags: ["申请流程", "范围规划", "启动判断", "体系运行"],
-    keywords: ["CNAS认可流程怎么走", "CNAS申请流程", "CNAS认证流程", "CNAS启动步骤"],
+    keywords: ["CNAS认可流程怎么走", "CNAS申请流程", "CNAS认可流程", "CNAS启动步骤"],
     updatedAt: "2026-05-06",
     answer: "企业做 CNAS认可时，第一步通常不是递交申请，而是先确认检测需求、认可范围和实验室基础是否适合启动。",
     content: buildDecisionSections(
@@ -181,7 +181,7 @@ const articleSources: ArticleSource[] = [
     summary: "周期长短取决于基础条件是否成熟，而不是把提交申请后的时间单独拎出来算。",
     category: "cnas-cost",
     tags: ["周期评估", "进度评估", "启动判断", "返工风险"],
-    keywords: ["CNAS认可周期多久", "CNAS多久能做完", "CNAS认证周期", "CNAS评审周期"],
+    keywords: ["CNAS认可周期多久", "CNAS多久能做完", "CNAS认可周期", "CNAS评审周期"],
     updatedAt: "2026-05-06",
     answer: "CNAS认可的整体周期取决于实验室建设成熟度、试运行质量和整改效率，不能只看申请后的官方流程时间。",
     content: buildDecisionSections(
@@ -356,7 +356,7 @@ const articleSources: ArticleSource[] = [
     summary: "资料不是越多越好，关键是每一类材料都要能对应真实能力、范围和运行证据。",
     category: "cnas-process",
     tags: ["申请资料", "资料准备", "申请流程", "体系运行"],
-    keywords: ["CNAS认可需要准备哪些资料", "CNAS申请资料", "CNAS认证资料", "CNAS文件清单"],
+    keywords: ["CNAS认可需要准备哪些资料", "CNAS申请资料", "CNAS认可资料", "CNAS文件清单"],
     updatedAt: "2026-05-06",
     answer: "CNAS认可准备资料时，关键不是凑齐模板，而是形成能对应认可范围、人员设备方法和运行证据的成套材料。",
     content: buildDecisionSections(
@@ -460,8 +460,8 @@ const articleSources: ArticleSource[] = [
     title: "CNAS是什么？先看认可和实验室能力要求",
     summary: "理解 CNAS 不是从证书开始，而是从实验室能否稳定输出有效结果开始。",
     category: "cnas-basic",
-    tags: ["CNAS认可", "CNAS认证", "实验室能力", "基础认知"],
-    keywords: ["CNAS是什么", "CNAS认可", "CNAS认证", "实验室能力"],
+    tags: ["CNAS认可", "实验室能力", "基础认知"],
+    keywords: ["CNAS是什么", "CNAS认可", "CNAS认可", "实验室能力"],
     updatedAt: "2026-05-06",
     answer: "CNAS认可本质上是对实验室真实能力和体系运行能力的认可，而不是只看文件是否齐全。",
     content: buildDecisionSections(
@@ -478,8 +478,8 @@ const articleSources: ArticleSource[] = [
     ],
     faqs: [
       {
-        question: "CNAS认证和 CNAS认可有什么区别？",
-        answer: "CNAS认可是更专业的表达，CNAS认证是企业常见搜索词，实际通常指同一类认可准备场景。",
+        question: "CNAS认可和 CNAS认可有什么区别？",
+        answer: "CNAS认可是更专业的表达，CNAS认可是企业常见搜索词，实际通常指同一类认可准备场景。",
       },
       {
         question: "没有成熟实验室，也能先了解 CNAS 吗？",
@@ -496,7 +496,7 @@ const articleSources: ArticleSource[] = [
     summary: "流程总览的价值，不是给出固定步骤，而是帮助企业看清每一步要解决的核心判断。",
     category: "cnas-process",
     tags: ["申请流程", "体系运行", "现场评审", "启动判断"],
-    keywords: ["CNAS流程", "CNAS申请流程", "CNAS认证流程", "现场评审"],
+    keywords: ["CNAS流程", "CNAS申请流程", "CNAS认可流程", "现场评审"],
     updatedAt: "2026-05-06",
     answer: "CNAS认可通常要经历启动判断、范围规划、建设准备、体系试运行、正式申请和评审整改几个阶段。",
     content: buildDecisionSections(
@@ -531,7 +531,7 @@ const articleSources: ArticleSource[] = [
     summary: "预算判断的关键，不是先听报价，而是先知道哪些投入直接决定能力能不能跑起来。",
     category: "cnas-cost",
     tags: ["费用预算", "预算风险", "认可范围", "返工风险"],
-    keywords: ["CNAS费用", "CNAS多少钱", "CNAS认证费用", "实验室建设成本"],
+    keywords: ["CNAS费用", "CNAS多少钱", "CNAS认可费用", "实验室建设成本"],
     updatedAt: "2026-05-06",
     answer: "做 CNAS认可时，预算通常花在实验室建设、设备校准、体系运行、能力验证和整改几个重点环节。",
     content: buildDecisionSections(
@@ -566,7 +566,7 @@ const articleSources: ArticleSource[] = [
     summary: "进度被拖慢时，问题往往不在排期本身，而在前面没收住的范围和没跑通的能力。",
     category: "cnas-cost",
     tags: ["周期评估", "进度评估", "申请流程", "返工风险"],
-    keywords: ["CNAS周期", "CNAS多久", "CNAS认证周期", "认可进度"],
+    keywords: ["CNAS周期", "CNAS多久", "CNAS认可周期", "认可进度"],
     updatedAt: "2026-05-06",
     answer: "CNAS认可周期最容易卡在范围反复、设备环境准备滞后、试运行不稳定和问题整改四类环节。",
     content: buildDecisionSections(
