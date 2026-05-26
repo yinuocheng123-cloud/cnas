@@ -21,6 +21,7 @@ export function Footer() {
           <Image src="/brand/cnas-logo.png" alt="CNAS认可指南" width={1415} height={404} sizes="168px" className="mx-auto h-auto w-[168px] md:mx-0" />
           <p className="mt-4 text-body text-slate-300">先判断路径，再决定怎么推进。</p>
           <p className="mt-2 max-w-sm text-body text-slate-400">专注实验室CNAS认可路径判断与评审准备。</p>
+          <p className="mt-2 text-meta font-semibold text-[#d8ad63] md:hidden">CNAS行业服务平台</p>
         </section>
 
         <section className="min-w-0 text-center md:text-left">
@@ -44,9 +45,21 @@ export function Footer() {
       </div>
 
       <div className="site-shell border-t border-white/10 py-4 text-center text-meta text-slate-400">
+        <nav className="mb-4 flex flex-wrap justify-center gap-x-5 gap-y-2 md:hidden" aria-label="底部平台链接">
+          <a href="/about" className="transition hover:text-white">
+            关于我们
+          </a>
+          <a href="/faqs" className="transition hover:text-white">
+            常见问题
+          </a>
+          <a href="#" className="transition hover:text-white">
+            返回顶部
+          </a>
+        </nav>
         <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
           浙ICP备2020044218号-3
         </a>
+        <p className="mt-3 md:hidden">Copyright © CNAS认可指南</p>
       </div>
     </footer>
   );
