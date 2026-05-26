@@ -28,12 +28,13 @@ const mobileNavItems = [
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isHomePage = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-20 bg-paper/95 backdrop-blur">
+    <header className={`sticky top-0 z-20 backdrop-blur ${isHomePage ? "bg-[#06162c]/95 shadow-[0_1px_0_rgba(255,255,255,0.08)] md:bg-paper/95 md:shadow-none" : "bg-paper/95"}`}>
       <div className="site-shell flex min-h-14 items-center justify-between gap-4 py-2.5 md:min-h-16 md:py-3">
         <Link href="/" className="flex w-fit items-center">
-          <span className="text-base font-semibold text-ink md:hidden">CNAS认可指南</span>
+          <span className={`text-base font-semibold md:hidden ${isHomePage ? "hidden" : "text-ink"}`}>CNAS认可指南</span>
           <Image
             src="/brand/cnas-logo.png"
             alt="CNAS认可指南"
@@ -41,7 +42,7 @@ export function Header() {
             height={404}
             priority
             sizes="(max-width: 767px) 156px, 220px"
-            className="hidden h-auto w-[156px] md:block md:w-[220px]"
+            className={`${isHomePage ? "block" : "hidden"} h-auto w-[142px] rounded bg-white/95 p-1.5 md:block md:w-[220px] md:rounded-none md:bg-transparent md:p-0`}
           />
         </Link>
 
@@ -49,7 +50,11 @@ export function Header() {
           type="button"
           aria-expanded={isMobileMenuOpen}
           aria-label={isMobileMenuOpen ? "关闭菜单" : "打开菜单"}
-          className="inline-flex min-h-12 items-center justify-center rounded-lg border border-line bg-white px-3 text-meta font-semibold text-ink transition hover:border-primary hover:text-primary lg:hidden"
+          className={`inline-flex min-h-12 items-center justify-center rounded-lg border px-3 text-meta font-semibold transition lg:hidden ${
+            isHomePage
+              ? "border-white/15 bg-white/10 text-white hover:border-[#d8ad63] hover:text-[#f2d59a] md:border-line md:bg-white md:text-ink md:hover:border-primary md:hover:text-primary"
+              : "border-line bg-white text-ink hover:border-primary hover:text-primary"
+          }`}
           onClick={() => setIsMobileMenuOpen((current) => !current)}
         >
           {isMobileMenuOpen ? "关闭" : "菜单"}
@@ -87,7 +92,7 @@ export function Header() {
       </div>
 
       {isMobileMenuOpen ? (
-        <div className="border-t border-line bg-paper/95 lg:hidden">
+        <div className={`border-t lg:hidden ${isHomePage ? "border-white/10 bg-[#06162c]/95 md:border-line md:bg-paper/95" : "border-line bg-paper/95"}`}>
           <div className="site-shell py-3">
             <div className="ml-auto w-full max-w-[17rem] rounded-2xl border border-line bg-white p-3 shadow-card">
               <div className="grid gap-1">
