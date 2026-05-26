@@ -223,3 +223,13 @@
 - 未修改 `/api/lead`。
 - 未修改后台权限和 `ADMIN_KEY`。
 - 未新增外部图片或第三方依赖。
+
+### 验证结果
+
+- `npm run build`：服务器通过。
+- `npm run typecheck`：服务器通过。
+- PM2 `cnas-main`：online。
+- `https://cnaszhinan.com`：返回 200。
+- `https://www.cnaszhinan.com`：返回 200。
+- `https://path.cnaszhinan.com`：返回 200。
+- 375px 手机视口检查：未发现横向滚动，手机端关键模块和二维码可见。
