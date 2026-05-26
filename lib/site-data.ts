@@ -141,11 +141,11 @@ export const navItems: NavItem[] = [
 ];
 
 export const homePathways = [
-  { title: "知识库", href: "/knowledge", intent: "流量入口", summary: "承接基础认知、费用周期、评审风险和常见问题搜索需求。" },
-  { title: "认可流程", href: "/cnas-process", intent: "强需求入口", summary: "按启动、建设、运行、申请、评审和整改拆解实施路径。" },
-  { title: "行业方案", href: "/solutions", intent: "成交入口", summary: "按企业类型拆解问题、路径、风险和咨询承接方式。" },
-  { title: "案例解析", href: "/cases", intent: "信任入口", summary: "用问题、动作、结果说明真实准备场景和风险处理方式。" },
-  { title: "风险诊断", href: "/diagnosis", intent: "转化入口", summary: "帮助企业先判断是否适合现在启动 CNAS认可。" },
+  { title: "路径判断", href: "/path", intent: "平台入口", summary: "先判断是否适合启动，再决定认可范围、资源和推进顺序。" },
+  { title: "认可准备", href: "/prepare", intent: "准备入口", summary: "围绕体系、人员、设备、环境和记录建立可运行基础。" },
+  { title: "评审整改", href: "/review", intent: "风险入口", summary: "评审前排查风险，评审后围绕不符合项完成整改闭环。" },
+  { title: "认可后维护", href: "/maintenance", intent: "维护入口", summary: "持续做好体系运行、监督评审、复评审和扩项变更。" },
+  { title: "行业内容", href: "/articles", intent: "内容入口", summary: "继续阅读路径判断、认可准备和评审风险相关基础内容。" },
 ];
 
 export const homePathwayLead = "从了解、判断，到落地，每一步都有对应路径";

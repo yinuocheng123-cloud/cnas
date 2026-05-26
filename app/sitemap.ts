@@ -12,7 +12,7 @@ import { siteUrl } from "@/lib/seo";
  */
 
 // ========== 第一部分：静态路径 ==========
-const staticRoutes = ["/", "/knowledge", "/solutions", "/cases", "/services", "/about", "/diagnosis", "/faqs"];
+const staticRoutes = ["/", "/knowledge", "/solutions", "/cases", "/services", "/about", "/diagnosis", "/faqs", "/path", "/prepare", "/review", "/maintenance", "/faq", "/articles"];
 
 // ========== 第二部分：sitemap 生成 ==========
 export default function sitemap(): MetadataRoute.Sitemap {

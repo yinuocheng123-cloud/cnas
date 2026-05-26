@@ -40,10 +40,17 @@ const mobileIndustryProblems = [
 ];
 
 const mobileCapabilities = [
-  ["路径判断", "判断当前条件与启动可行性"],
-  ["认可准备", "梳理体系、人员、设备与记录准备"],
-  ["评审整改", "支持评审前风险排查与问题整改"],
-  ["后期维护", "支持监督评审、复评审、扩项和年度维护"],
+  ["路径判断", "判断当前条件与启动可行性", "/path"],
+  ["认可准备", "梳理体系、人员、设备与记录准备", "/prepare"],
+  ["评审整改", "支持评审前风险排查与问题整改", "/review"],
+  ["后期维护", "支持监督评审、复评审、扩项和年度维护", "/maintenance"],
+];
+
+const mobileHeroCapabilityLinks = [
+  { title: "路径判断", href: "/path" },
+  { title: "认可准备", href: "/prepare" },
+  { title: "评审整改", href: "/review" },
+  { title: "后期维护", href: "/maintenance" },
 ];
 
 const mobilePathCheckItems = [
@@ -113,13 +120,13 @@ export default function HomePage() {
             <p className="mt-5 max-w-[18rem] text-base leading-8 text-slate-200">很多实验室的问题，不是审核，而是方向。</p>
           </div>
           <div className="grid grid-cols-4 gap-2">
-            {["路径判断", "认可准备", "评审整改", "后期维护"].map((item) => (
-              <span key={item} className="grid min-h-16 place-items-center rounded-2xl border border-white/10 bg-white/[0.08] px-2 text-center text-xs font-semibold text-slate-100 backdrop-blur">
-                {item}
-              </span>
+            {mobileHeroCapabilityLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="grid min-h-16 place-items-center rounded-2xl border border-white/10 bg-white/[0.08] px-2 text-center text-xs font-semibold text-slate-100 backdrop-blur transition hover:border-[#d8ad63]/60">
+                {item.title}
+              </Link>
             ))}
           </div>
-          <Link href="#mobile-path-check" className="flex min-h-14 items-center justify-between rounded-2xl bg-gradient-to-r from-[#f5dca8] to-[#d8ad63] px-5 text-sm font-semibold text-[#06162c] shadow-[0_18px_42px_rgba(216,173,99,0.22)]">
+          <Link href="/path" className="flex min-h-14 items-center justify-between rounded-2xl bg-gradient-to-r from-[#f5dca8] to-[#d8ad63] px-5 text-sm font-semibold text-[#06162c] shadow-[0_18px_42px_rgba(216,173,99,0.22)]">
             了解CNAS认可路径判断
             <span className="grid h-8 w-8 place-items-center rounded-full bg-[#06162c] text-lg text-white">→</span>
           </Link>
@@ -146,12 +153,12 @@ export default function HomePage() {
           <h2 className="mt-2 text-2xl font-semibold leading-snug">CNAS认可指南能做什么？</h2>
           <p className="mt-3 text-body text-slate-300">围绕认可前、认可中、认可后，提供持续的信息、判断与服务支持，帮助实验室更清楚地推进CNAS认可准备。</p>
           <div className="mt-5 grid grid-cols-2 gap-3">
-            {mobileCapabilities.map(([title, summary], index) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.08] p-4">
+            {mobileCapabilities.map(([title, summary, href], index) => (
+              <Link key={title} href={href} className="rounded-2xl border border-white/10 bg-white/[0.08] p-4 transition hover:border-[#d8ad63]/60">
                 <span className="grid h-9 w-9 place-items-center rounded-xl border border-[#d8ad63]/35 text-sm font-semibold text-[#f2d59a]">{index + 1}</span>
                 <h3 className="mt-4 text-base font-semibold">{title}</h3>
                 <p className="mt-2 text-[0.8125rem] leading-6 text-slate-300">{summary}</p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -169,7 +176,7 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-        <Link href="/diagnosis" className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-[#06162c] px-5 text-sm font-semibold text-white">
+        <Link href="/path" className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-[#06162c] px-5 text-sm font-semibold text-white">
           了解路径判断
         </Link>
       </section>
@@ -209,7 +216,7 @@ export default function HomePage() {
             <p className="text-meta font-semibold text-[#b88a3c]">内容入口</p>
             <h2 className="mt-2 text-2xl font-semibold text-ink">最新行业内容</h2>
           </div>
-          <Link href="/knowledge" className="shrink-0 text-meta font-semibold text-ink">
+          <Link href="/articles" className="shrink-0 text-meta font-semibold text-ink">
             查看更多 →
           </Link>
         </div>
@@ -224,8 +231,15 @@ export default function HomePage() {
       </section>
 
       <section className="site-shell bg-[#f7f8fb] pb-8 md:hidden">
-        <p className="text-meta font-semibold text-[#b88a3c]">常见问题</p>
-        <h2 className="mt-2 text-2xl font-semibold text-ink">先把关键疑问说清楚</h2>
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="text-meta font-semibold text-[#b88a3c]">常见问题</p>
+            <h2 className="mt-2 text-2xl font-semibold text-ink">先把关键疑问说清楚</h2>
+          </div>
+          <Link href="/faq" className="shrink-0 text-meta font-semibold text-ink">
+            全部问题 →
+          </Link>
+        </div>
         <div className="mt-5 grid gap-3">
           {mobileFaqItems.map(([question, answer]) => (
             <details key={question} className="rounded-2xl border border-slate-200 bg-white p-4">
@@ -248,6 +262,9 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+          <Link href="/maintenance" className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-2xl border border-[#d8ad63]/45 px-5 text-sm font-semibold text-[#f2d59a]">
+            了解认可后维护
+          </Link>
         </div>
       </section>
 
