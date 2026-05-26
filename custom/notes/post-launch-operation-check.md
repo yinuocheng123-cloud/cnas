@@ -177,3 +177,27 @@
 - 保留 ACME challenge 配置，避免影响证书续期校验。
 - `nginx -t` 通过后执行 reload。
 - 未修改其它网站 Nginx 配置。
+
+## 主站首页过度整合修复记录：2026-05-26
+
+### 修复原因
+
+上一轮把 path 成交页逻辑过度整合进主站首页，导致电脑版首页变成成交页风格，偏离 CNAS认可指南主站的内容入口定位。
+
+### 修复结果
+
+- 电脑版首页主体已恢复为原 CNAS认可指南主站结构。
+- 电脑版首页不再使用上一轮新增的整页成交式首页组件。
+- 电脑版仅保留 footer 层面的企业微信二维码、服务内容和备案号优化。
+- 手机版保留轻量路径判断引导，但不放完整长表单，不照搬成交页。
+- `path.cnaszhinan.com` 已撤回 301，恢复独立成交页访问。
+- 未删除 `/www/wwwroot/cnas-path`。
+- 未修改成交页内容。
+- 未修改主站后台、`/api/lead`、`ADMIN_KEY`、webhook、HTTPS、PM2 或其它网站。
+
+### 当前状态
+
+- `https://path.cnaszhinan.com` 返回 200。
+- `http://path.cnaszhinan.com` 只跳转到 `https://path.cnaszhinan.com/`。
+- 备案号仍为：`浙ICP备2020044218号-3`。
+- 备案链接仍为：`https://beian.miit.gov.cn/`。

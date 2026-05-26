@@ -10,7 +10,7 @@ import Image from "next/image";
  */
 
 // ========== 第一部分：服务内容配置 ==========
-const serviceItems = ["认可路径判断", "评审准备", "整改闭环", "认可后维护"];
+const serviceItems = ["CNAS认可流程", "CNAS认可路径判断", "评审准备", "认可后维护"];
 
 // ========== 第二部分：Footer 组件 ==========
 export function Footer() {
@@ -35,7 +35,7 @@ export function Footer() {
           </ul>
         </section>
 
-        <section className="grid max-w-xs gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-body text-slate-300 md:justify-self-end">
+        <section id="footer-wecom" className="grid max-w-xs scroll-mt-20 gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-body text-slate-300 md:justify-self-end">
           <h2 className="text-base font-semibold text-white">添加CNAS认可指南顾问</h2>
           <img src="/wecom-qr.png" alt="企业微信顾问二维码" className="h-36 w-36 rounded-lg bg-white p-2" />
           <p className="font-semibold text-white">扫码领取《CNAS认可路径判断问卷》</p>
