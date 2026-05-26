@@ -162,8 +162,18 @@
 
 ### 待部署后补充
 
-- 主站线上首页是否正常显示。
-- 主站表单是否能提交到 `/api/lead`。
-- 后台是否能看到主站测试线索。
-- `path.cnaszhinan.com` 是否已经 301 到主站路径判断区。
-- PM2 `cnas-main` 是否 online。
+- 主站线上首页已正常显示，页面 HTML 可读取到 `#path-check`、企业微信二维码 `/wecom-qr.png` 和备案号。
+- 主站表单已能提交到 `/api/lead`，测试企业名为“主站整合测试企业20260526H”。
+- 后台已能看到主站测试线索，校验过程中未输出 `ADMIN_KEY`。
+- `path.cnaszhinan.com` 已通过 Nginx 301 到 `https://cnaszhinan.com/#path-check`。
+- HTTP 与 HTTPS 访问 `path.cnaszhinan.com` 均返回 301。
+- 旧成交页目录 `/www/wwwroot/cnas-path` 保留为备份，未删除。
+- PM2 `cnas-main` 已在构建和类型检查通过后重启，当前线上首页正常返回。
+
+### Nginx 收口记录
+
+- 仅修改 `/www/server/panel/vhost/nginx/path.cnaszhinan.com.conf`。
+- 修改前已备份为 `/www/server/panel/vhost/nginx/path.cnaszhinan.com.conf.bak-main-integration-20260526`。
+- 保留 ACME challenge 配置，避免影响证书续期校验。
+- `nginx -t` 通过后执行 reload。
+- 未修改其它网站 Nginx 配置。
