@@ -13,7 +13,7 @@ import Link from "next/link";
 import { getAdminHref, type AdminNavKey } from "@/lib/admin";
 
 // ========== 第二部分：导航配置 ==========
-const adminNavItems: { key: AdminNavKey | "front"; label: string; href: string }[] = [
+const adminNavItems: { key: AdminNavKey | "front" | "logout"; label: string; href: string }[] = [
   { key: "home", label: "首页", href: "/admin" },
   { key: "articles", label: "文章", href: "/admin/articles" },
   { key: "faqs", label: "FAQ", href: "/admin/faqs" },
@@ -21,6 +21,7 @@ const adminNavItems: { key: AdminNavKey | "front"; label: string; href: string }
   { key: "leads", label: "线索", href: "/admin/leads" },
   { key: "settings", label: "设置", href: "/admin/settings" },
   { key: "front", label: "返回前台", href: "/" },
+  { key: "logout", label: "退出登录", href: "/admin/logout" },
 ];
 
 // ========== 第三部分：后台壳子组件 ==========
@@ -50,7 +51,7 @@ export function AdminShell({
           <nav className="flex flex-wrap gap-2 text-sm">
             {adminNavItems.map((item) => {
               const isActive = item.key === active;
-              const href = item.key === "front" ? item.href : getAdminHref(item.href, adminKey);
+              const href = item.key === "front" || item.key === "logout" ? item.href : getAdminHref(item.href, adminKey);
 
               return (
                 <Link

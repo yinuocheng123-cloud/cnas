@@ -22,14 +22,14 @@ export default async function AdminCategoriesPage({
   noStore();
 
   const { key } = await searchParams;
-  ensureAdminAccess(key);
+  const access = await ensureAdminAccess(key);
 
   const categoryItems = getAdminCategoryItems();
 
   return (
     <AdminShell
       active="categories"
-      adminKey={key}
+      adminKey={access.adminKey}
       title="栏目管理"
       description="只读查看 CNAS行业服务平台的基础栏目。当前版本不新增栏目，也不修改栏目路径。"
     >

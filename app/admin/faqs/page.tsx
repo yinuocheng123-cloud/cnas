@@ -22,7 +22,7 @@ export default async function AdminFaqsPage({
   noStore();
 
   const params = await searchParams;
-  ensureAdminAccess(params.key);
+  const access = await ensureAdminAccess(params.key);
 
   const faqItems = getAdminFaqItems();
   const categories = Array.from(new Set(faqItems.map((item) => item.category)));
@@ -31,12 +31,12 @@ export default async function AdminFaqsPage({
   return (
     <AdminShell
       active="faqs"
-      adminKey={params.key}
+      adminKey={access.adminKey}
       title="FAQ管理"
       description="只读聚合当前站内 FAQ，便于内容运营查看问题、分类、首页展示状态和来源页面。"
     >
       <form className="flex flex-col gap-3 rounded-3xl border border-[#e4ded2] bg-white p-4 md:flex-row md:items-center" method="get">
-        <input type="hidden" name="key" value={params.key ?? ""} />
+        <input type="hidden" name="key" value={access.adminKey ?? ""} />
         <select
           className="min-w-0 rounded-2xl border border-[#e4ded2] px-4 py-3 text-sm outline-none focus:border-[#d1a35d] md:w-72"
           name="category"

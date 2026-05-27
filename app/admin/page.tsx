@@ -24,7 +24,7 @@ export default async function AdminHomePage({
   noStore();
 
   const { key } = await searchParams;
-  ensureAdminAccess(key);
+  const access = await ensureAdminAccess(key);
 
   const [leads, faqItems, categoryItems] = await Promise.all([getLeads(), getAdminFaqItems(), getAdminCategoryItems()]);
   const stats = [
@@ -46,13 +46,13 @@ export default async function AdminHomePage({
   return (
     <AdminShell
       active="home"
-      adminKey={key}
+      adminKey={access.adminKey}
       title="后台首页"
       description="第一版 CNAS内容控制台只做只读管理，用来查看内容、栏目、线索和站点配置状态，不提供新增、编辑或删除。"
     >
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
         {stats.map((stat) => (
-          <Link key={stat.label} href={getAdminHref(stat.href, key)} className="rounded-2xl border border-[#e4ded2] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#d1a35d]">
+          <Link key={stat.label} href={getAdminHref(stat.href, access.adminKey)} className="rounded-2xl border border-[#e4ded2] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#d1a35d]">
             <p className="text-sm text-[#657184]">{stat.label}</p>
             <p className="mt-3 text-2xl font-semibold text-[#0b1d35]">{stat.value}</p>
           </Link>
@@ -61,7 +61,7 @@ export default async function AdminHomePage({
 
       <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
         {entries.map((entry) => (
-          <Link key={entry.title} href={getAdminHref(entry.href, key)} className="rounded-3xl border border-[#e4ded2] bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#d1a35d]">
+          <Link key={entry.title} href={getAdminHref(entry.href, access.adminKey)} className="rounded-3xl border border-[#e4ded2] bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#d1a35d]">
             <h3 className="text-lg font-semibold text-[#0b1d35]">{entry.title}</h3>
             <p className="mt-3 text-sm leading-6 text-[#667085]">{entry.summary}</p>
             <span className="mt-5 inline-flex text-sm font-semibold text-[#b78b49]">进入查看</span>

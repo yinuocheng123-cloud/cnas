@@ -27,6 +27,7 @@ custom/experiments/*.log
 custom/experiments/
 custom/tools/
 data/leads.json
+data/article-drafts.json
 data/*.json
 *.png
 *.jpg

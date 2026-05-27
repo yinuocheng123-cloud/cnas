@@ -22,14 +22,14 @@ export default async function AdminLeadsPage({
   noStore();
 
   const { key } = await searchParams;
-  ensureAdminAccess(key);
+  const access = await ensureAdminAccess(key);
 
   const leads = await getLeads();
 
   return (
     <AdminShell
       active="leads"
-      adminKey={key}
+      adminKey={access.adminKey}
       title="线索查看"
       description="继续展示现有本地线索备份数据。当前页面只读，不新增 CRM 跟进、分配或编辑能力。"
     >

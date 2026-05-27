@@ -21,14 +21,14 @@ export default async function AdminSettingsPage({
   noStore();
 
   const { key } = await searchParams;
-  ensureAdminAccess(key);
+  const access = await ensureAdminAccess(key);
 
   const settings = getSiteSettingStatuses();
 
   return (
     <AdminShell
       active="settings"
-      adminKey={key}
+      adminKey={access.adminKey}
       title="站点设置"
       description="只读查看当前生产运营配置状态。这里不会显示 ADMIN_KEY、webhook 或任何真实密钥。"
     >

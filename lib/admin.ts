@@ -12,7 +12,7 @@
 // ========== 第一部分：导入依赖 ==========
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { forbidden } from "next/navigation";
+import { ensureAdminAccess } from "@/lib/admin-auth";
 import { geoArticleCategories, geoArticles, type GeoArticleCategory } from "@/lib/geo-articles";
 import { platformPages } from "@/lib/platform-pages";
 import { faqs as knowledgeFaqs } from "@/lib/site-data";
@@ -20,13 +20,7 @@ import { faqs as knowledgeFaqs } from "@/lib/site-data";
 // ========== 第二部分：访问保护与通用工具 ==========
 export type AdminNavKey = "home" | "articles" | "faqs" | "categories" | "leads" | "settings";
 
-export function ensureAdminAccess(key: string | undefined) {
-  const adminKey = process.env.ADMIN_KEY?.trim();
-
-  if (!adminKey || key !== adminKey) {
-    forbidden();
-  }
-}
+export { ensureAdminAccess };
 
 export function getAdminHref(path: string, key: string | undefined) {
   if (!key) {
@@ -163,6 +157,8 @@ export function getSiteSettingStatuses() {
   return [
     { label: "SITE_URL", status: process.env.SITE_URL ? "已配置" : "未配置" },
     { label: "ADMIN_KEY", status: process.env.ADMIN_KEY ? "已配置" : "未配置" },
+    { label: "ADMIN_USERNAME", status: process.env.ADMIN_USERNAME ? "已配置" : "未配置" },
+    { label: "ADMIN_PASSWORD", status: process.env.ADMIN_PASSWORD ? "已配置" : "未配置" },
     { label: "LEAD_WEBHOOK_FEISHU", status: process.env.LEAD_WEBHOOK_FEISHU ? "已配置" : "未配置" },
     { label: "LEAD_WEBHOOK_WECHAT", status: process.env.LEAD_WEBHOOK_WECHAT ? "已配置" : "未配置" },
     { label: "NEXT_PUBLIC_GA_ID", status: process.env.NEXT_PUBLIC_GA_ID ? "已配置" : "未配置" },
