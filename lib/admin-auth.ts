@@ -39,6 +39,26 @@ function signPayload(payload: string) {
   return createHmac("sha256", getSessionSecret()).update(payload).digest("base64url");
 }
 
+function getAdminCookieDomain() {
+  const siteUrl = process.env.SITE_URL?.trim();
+
+  if (!siteUrl) {
+    return undefined;
+  }
+
+  try {
+    const hostname = new URL(siteUrl).hostname;
+
+    if (hostname === "cnaszhinan.com" || hostname.endsWith(".cnaszhinan.com")) {
+      return ".cnaszhinan.com";
+    }
+  } catch {
+    return undefined;
+  }
+
+  return undefined;
+}
+
 export function verifyAdminCredentials(username: string, password: string) {
   const configuredUsername = process.env.ADMIN_USERNAME?.trim();
   const configuredPassword = process.env.ADMIN_PASSWORD?.trim();
@@ -103,6 +123,7 @@ export async function hasAdminSession() {
 
 export function setAdminSessionCookie(response: NextResponse, username: string) {
   response.cookies.set(adminSessionCookieName, createAdminSessionValue(username), {
+    domain: getAdminCookieDomain(),
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
@@ -113,6 +134,7 @@ export function setAdminSessionCookie(response: NextResponse, username: string) 
 
 export function clearAdminSessionCookie(response: NextResponse) {
   response.cookies.set(adminSessionCookieName, "", {
+    domain: getAdminCookieDomain(),
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
