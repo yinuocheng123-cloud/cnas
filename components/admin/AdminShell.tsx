@@ -52,18 +52,23 @@ export function AdminShell({
             {adminNavItems.map((item) => {
               const isActive = item.key === active;
               const href = item.key === "front" || item.key === "logout" ? item.href : getAdminHref(item.href, adminKey);
+              const className = [
+                "rounded-full border px-4 py-2 transition",
+                isActive
+                  ? "border-[#0b1d35] bg-[#0b1d35] text-white"
+                  : "border-[#e4ded2] bg-white text-[#40516a] hover:border-[#d1a35d] hover:text-[#0b1d35]",
+              ].join(" ");
+
+              if (item.key === "logout") {
+                return (
+                  <a key={item.key} href={href} className={className}>
+                    {item.label}
+                  </a>
+                );
+              }
 
               return (
-                <Link
-                  key={item.key}
-                  href={href}
-                  className={[
-                    "rounded-full border px-4 py-2 transition",
-                    isActive
-                      ? "border-[#0b1d35] bg-[#0b1d35] text-white"
-                      : "border-[#e4ded2] bg-white text-[#40516a] hover:border-[#d1a35d] hover:text-[#0b1d35]",
-                  ].join(" ")}
-                >
+                <Link key={item.key} href={href} className={className}>
                   {item.label}
                 </Link>
               );
