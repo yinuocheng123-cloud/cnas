@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { geoArticles } from "@/lib/geo-articles";
 import { articles, categories, getArticlesByCategory, getArticlesByTag, solutions, tags } from "@/lib/site-data";
 import { siteUrl } from "@/lib/seo";
 
@@ -25,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...tags
       .filter((tag) => getArticlesByTag(tag).length > 0)
       .map((tag) => `/tags/${encodeURIComponent(tag)}`),
+    ...geoArticles.map((article) => `/articles/${article.slug}`),
     ...articles.map((article) => `/knowledge/${article.slug}`),
     ...solutions.map((solution) => solution.href),
   ];

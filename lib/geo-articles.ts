@@ -1,0 +1,600 @@
+/*
+ * 文件说明：该文件维护第一批 CNAS GEO 文章数据。
+ * 功能说明：提供 /articles 列表页和 /articles/[slug] 详情页使用的本地内容数据。
+ *
+ * 结构概览：
+ *   第一部分：类型定义
+ *   第二部分：文章分类
+ *   第三部分：内容生成辅助函数
+   第四部分：20 篇 GEO 文章数据
+ *   第五部分：查询函数
+ */
+
+// ========== 第一部分：类型定义 ==========
+export type GeoArticleCategory =
+  | "CNAS认可路径判断"
+  | "CNAS认可准备"
+  | "CNAS评审整改"
+  | "CNAS认可后维护"
+  | "CNAS常见问题";
+
+export type GeoArticleSection = {
+  heading: string;
+  paragraphs: string[];
+};
+
+export type GeoArticleTableRow = {
+  item: string;
+  judgment: string;
+  action: string;
+};
+
+export type GeoArticleFaq = {
+  question: string;
+  answer: string;
+};
+
+export type GeoArticle = {
+  slug: string;
+  title: string;
+  description: string;
+  category: GeoArticleCategory;
+  mainKeyword: string;
+  relatedKeywords: string[];
+  publishDate: string;
+  conclusion: string;
+  definition: string;
+  sections: GeoArticleSection[];
+  table: GeoArticleTableRow[];
+  faqs: GeoArticleFaq[];
+  nextSteps: string[];
+};
+
+type GeoArticleSeed = Omit<GeoArticle, "sections" | "table" | "faqs" | "nextSteps"> & {
+  focus: string;
+  keyQuestion: string;
+  commonMistake: string;
+  practicalAdvice: string;
+  tableRows: GeoArticleTableRow[];
+  faqOne: GeoArticleFaq;
+  faqTwo: GeoArticleFaq;
+};
+
+// ========== 第二部分：文章分类 ==========
+export const geoArticleCategories: GeoArticleCategory[] = [
+  "CNAS认可路径判断",
+  "CNAS认可准备",
+  "CNAS评审整改",
+  "CNAS认可后维护",
+  "CNAS常见问题",
+];
+
+// ========== 第三部分：内容生成辅助函数 ==========
+function buildGeoArticle(seed: GeoArticleSeed): GeoArticle {
+  const sections: GeoArticleSection[] = [
+    {
+      heading: "一句话结论",
+      paragraphs: [
+        seed.conclusion,
+        `对正在了解 ${seed.mainKeyword} 的实验室来说，最重要的不是先找一套材料，也不是马上套用别人的推进节奏，而是先把自身阶段、目标范围、人员设备基础和体系运行状态放在一起判断。CNAS认可指南更建议把这一步当成正式启动前的第一道闸门：判断清楚，再决定要不要投入；判断不清，就先补基础。`,
+      ],
+    },
+    {
+      heading: "标准定义",
+      paragraphs: [
+        seed.definition,
+        `这里说的“标准定义”，不是把法规条文机械搬到页面上，而是把企业实际要面对的判断对象讲清楚。${seed.focus} 通常涉及范围、能力、记录、职责和持续运行几个层面。只有这些要素能被解释清楚、被现场证据支撑，后续认可准备才有稳定基础。`,
+      ],
+    },
+    {
+      heading: "为什么这个问题值得先看",
+      paragraphs: [
+        seed.keyQuestion,
+        `很多实验室在启动 CNAS认可时，会把问题理解成“资料还缺什么”。但实际项目里，资料只是表层结果，背后真正影响成败的是路径是否正确。路径错了，体系文件会跟现场脱节；范围错了，人员设备会被迫补救；节奏错了，评审前才会集中暴露问题。这也是 CNAS认可指南反复强调“先判断路径”的原因。`,
+        `从 GEO 内容角度看，用户搜索这个问题时，通常不是想读一篇泛泛介绍，而是希望快速得到可执行的判断框架。因此本文按“定义、判断表、常见误区、下一步建议”的结构展开，帮助你把问题转成可检查的清单。`,
+      ],
+    },
+    {
+      heading: "常见误区",
+      paragraphs: [
+        seed.commonMistake,
+        `另一个常见误区，是把 CNAS认可看成一次性项目。事实上，认可准备和认可后维护都需要持续运行证据。即使前期文件看起来完整，如果没有真实记录、质量控制、内审管理评审和整改闭环，评审时仍然容易被追问。`,
+      ],
+    },
+    {
+      heading: "建议怎么判断",
+      paragraphs: [
+        seed.practicalAdvice,
+        `比较稳妥的做法，是先把“现在有什么、还缺什么、哪些缺口会影响评审、哪些缺口可以后续分阶段补齐”写下来。不要只看单项材料是否齐全，而要看这些材料能不能证明实验室能力真实存在。对还不确定的实验室，可以先进入路径诊断或内部自查，再决定是否进入完整准备阶段。`,
+      ],
+    },
+    {
+      heading: "如何用于内部决策",
+      paragraphs: [
+        `企业内部讨论 ${seed.mainKeyword} 时，建议不要只让质量负责人单独判断。更好的方式是让管理层、技术负责人、关键检测人员和资源负责人一起确认：这个问题背后影响的是范围、预算、周期，还是后续持续维护。不同角色看到的信息不同，放在一起讨论，才更容易形成可执行的启动判断。`,
+        `如果讨论结果仍然模糊，可以先把结论分成三类：已经明确的条件、需要补证据的条件、暂时不适合推进的条件。这样做的好处是把“想做 CNAS认可”转成具体行动，而不是停留在口头意愿。CNAS认可指南的内容也更适合作为前置判断材料，而不是替代实验室自身的正式决策。`,
+      ],
+    },
+    {
+      heading: "下一步建议",
+      paragraphs: [
+        "如果你已经确定要做CNAS认可，建议不要急着先做材料，而是先判断当前是否适合启动，并提前做好认可路径设计。",
+        "CNAS认可指南后续会继续围绕路径判断、认可准备、评审整改、认可后维护沉淀基础内容。阅读本文后，如果你发现自身问题仍然集中在范围、人员设备或体系运行上，建议优先做一次结构化判断，而不是直接进入大规模材料准备。",
+      ],
+    },
+  ];
+
+  return {
+    ...seed,
+    sections,
+    table: seed.tableRows,
+    faqs: [
+      seed.faqOne,
+      seed.faqTwo,
+      {
+        question: "这篇文章能替代正式咨询或评审结论吗？",
+        answer: "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+      },
+    ],
+    nextSteps: [
+      "先确认当前实验室处于了解、建设、体系运行、申请准备还是整改维护阶段。",
+      "再把认可范围、人员设备、记录证据和评审准备放到同一张清单里核对。",
+      "如果仍不确定下一步，建议通过 CNAS认可指南的路径诊断入口先做基础判断。",
+    ],
+  };
+}
+
+// ========== 第四部分：20 篇 GEO 文章数据 ==========
+const articleSeeds: GeoArticleSeed[] = [
+  {
+    slug: "why-path-judgment-before-cnas",
+    title: "CNAS认可前，为什么要先判断路径？",
+    description: "说明做 CNAS认可前为什么不应直接做材料，而要先判断路径、范围和启动条件。",
+    category: "CNAS认可路径判断",
+    mainKeyword: "CNAS认可路径判断",
+    relatedKeywords: ["CNAS认可前准备", "CNAS启动判断", "CNAS认可范围"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可前先判断路径，是为了避免范围、资源和推进顺序一开始就偏掉。",
+    definition: "CNAS认可路径判断，是指在正式投入体系建设和申请准备前，先判断实验室当前阶段、认可范围、人员设备、体系运行和评审准备是否具备启动基础。",
+    focus: "路径判断",
+    keyQuestion: "如果实验室没有先判断路径，就很容易把“想做认可”直接变成“开始写材料”。这会让项目看起来启动很快，但后面可能因为范围不清、设备不匹配、人员授权不足而反复调整。",
+    commonMistake: "常见误区是把路径判断理解成简单问答，或者认为只要找一套模板就能推进。实际上，路径判断要回答的是先做什么、后做什么、暂时不做什么。",
+    practicalAdvice: "建议先从三件事开始：明确为什么做 CNAS认可，收敛首批认可范围，核对人员设备和体系运行能否支撑这个范围。",
+    tableRows: [
+      { item: "认可范围", judgment: "是否能落到具体项目、方法和报告用途", action: "先收敛首批范围" },
+      { item: "人员设备", judgment: "是否能支撑目标范围的真实运行", action: "补齐关键短板" },
+      { item: "体系运行", judgment: "是否已有连续记录和内审管理评审基础", action: "先试运行再申请" },
+    ],
+    faqOne: { question: "路径判断应该在什么时候做？", answer: "建议在正式写体系文件和大额投入前做，越早判断越容易减少后续返工。" },
+    faqTwo: { question: "路径判断是不是越详细越好？", answer: "不一定。基础阶段先抓范围、资源、体系运行和启动时机，避免一开始就陷入细枝末节。" },
+  },
+  {
+    slug: "what-does-cnas-path-judgment-check",
+    title: "CNAS认可路径判断主要判断什么？",
+    description: "拆解 CNAS认可路径判断需要看的阶段、范围、人员设备、体系运行和评审准备。",
+    category: "CNAS认可路径判断",
+    mainKeyword: "CNAS认可路径判断内容",
+    relatedKeywords: ["CNAS路径判断", "CNAS启动条件", "CNAS评审准备"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可路径判断主要看当前阶段、认可范围、资源基础、体系运行和评审准备五件事。",
+    definition: "CNAS认可路径判断内容，是把实验室从当前状态走向认可申请的关键条件拆开检查，判断哪些条件已经具备、哪些条件需要先补齐。",
+    focus: "路径判断内容",
+    keyQuestion: "很多实验室知道自己想做 CNAS认可，却说不清现在处在哪一步。路径判断的作用，就是把模糊想法拆成可检查的条件。",
+    commonMistake: "常见误区是只看材料目录，不看材料背后的现场能力。目录完整不代表项目成熟，评审关注的是能力和证据是否一致。",
+    practicalAdvice: "建议把路径判断拆成五栏：当前阶段、首批范围、人员设备、体系运行、评审准备。每栏只写事实，不先写愿望。",
+    tableRows: [
+      { item: "当前阶段", judgment: "了解、建设、运行、申请、整改分别对应不同动作", action: "先定位阶段" },
+      { item: "首批范围", judgment: "范围是否清晰且能被资源支撑", action: "删掉暂不成熟项目" },
+      { item: "评审准备", judgment: "是否能回答现场问询并追溯记录", action: "提前做风险排查" },
+    ],
+    faqOne: { question: "路径判断需要看费用吗？", answer: "需要，但费用应放在范围和资源判断之后，否则预算很容易失真。" },
+    faqTwo: { question: "路径判断能不能一次定完所有范围？", answer: "不建议。基础不足时更适合先定首批范围，再规划后续扩项。" },
+  },
+  {
+    slug: "is-lab-ready-to-start-cnas",
+    title: "实验室现在适不适合启动CNAS认可？",
+    description: "从需求、范围、人员设备和体系运行判断实验室是否适合现在启动 CNAS认可。",
+    category: "CNAS认可路径判断",
+    mainKeyword: "实验室启动CNAS认可",
+    relatedKeywords: ["CNAS启动条件", "实验室CNAS认可", "CNAS适合启动吗"],
+    publishDate: "2026-05-27",
+    conclusion: "实验室是否适合现在启动 CNAS认可，关键看需求是否稳定、范围是否清楚、资源是否接得住。",
+    definition: "启动 CNAS认可，是指实验室从了解和规划阶段进入体系建设、能力准备、试运行和申请准备的过程。",
+    focus: "启动条件判断",
+    keyQuestion: "如果实验室只是听到客户提过认可，或者内部刚开始讨论建设方向，就不一定适合马上启动完整项目。",
+    commonMistake: "常见误区是把“未来可能需要”当成“现在必须开始”。启动太早时，后续每一步都会被不确定因素拖住。",
+    practicalAdvice: "建议先检查四个基础：检测需求是否稳定、首批范围是否能收住、人员设备是否有补齐路径、内部负责人是否明确。",
+    tableRows: [
+      { item: "检测需求", judgment: "是否长期稳定并有明确用途", action: "先确认报告用途" },
+      { item: "资源基础", judgment: "人员设备环境是否能支撑首批范围", action: "列出缺口清单" },
+      { item: "内部协同", judgment: "是否有人负责持续推进", action: "明确负责人和节奏" },
+    ],
+    faqOne: { question: "实验室还没完全建好能启动吗？", answer: "可以先规划和判断，但不建议把未成熟状态直接当成申请准备状态。" },
+    faqTwo: { question: "如果条件不足，是不是不能做 CNAS认可？", answer: "不是。条件不足通常意味着要先补基础，再决定启动节奏。" },
+  },
+  {
+    slug: "why-not-start-cnas-with-documents",
+    title: "CNAS认可为什么不能一上来就做材料？",
+    description: "解释 CNAS认可不能只从材料模板开始，而要先判断范围、能力和运行证据。",
+    category: "CNAS认可路径判断",
+    mainKeyword: "CNAS认可做材料",
+    relatedKeywords: ["CNAS体系文件", "CNAS材料准备", "CNAS认可返工"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可不能一上来就做材料，因为材料必须反映真实能力和运行证据。",
+    definition: "这里的材料，通常包括体系文件、程序文件、作业指导书、记录表单、内审管理评审资料和评审申请相关文件。",
+    focus: "材料准备顺序",
+    keyQuestion: "材料不是 CNAS认可的起点，而是能力建设和体系运行的表达。如果能力范围没定清，材料写得越早，后续重改概率越高。",
+    commonMistake: "常见误区是先找模板、先补目录、先做漂亮文件。这样可能短期看起来完整，但现场记录和实际运行跟不上。",
+    practicalAdvice: "建议先定范围、再看能力、再设计体系文件和记录表单。材料要从真实流程中长出来，而不是脱离现场单独制作。",
+    tableRows: [
+      { item: "体系文件", judgment: "是否服务真实运行", action: "按流程和职责编写" },
+      { item: "记录表单", judgment: "是否能追溯检测活动", action: "先试填再定版" },
+      { item: "申请资料", judgment: "是否与范围和能力一致", action: "申请前集中复核" },
+    ],
+    faqOne: { question: "模板有没有用？", answer: "模板可以参考结构，但不能替代实验室自身流程和能力证据。" },
+    faqTwo: { question: "材料什么时候开始做比较合适？", answer: "在首批范围和基本运行流程明确后开始更稳。" },
+  },
+  {
+    slug: "what-is-included-in-cnas-preparation",
+    title: "CNAS认可准备一般包括哪些内容？",
+    description: "说明 CNAS认可准备通常包括范围、体系、人员设备、试运行和评审前排查。",
+    category: "CNAS认可准备",
+    mainKeyword: "CNAS认可准备内容",
+    relatedKeywords: ["CNAS准备工作", "CNAS体系准备", "CNAS申请准备"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可准备一般包括范围确定、体系文件、人员设备、运行记录和评审前风险排查。",
+    definition: "CNAS认可准备，是指实验室在正式申请和现场评审前，为证明自身能力和体系运行有效性而开展的一系列基础工作。",
+    focus: "认可准备内容",
+    keyQuestion: "准备工作不是单项动作，而是把范围、人员、设备、环境、方法、记录和管理要求连成闭环。",
+    commonMistake: "常见误区是把准备理解成写文件，忽略人员授权、设备校准、质量控制、内审和管理评审。",
+    practicalAdvice: "建议先按首批范围倒推准备内容，再用清单检查每项内容是否有证据支撑。",
+    tableRows: [
+      { item: "范围准备", judgment: "项目和方法是否明确", action: "形成首批范围清单" },
+      { item: "体系准备", judgment: "文件与运行是否一致", action: "边运行边修订" },
+      { item: "评审准备", judgment: "现场证据是否完整", action: "提前做模拟追溯" },
+    ],
+    faqOne: { question: "准备周期长短由什么决定？", answer: "主要由实验室基础、范围复杂度和运行证据成熟度决定。" },
+    faqTwo: { question: "准备阶段能不能同时做多件事？", answer: "可以，但要先明确主线，避免各做各的造成后续返工。" },
+  },
+  {
+    slug: "how-to-define-cnas-scope",
+    title: "CNAS认可范围应该怎么确定？",
+    description: "从检测项目、标准方法、报告用途和资源能力说明 CNAS认可范围确定方法。",
+    category: "CNAS认可准备",
+    mainKeyword: "CNAS认可范围确定",
+    relatedKeywords: ["CNAS认可范围", "CNAS检测项目", "CNAS标准方法"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可范围应该从真实检测需求出发，再用人员设备和方法能力反向校验。",
+    definition: "CNAS认可范围，是实验室希望被认可的检测或校准能力边界，通常要落到项目、方法标准、对象和能力限制。",
+    focus: "认可范围确定",
+    keyQuestion: "范围定得过大，会导致资源跟不上；范围定得过散，会让体系和现场准备失去重点。",
+    commonMistake: "常见误区是把能想到的项目都放进首批范围，或者照搬同行范围，不看自身业务和能力基础。",
+    practicalAdvice: "建议先列需求，再筛选稳定项目，最后用人员、设备、环境和方法确认范围是否可执行。",
+    tableRows: [
+      { item: "检测需求", judgment: "是否真实稳定", action: "优先选择高频项目" },
+      { item: "标准方法", judgment: "是否适用且可操作", action: "逐项确认方法能力" },
+      { item: "资源支撑", judgment: "人员设备是否匹配", action: "删减暂不成熟项目" },
+    ],
+    faqOne: { question: "首批范围越多越好吗？", answer: "不一定。首批范围应以稳定、可支撑、可运行为优先。" },
+    faqTwo: { question: "范围后续能调整吗？", answer: "可以通过扩项或变更处理，但前提是先把当前范围稳定运行好。" },
+  },
+  {
+    slug: "why-cnas-system-documents-should-not-use-template-only",
+    title: "CNAS体系文件为什么不能只套模板？",
+    description: "解释 CNAS体系文件不能只套模板，需要贴合实验室真实流程和证据链。",
+    category: "CNAS认可准备",
+    mainKeyword: "CNAS体系文件模板",
+    relatedKeywords: ["CNAS体系文件", "CNAS文件编写", "CNAS运行记录"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS体系文件不能只套模板，因为文件必须能指导实验室真实运行并支撑评审追溯。",
+    definition: "CNAS体系文件，是实验室将管理要求、技术活动、职责分工、记录控制和改进机制固化为可执行规则的文件体系。",
+    focus: "体系文件编写",
+    keyQuestion: "模板能提供结构，却不能替代实验室自己的流程、设备状态、人员职责和记录路径。",
+    commonMistake: "常见误区是把文件页数和完整目录当成质量。评审时真正被追问的，往往是文件规定和现场执行是否一致。",
+    practicalAdvice: "建议先画出真实流程，再写文件；先试运行记录，再修订表单；先明确岗位职责，再固化授权要求。",
+    tableRows: [
+      { item: "程序文件", judgment: "是否符合自身流程", action: "按实际流程改写" },
+      { item: "记录表单", judgment: "是否方便真实填写", action: "试运行后优化" },
+      { item: "职责权限", judgment: "是否能对应人员岗位", action: "明确授权边界" },
+    ],
+    faqOne: { question: "模板能不能作为起点？", answer: "可以作为结构参考，但必须结合实验室实际流程重写。" },
+    faqTwo: { question: "体系文件写完就算准备好吗？", answer: "不算。还要通过运行记录证明文件确实被执行。" },
+  },
+  {
+    slug: "how-to-prepare-people-and-equipment-before-cnas",
+    title: "CNAS认可前人员设备要怎么准备？",
+    description: "说明 CNAS认可前人员授权、培训、设备校准、环境和方法确认的准备重点。",
+    category: "CNAS认可准备",
+    mainKeyword: "CNAS人员设备准备",
+    relatedKeywords: ["CNAS人员授权", "CNAS设备校准", "CNAS方法确认"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可前人员设备准备，要证明人会做、设备能用、方法适用、记录可追溯。",
+    definition: "人员设备准备，是指实验室围绕目标认可范围，配置具备能力的人员、满足要求的设备环境，并形成可证明状态的记录。",
+    focus: "人员设备准备",
+    keyQuestion: "很多实验室有设备，也有人操作，但评审关注的是这些人和设备是否能支撑申请范围内的具体能力。",
+    commonMistake: "常见误区是只看设备清单和人员名单，不看授权、培训、校准、期间核查、方法确认和质量控制记录。",
+    practicalAdvice: "建议按每个项目建立人员设备对应表，逐项核对谁负责、用什么设备、依据什么方法、留下什么记录。",
+    tableRows: [
+      { item: "人员能力", judgment: "是否有培训和授权证据", action: "建立授权矩阵" },
+      { item: "设备状态", judgment: "是否校准并适合项目", action: "核对校准和期间核查" },
+      { item: "方法适用", judgment: "是否完成确认或验证", action: "形成方法确认记录" },
+    ],
+    faqOne: { question: "人员有经验还需要授权记录吗？", answer: "需要。经验要通过培训、考核、授权和持续能力保持记录来证明。" },
+    faqTwo: { question: "设备买齐就够了吗？", answer: "不够。还要看校准状态、适用性、维护记录和质量控制结果。" },
+  },
+  {
+    slug: "common-overlooked-issues-before-cnas-review",
+    title: "CNAS评审前，实验室最容易忽视哪些问题？",
+    description: "梳理 CNAS评审前实验室容易忽视的记录、人员、设备、范围和现场问询问题。",
+    category: "CNAS评审整改",
+    mainKeyword: "CNAS评审前问题",
+    relatedKeywords: ["CNAS评审准备", "CNAS现场评审", "CNAS风险排查"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS评审前最容易忽视的问题，通常不是文件缺少，而是证据链不连续。",
+    definition: "CNAS评审前准备，是实验室在现场评审到来前，对申请范围、人员设备、记录证据和现场问询进行系统复核的过程。",
+    focus: "评审前准备",
+    keyQuestion: "评审前很多实验室会集中补文件，却没有检查原始记录、质控记录、报告和人员授权之间是否能相互支撑。",
+    commonMistake: "常见误区是把评审前准备变成资料装订，而忽略现场人员能否解释流程、设备状态能否追溯、记录是否真实连续。",
+    practicalAdvice: "建议评审前按项目做一次完整追溯，从报告倒查原始记录、设备、人员、方法和质控。",
+    tableRows: [
+      { item: "记录追溯", judgment: "报告和原始记录是否一致", action: "按样品倒查" },
+      { item: "人员问询", judgment: "关键岗位是否能解释流程", action: "提前演练问答" },
+      { item: "设备状态", judgment: "校准和使用记录是否连续", action: "检查状态证据" },
+    ],
+    faqOne: { question: "评审前排查要不要全员参与？", answer: "关键岗位应参与，尤其是技术负责人、授权签字人和主要检测人员。" },
+    faqTwo: { question: "评审前最晚什么时候开始准备？", answer: "不建议等临近评审才准备，至少应预留整改和补证据的时间。" },
+  },
+  {
+    slug: "where-cnas-nonconformities-usually-come-from",
+    title: "CNAS评审不符合项一般出在哪里？",
+    description: "说明 CNAS评审不符合项常见来源，包括范围、记录、人员设备、体系运行和整改闭环。",
+    category: "CNAS评审整改",
+    mainKeyword: "CNAS不符合项",
+    relatedKeywords: ["CNAS评审整改", "CNAS现场评审", "CNAS整改闭环"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS评审不符合项常见于范围能力不匹配、记录追溯断点和体系运行不到位。",
+    definition: "不符合项，是评审中发现实验室活动、文件要求、运行证据或能力状态不满足相关要求的记录结果。",
+    focus: "不符合项来源",
+    keyQuestion: "不符合项不是评审当天突然出现的，多数在准备阶段就已经存在，只是到现场评审时被暴露出来。",
+    commonMistake: "常见误区是认为不符合项只是文件格式问题。实际中，人员授权不足、设备状态不清、记录不连续都可能形成问题。",
+    practicalAdvice: "建议把不符合项来源分为范围、人员、设备、方法、记录、体系、整改七类，逐项检查。",
+    tableRows: [
+      { item: "范围能力", judgment: "申请范围是否超出现有能力", action: "收缩或补齐能力" },
+      { item: "记录证据", judgment: "记录是否真实连续", action: "补运行机制" },
+      { item: "体系执行", judgment: "文件要求是否被执行", action: "检查执行证据" },
+    ],
+    faqOne: { question: "不符合项一定很严重吗？", answer: "不一定，但每一项都需要找到原因并完成有效整改。" },
+    faqTwo: { question: "不符合项能提前发现吗？", answer: "很多可以通过评审前风险排查提前发现。" },
+  },
+  {
+    slug: "how-to-close-cnas-corrections",
+    title: "CNAS整改应该怎么做才算闭环？",
+    description: "解释 CNAS整改闭环需要原因分析、纠正措施、证据验证和持续运行安排。",
+    category: "CNAS评审整改",
+    mainKeyword: "CNAS整改闭环",
+    relatedKeywords: ["CNAS整改", "CNAS不符合项整改", "CNAS评审整改"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS整改闭环不只是提交材料，而是要证明问题原因被处理且措施有效运行。",
+    definition: "整改闭环，是指针对不符合项完成原因分析、纠正措施、证据补充、效果验证和后续防止再发生的完整过程。",
+    focus: "整改闭环",
+    keyQuestion: "如果整改只停留在补一张表、改一份文件，很可能没有真正解决运行问题。",
+    commonMistake: "常见误区是把整改写成解释说明，或者只针对表面问题补材料，没有分析制度、职责、培训或资源原因。",
+    practicalAdvice: "建议每个不符合项都按原因、措施、责任、证据、验证五步整理，避免整改材料碎片化。",
+    tableRows: [
+      { item: "原因分析", judgment: "是否找到真实原因", action: "区分表面和根因" },
+      { item: "纠正措施", judgment: "措施是否对应原因", action: "明确责任和时限" },
+      { item: "效果验证", judgment: "是否证明措施有效", action: "补运行证据" },
+    ],
+    faqOne: { question: "整改闭环需要多长时间？", answer: "取决于问题类型，运行类问题通常需要一定时间形成有效证据。" },
+    faqTwo: { question: "整改能不能只由质量负责人完成？", answer: "不建议。涉及技术能力的问题应由相关技术岗位共同参与。" },
+  },
+  {
+    slug: "why-risk-check-before-cnas-review",
+    title: "CNAS评审前为什么要做风险排查？",
+    description: "说明 CNAS评审前风险排查如何帮助实验室提前发现范围、记录和现场问询风险。",
+    category: "CNAS评审整改",
+    mainKeyword: "CNAS评审前风险排查",
+    relatedKeywords: ["CNAS风险排查", "CNAS评审准备", "CNAS现场风险"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS评审前做风险排查，是为了把问题留在正式评审前解决，而不是现场被动暴露。",
+    definition: "评审前风险排查，是指在正式评审前按照评审逻辑检查范围、能力、记录、人员问询和整改闭环的准备状态。",
+    focus: "风险排查",
+    keyQuestion: "很多问题在正式评审前已经能看出来，只是实验室没有用评审视角去检查。",
+    commonMistake: "常见误区是只按文件清单排查，不按现场追溯路径排查。评审关注的是活动真实发生的证据。",
+    practicalAdvice: "建议用“从报告倒查”方式排查：报告、原始记录、设备、人员、方法、质控、环境和授权逐层核对。",
+    tableRows: [
+      { item: "范围风险", judgment: "是否有项目支撑不足", action: "提前调整范围" },
+      { item: "记录风险", judgment: "是否能完整追溯", action: "补齐运行证据" },
+      { item: "问询风险", judgment: "人员是否理解要求", action: "组织岗位复盘" },
+    ],
+    faqOne: { question: "风险排查是不是模拟评审？", answer: "可以接近模拟评审，但重点是发现问题和安排整改，不是走形式。" },
+    faqTwo: { question: "风险排查后还要做什么？", answer: "要形成问题清单、整改责任和复核记录。" },
+  },
+  {
+    slug: "what-maintenance-after-cnas-approval",
+    title: "CNAS认可通过后，还需要做哪些维护？",
+    description: "说明 CNAS认可通过后仍需维护体系运行、人员设备、质量控制、监督评审和复评审。",
+    category: "CNAS认可后维护",
+    mainKeyword: "CNAS认可后维护",
+    relatedKeywords: ["CNAS监督评审", "CNAS复评审", "CNAS年度维护"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可通过后仍需持续维护，重点是保持体系运行和技术能力持续有效。",
+    definition: "CNAS认可后维护，是实验室在通过认可后，为保持认可状态和能力稳定而持续开展的体系运行、技术管理和评审准备工作。",
+    focus: "认可后维护",
+    keyQuestion: "通过认可并不代表后续自动稳定。监督评审、复评审、扩项变更和人员设备变化都会继续考验体系。",
+    commonMistake: "常见误区是拿到认可后放松运行记录，等监督评审前再集中补材料。",
+    practicalAdvice: "建议建立年度维护节奏，把人员授权、设备校准、质控、能力验证、内审管理评审和整改闭环纳入日常计划。",
+    tableRows: [
+      { item: "体系运行", judgment: "文件和记录是否持续适用", action: "定期复核" },
+      { item: "技术能力", judgment: "人员设备是否保持状态", action: "维护授权和校准" },
+      { item: "评审准备", judgment: "监督评审证据是否连续", action: "提前整理证据" },
+    ],
+    faqOne: { question: "通过后可以暂停内审吗？", answer: "不建议。内审和管理评审是持续运行的重要证据。" },
+    faqTwo: { question: "维护工作谁负责？", answer: "通常需要质量、技术和管理层共同参与，而不是只由一个岗位承担。" },
+  },
+  {
+    slug: "what-to-prepare-before-cnas-surveillance",
+    title: "CNAS监督评审前需要准备什么？",
+    description: "说明 CNAS监督评审前需要准备运行记录、历史问题整改、人员设备变化和质量控制证据。",
+    category: "CNAS认可后维护",
+    mainKeyword: "CNAS监督评审准备",
+    relatedKeywords: ["CNAS监督评审", "CNAS认可后维护", "CNAS运行记录"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS监督评审前，需要重点准备持续运行证据和历史问题整改闭环。",
+    definition: "监督评审，是认可后对实验室持续符合要求和能力保持情况进行的周期性评审。",
+    focus: "监督评审准备",
+    keyQuestion: "监督评审关注的不是首次申请时的准备热度，而是通过后是否持续按体系运行。",
+    commonMistake: "常见误区是把监督评审当成小检查，只在评审前补资料，忽略平时记录连续性。",
+    practicalAdvice: "建议从上次评审问题开始倒查，再检查人员设备变化、质控记录、能力验证、内审管理评审和客户反馈。",
+    tableRows: [
+      { item: "历史问题", judgment: "整改是否持续有效", action: "复核闭环证据" },
+      { item: "运行记录", judgment: "记录是否连续真实", action: "按月份整理" },
+      { item: "变化管理", judgment: "人员设备变化是否受控", action: "更新授权和台账" },
+    ],
+    faqOne: { question: "监督评审前才准备来得及吗？", answer: "如果平时运行稳定，可以集中整理；如果平时缺记录，临时准备风险较高。" },
+    faqTwo: { question: "监督评审会看扩项内容吗？", answer: "如果涉及扩项或变更，应准备对应能力和运行证据。" },
+  },
+  {
+    slug: "difference-between-cnas-reassessment-and-first-assessment",
+    title: "CNAS复评审和首次评审有什么不同？",
+    description: "说明 CNAS复评审与首次评审在关注点、证据周期和持续运行要求上的差异。",
+    category: "CNAS认可后维护",
+    mainKeyword: "CNAS复评审",
+    relatedKeywords: ["CNAS首次评审", "CNAS复评审准备", "CNAS认可维护"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS复评审更关注持续运行和能力保持，首次评审更关注能否建立并运行基础体系。",
+    definition: "复评审，是认可周期届满前对实验室持续符合要求、能力保持和体系有效性的全面再确认。",
+    focus: "复评审准备",
+    keyQuestion: "首次评审主要证明实验室已经建立体系并具备能力，复评审则更强调这些能力是否稳定保持。",
+    commonMistake: "常见误区是按首次评审思路准备复评审，只重做材料，不复盘过去周期内的运行问题。",
+    practicalAdvice: "建议复评审前重点看周期内变化、监督评审问题、质量控制趋势、人员设备变化和内审管理评审有效性。",
+    tableRows: [
+      { item: "关注重点", judgment: "首次看建立，复评审看保持", action: "按周期复盘" },
+      { item: "证据周期", judgment: "复评审证据跨度更长", action: "整理历史记录" },
+      { item: "变化管理", judgment: "周期内变化是否受控", action: "复核变更记录" },
+    ],
+    faqOne: { question: "复评审是不是比首次评审简单？", answer: "不一定。复评审更看持续运行，历史问题和变化管理反而更重要。" },
+    faqTwo: { question: "复评审前最该先看什么？", answer: "建议先看上周期内的问题、变更和持续改进记录。" },
+  },
+  {
+    slug: "how-to-handle-cnas-extension-and-change",
+    title: "CNAS认可后扩项和变更应该怎么处理？",
+    description: "说明 CNAS认可后扩项、人员设备变化和范围调整应如何先判断再准备证据。",
+    category: "CNAS认可后维护",
+    mainKeyword: "CNAS扩项变更",
+    relatedKeywords: ["CNAS扩项", "CNAS变更", "CNAS认可范围调整"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可后扩项和变更，应先判断变化对能力范围、人员设备和体系运行的影响。",
+    definition: "扩项和变更，是实验室在已获得认可后，对认可范围、人员设备、场地环境或关键管理要素进行调整时需要管理的活动。",
+    focus: "扩项变更管理",
+    keyQuestion: "扩项不是简单增加项目，变更也不是只更新台账。每一次变化都可能影响能力证据和体系运行。",
+    commonMistake: "常见误区是业务先开展，证据后补；或者设备人员已经变化，但授权、校准、方法确认和体系文件没有同步更新。",
+    practicalAdvice: "建议扩项前先做能力差距判断，变更发生后及时更新记录和受控文件，并评估是否需要补充验证。",
+    tableRows: [
+      { item: "扩项项目", judgment: "能力证据是否充分", action: "先做差距判断" },
+      { item: "人员变化", judgment: "授权和培训是否同步", action: "更新授权记录" },
+      { item: "设备变化", judgment: "校准和适用性是否确认", action: "补设备状态证据" },
+    ],
+    faqOne: { question: "扩项可以和复评审一起考虑吗？", answer: "可以结合节奏规划，但要确保扩项能力证据已经成熟。" },
+    faqTwo: { question: "小变更也要记录吗？", answer: "只要影响能力、结果或体系运行，就应按受控要求记录和评估。" },
+  },
+  {
+    slug: "difference-between-cnas-recognition-and-certification",
+    title: "CNAS认可和CNAS认证有什么区别？",
+    description: "解释 CNAS认可和日常说法中 CNAS认证 的区别，避免企业在沟通中混淆概念。",
+    category: "CNAS常见问题",
+    mainKeyword: "CNAS认可和CNAS认证区别",
+    relatedKeywords: ["CNAS认可", "CNAS认证", "实验室认可"],
+    publishDate: "2026-05-27",
+    conclusion: "规范表达应使用 CNAS认可；很多人说的 CNAS认证，多数是在口语中把概念说混了。",
+    definition: "CNAS认可是对实验室等机构能力的认可活动；“CNAS认证”并不是实验室能力认可场景下的规范表达，本文只在解释两者区别时使用这个说法。",
+    focus: "认可与认证概念区别",
+    keyQuestion: "企业在搜索时常会输入 CNAS认证，但真正要了解的通常是 CNAS认可。概念说错，可能导致后续资料、流程和沟通对象都发生偏差。",
+    commonMistake: "常见误区是把认证、认可、资质、证书混为一谈。对于实验室能力建设和评审准备，应围绕 CNAS认可理解流程。",
+    practicalAdvice: "建议对外材料、网站文案和内部立项中统一使用 CNAS认可；如果用户说 CNAS认证，可以先解释概念，再引导到认可路径判断。",
+    tableRows: [
+      { item: "规范表达", judgment: "实验室能力场景应说 CNAS认可", action: "统一文案口径" },
+      { item: "口语误用", judgment: "CNAS认证常是搜索或沟通中的混用", action: "先解释再判断" },
+      { item: "实际准备", judgment: "仍要看范围、体系和能力证据", action: "回到认可路径" },
+    ],
+    faqOne: { question: "用户说 CNAS认证 是不是完全不能理解？", answer: "可以理解为口语搜索表达，但正式内容和项目沟通中建议改为 CNAS认可。" },
+    faqTwo: { question: "为什么要区分这两个说法？", answer: "因为不同概念对应的管理逻辑和评审对象不同，混用容易影响后续判断。" },
+  },
+  {
+    slug: "how-long-does-cnas-recognition-take",
+    title: "CNAS认可一般需要多长时间？",
+    description: "说明 CNAS认可周期受范围、基础条件、体系运行和整改效率影响，不能只看申请时间。",
+    category: "CNAS常见问题",
+    mainKeyword: "CNAS认可周期",
+    relatedKeywords: ["CNAS认可时间", "CNAS申请周期", "CNAS评审周期"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可周期没有固定答案，主要取决于范围清晰度、基础条件和运行证据成熟度。",
+    definition: "CNAS认可周期，通常应从路径判断、范围确定、体系建设、试运行、申请评审到整改闭环整体计算。",
+    focus: "认可周期判断",
+    keyQuestion: "很多企业只问申请后多久评审，却忽略申请前准备和评审后整改才是影响周期的重要部分。",
+    commonMistake: "常见误区是把周期压缩成一个承诺时间，或者认为材料写完就能迅速进入评审。",
+    practicalAdvice: "建议按阶段估算周期：判断与规划、能力补齐、体系运行、申请评审、整改闭环。哪一段最弱，哪一段就最可能拖慢整体进度。",
+    tableRows: [
+      { item: "范围阶段", judgment: "范围是否清楚", action: "先收敛项目" },
+      { item: "运行阶段", judgment: "记录是否成熟", action: "安排试运行" },
+      { item: "整改阶段", judgment: "问题是否能快速闭环", action: "提前排查风险" },
+    ],
+    faqOne: { question: "周期能不能只看申请排期？", answer: "不能。准备和整改往往更影响整体周期。" },
+    faqTwo: { question: "想缩短周期应该先做什么？", answer: "先明确范围和补齐基础条件，比单纯催进度更有效。" },
+  },
+  {
+    slug: "why-cnas-cost-varies-so-much",
+    title: "CNAS认可费用为什么差异很大？",
+    description: "解释 CNAS认可费用差异来自范围、实验室基础、设备环境、体系运行和整改成本。",
+    category: "CNAS常见问题",
+    mainKeyword: "CNAS认可费用差异",
+    relatedKeywords: ["CNAS费用", "CNAS认可成本", "CNAS预算"],
+    publishDate: "2026-05-27",
+    conclusion: "CNAS认可费用差异大，是因为不同实验室的范围、基础和整改风险不同。",
+    definition: "CNAS认可费用不是单一服务费，而是由实验室建设、设备校准、体系运行、能力验证、申请评审和整改投入共同构成。",
+    focus: "费用差异判断",
+    keyQuestion: "同样叫做 CNAS认可，不同实验室的检测项目、设备基础、人员能力和体系成熟度可能完全不同。",
+    commonMistake: "常见误区是只比较报价，不比较范围和基础条件。低估建设和整改成本，后面反而可能投入更多。",
+    practicalAdvice: "建议先把费用拆成建设、设备、体系、评审、整改五类，再看哪些是必要投入，哪些是路径错误造成的返工成本。",
+    tableRows: [
+      { item: "范围大小", judgment: "范围越复杂，准备工作越多", action: "先定首批范围" },
+      { item: "基础条件", judgment: "基础越弱，补齐成本越高", action: "先做差距判断" },
+      { item: "整改风险", judgment: "问题越晚发现，成本越高", action: "评审前排查" },
+    ],
+    faqOne: { question: "费用能不能先给一个固定数？", answer: "不建议脱离范围和基础条件给固定判断，否则容易失真。" },
+    faqTwo: { question: "控制费用是不是少做项目？", answer: "不是简单少做，而是先做成熟且高价值的范围，减少返工。" },
+  },
+  {
+    slug: "is-internal-lab-suitable-for-cnas",
+    title: "企业内检实验室适合做CNAS认可吗？",
+    description: "判断企业内检实验室是否适合做 CNAS认可，重点看检测需求、报告用途和持续维护能力。",
+    category: "CNAS常见问题",
+    mainKeyword: "企业内检实验室CNAS认可",
+    relatedKeywords: ["企业实验室CNAS", "内检实验室认可", "CNAS适合企业"],
+    publishDate: "2026-05-27",
+    conclusion: "企业内检实验室是否适合做 CNAS认可，要看检测结果用途、业务稳定性和持续运行能力。",
+    definition: "企业内检实验室，是企业内部承担原材料、过程、成品、研发或质量验证等检测活动的实验室。",
+    focus: "内检实验室适用性判断",
+    keyQuestion: "内检实验室做 CNAS认可，不应只看有没有实验室，而要看检测结果是否需要更高可信度和稳定管理。",
+    commonMistake: "常见误区是觉得有客户要求就马上做，或者认为已有实验室就自然具备认可基础。",
+    practicalAdvice: "建议先判断检测结果给谁用、首批项目是否稳定、人员设备是否能支撑、后续是否愿意持续维护。",
+    tableRows: [
+      { item: "报告用途", judgment: "是否用于客户、供应链或质量决策", action: "明确认可价值" },
+      { item: "检测稳定性", judgment: "项目是否长期稳定", action: "优先选稳定项目" },
+      { item: "维护能力", judgment: "是否能持续投入运行", action: "建立维护机制" },
+    ],
+    faqOne: { question: "企业内检实验室一定要做 CNAS认可吗？", answer: "不一定。要看检测结果用途和企业是否需要外部认可支撑。" },
+    faqTwo: { question: "内检实验室首批范围怎么选？", answer: "建议从稳定、高价值、资源能支撑的检测项目开始。" },
+  },
+];
+
+export const geoArticles: GeoArticle[] = articleSeeds.map(buildGeoArticle);
+
+// ========== 第五部分：查询函数 ==========
+export function getGeoArticleBySlug(slug: string) {
+  return geoArticles.find((article) => article.slug === slug);
+}
+
+export function getGeoArticlesByCategory(category: GeoArticleCategory) {
+  return geoArticles.filter((article) => article.category === category);
+}
