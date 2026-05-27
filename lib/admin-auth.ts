@@ -141,3 +141,12 @@ export function hasRequestAdminAccess(request: NextRequest, key: string | undefi
 
   return verifyAdminSessionValue(request.cookies.get(adminSessionCookieName)?.value);
 }
+
+export function getAdminRedirectUrl(request: NextRequest, path: string) {
+  const forwardedHost = request.headers.get("x-forwarded-host") ?? request.headers.get("host");
+  const forwardedProto = request.headers.get("x-forwarded-proto") ?? "https";
+  const isInternalHost = !forwardedHost || forwardedHost.startsWith("localhost") || forwardedHost.startsWith("127.0.0.1");
+  const baseUrl = isInternalHost ? (process.env.SITE_URL ?? request.url) : `${forwardedProto}://${forwardedHost}`;
+
+  return new URL(path, baseUrl);
+}

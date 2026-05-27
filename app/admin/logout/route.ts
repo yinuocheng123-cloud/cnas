@@ -9,11 +9,11 @@
 
 // ========== 第一部分：导入依赖 ==========
 import { NextRequest, NextResponse } from "next/server";
-import { clearAdminSessionCookie } from "@/lib/admin-auth";
+import { clearAdminSessionCookie, getAdminRedirectUrl } from "@/lib/admin-auth";
 
 // ========== 第二部分：退出处理 ==========
 export function GET(request: NextRequest) {
-  const response = NextResponse.redirect(new URL("/admin/login", request.url));
+  const response = NextResponse.redirect(getAdminRedirectUrl(request, "/admin/login"));
   clearAdminSessionCookie(response);
 
   return response;

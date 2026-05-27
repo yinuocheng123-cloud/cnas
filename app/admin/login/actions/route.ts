@@ -9,7 +9,7 @@
 
 // ========== 第一部分：导入依赖 ==========
 import { NextRequest, NextResponse } from "next/server";
-import { setAdminSessionCookie, verifyAdminCredentials } from "@/lib/admin-auth";
+import { getAdminRedirectUrl, setAdminSessionCookie, verifyAdminCredentials } from "@/lib/admin-auth";
 
 // ========== 第二部分：登录处理 ==========
 export async function POST(request: NextRequest) {
@@ -20,10 +20,10 @@ export async function POST(request: NextRequest) {
   const safeNext = next.startsWith("/admin") && !next.startsWith("/admin/login") ? next : "/admin";
 
   if (!verifyAdminCredentials(username, password)) {
-    return NextResponse.redirect(new URL("/admin/login?error=1", request.url));
+    return NextResponse.redirect(getAdminRedirectUrl(request, "/admin/login?error=1"), 303);
   }
 
-  const response = NextResponse.redirect(new URL(safeNext, request.url));
+  const response = NextResponse.redirect(getAdminRedirectUrl(request, safeNext), 303);
   setAdminSessionCookie(response, username);
 
   return response;

@@ -9,7 +9,7 @@
 
 // ========== 第一部分：导入依赖 ==========
 import { NextRequest, NextResponse } from "next/server";
-import { hasRequestAdminAccess } from "@/lib/admin-auth";
+import { getAdminRedirectUrl, hasRequestAdminAccess } from "@/lib/admin-auth";
 import { createArticleDraft, parseArticleDraftForm } from "@/lib/article-drafts";
 
 // ========== 第二部分：创建草稿处理 ==========
@@ -18,11 +18,11 @@ export async function POST(request: NextRequest) {
   const key = String(formData.get("key") ?? "");
 
   if (!hasRequestAdminAccess(request, key)) {
-    return NextResponse.redirect(new URL("/admin/login", request.url));
+    return NextResponse.redirect(getAdminRedirectUrl(request, "/admin/login"), 303);
   }
 
   const draft = await createArticleDraft(parseArticleDraftForm(formData));
   const keyQuery = key ? `?key=${encodeURIComponent(key)}` : "";
 
-  return NextResponse.redirect(new URL(`/admin/articles/drafts/${draft.id}${keyQuery}`, request.url));
+  return NextResponse.redirect(getAdminRedirectUrl(request, `/admin/articles/drafts/${draft.id}${keyQuery}`), 303);
 }
