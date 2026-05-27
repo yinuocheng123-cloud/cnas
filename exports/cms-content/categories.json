@@ -1,0 +1,74 @@
+[
+  {
+    "id": "cat-path",
+    "name": "路径判断",
+    "slug": "path",
+    "path": "/path",
+    "description": "先判断当前实验室是否适合启动，再决定认可范围、资源配置和推进顺序。",
+    "seoTitle": "路径判断 - CNAS认可指南",
+    "seoDescription": "先判断当前实验室是否适合启动，再决定认可范围、资源配置和推进顺序。",
+    "order": 1,
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "cat-prepare",
+    "name": "认可准备",
+    "slug": "prepare",
+    "path": "/prepare",
+    "description": "围绕体系、人员、设备、环境和记录，把认可准备从材料动作变成可运行能力。",
+    "seoTitle": "认可准备 - CNAS认可指南",
+    "seoDescription": "围绕体系、人员、设备、环境和记录，把认可准备从材料动作变成可运行能力。",
+    "order": 2,
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "cat-review",
+    "name": "评审整改",
+    "slug": "review",
+    "path": "/review",
+    "description": "把评审前风险排查和评审后整改闭环放在一起看，减少现场被动和重复返工。",
+    "seoTitle": "评审整改 - CNAS认可指南",
+    "seoDescription": "把评审前风险排查和评审后整改闭环放在一起看，减少现场被动和重复返工。",
+    "order": 3,
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "cat-maintenance",
+    "name": "后期维护",
+    "slug": "maintenance",
+    "path": "/maintenance",
+    "description": "CNAS认可不是拿证结束，持续运行、监督评审、复评审和扩项变更都需要节奏管理。",
+    "seoTitle": "后期维护 - CNAS认可指南",
+    "seoDescription": "CNAS认可不是拿证结束，持续运行、监督评审、复评审和扩项变更都需要节奏管理。",
+    "order": 4,
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "cat-faq",
+    "name": "常见问题",
+    "slug": "faq",
+    "path": "/faq",
+    "description": "把启动前、准备中、评审整改和认可后维护的高频问题先集中看清。",
+    "seoTitle": "常见问题 - CNAS认可指南",
+    "seoDescription": "把启动前、准备中、评审整改和认可后维护的高频问题先集中看清。",
+    "order": 5,
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "cat-articles",
+    "name": "最新行业内容",
+    "slug": "articles",
+    "path": "/articles",
+    "description": "围绕路径判断、认可准备、评审整改和认可后维护，持续沉淀基础行业内容。",
+    "seoTitle": "最新行业内容 - CNAS认可指南",
+    "seoDescription": "围绕路径判断、认可准备、评审整改和认可后维护，持续沉淀基础行业内容。",
+    "order": 6,
+    "featured": true,
+    "status": "published"
+  }
+]
