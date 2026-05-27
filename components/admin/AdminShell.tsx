@@ -61,9 +61,11 @@ export function AdminShell({
 
               if (item.key === "logout") {
                 return (
-                  <a key={item.key} href={href} className={className}>
-                    {item.label}
-                  </a>
+                  <form key={item.key} action={href} method="post">
+                    <button type="submit" className={className}>
+                      {item.label}
+                    </button>
+                  </form>
                 );
               }
 

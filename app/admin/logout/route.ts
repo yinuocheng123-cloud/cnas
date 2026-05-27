@@ -12,8 +12,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { clearAdminSessionCookie, getAdminRedirectUrl } from "@/lib/admin-auth";
 
 // ========== 第二部分：退出处理 ==========
-export function GET(request: NextRequest) {
-  const response = NextResponse.redirect(getAdminRedirectUrl(request, "/admin/login"));
+export function POST(request: NextRequest) {
+  const response = NextResponse.redirect(getAdminRedirectUrl(request, "/admin/login"), 303);
   clearAdminSessionCookie(response);
 
   return response;
