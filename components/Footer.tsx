@@ -52,8 +52,8 @@ export function Footer() {
           <a href="/faqs" className="transition hover:text-white">
             常见问题
           </a>
-          <a href="#" className="transition hover:text-white">
-            返回顶部
+          <a href="/" className="transition hover:text-white">
+            返回首页
           </a>
         </nav>
         <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
