@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { SectionTitle } from "@/components/SectionTitle";
-import { geoArticleCategories, geoArticles, getGeoArticlesByCategory } from "@/lib/geo-articles";
+import { getCmsArticleCategories, getCmsArticlesByCategory } from "@/lib/cms-content";
 import { createPageMetadata } from "@/lib/seo";
 
 /*
@@ -24,6 +25,10 @@ export const metadata = createPageMetadata({
 
 // ========== 第二部分：文章列表页主体 ==========
 export default function ArticlesPage() {
+  noStore();
+
+  const articleCategories = getCmsArticleCategories();
+
   return (
     <main className="min-h-screen bg-white text-ink">
       <Header />
@@ -46,7 +51,7 @@ export default function ArticlesPage() {
       <section className="site-shell section-space">
         <SectionTitle title="按分类阅读" description="每组内容先解决一个阶段的问题：先判断路径，再准备能力，再面对评审和后期维护。" />
         <div className="mt-5 grid gap-3 md:grid-cols-5">
-          {geoArticleCategories.map((category) => (
+          {articleCategories.map((category) => (
             <a key={category} href={`#${encodeURIComponent(category)}`} className="rounded-xl border border-line bg-card p-4 text-center text-body font-semibold text-ink shadow-card transition hover:border-primary hover:text-primary">
               {category}
             </a>
@@ -55,8 +60,8 @@ export default function ArticlesPage() {
       </section>
 
       <div className="site-shell pb-10">
-        {geoArticleCategories.map((category) => {
-          const items = getGeoArticlesByCategory(category);
+        {articleCategories.map((category) => {
+          const items = getCmsArticlesByCategory(category);
 
           return (
             <section key={category} id={encodeURIComponent(category)} className="scroll-mt-24 border-t border-line py-8 first:border-t-0 first:pt-0">

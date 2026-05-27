@@ -1,4 +1,5 @@
 import { FaqLanding } from "@/components/FaqLanding";
+import { unstable_noStore as noStore } from "next/cache";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -8,5 +9,7 @@ export const metadata = createPageMetadata({
 });
 
 export default function FaqsPage() {
+  noStore();
+
   return <FaqLanding />;
 }

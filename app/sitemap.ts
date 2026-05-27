@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { geoArticles } from "@/lib/geo-articles";
+import { getPublishedCmsArticlesSync } from "@/lib/cms-content";
 import { articles, categories, getArticlesByCategory, getArticlesByTag, solutions, tags } from "@/lib/site-data";
 import { siteUrl } from "@/lib/seo";
 
@@ -17,6 +17,8 @@ const staticRoutes = ["/", "/knowledge", "/solutions", "/cases", "/services", "/
 
 // ========== 第二部分：sitemap 生成 ==========
 export default function sitemap(): MetadataRoute.Sitemap {
+  const geoArticles = getPublishedCmsArticlesSync();
+
   const routes = [
     ...staticRoutes,
     ...categories.map((category) => category.href),

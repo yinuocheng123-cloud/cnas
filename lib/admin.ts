@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 文件说明：该文件集中维护 CNAS 内容控制台第一版只读后台的权限与聚合数据。
  * 功能说明：复用 ADMIN_KEY 做简单访问保护，并把文章、FAQ、栏目、站点配置整理成后台只读视图。
  *
@@ -13,6 +13,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ensureAdminAccess } from "@/lib/admin-auth";
+import { getCmsCategoriesSync, getCmsFaqsSync } from "@/lib/cms-content";
 import { geoArticleCategories, geoArticles, type GeoArticleCategory } from "@/lib/geo-articles";
 import { platformPages } from "@/lib/platform-pages";
 import { faqs as knowledgeFaqs } from "@/lib/site-data";
@@ -80,6 +81,18 @@ function dedupeAdminFaqs(items: AdminFaqItem[]) {
 }
 
 export function getAdminFaqItems() {
+  const cmsFaqItems = getCmsFaqsSync().map((faq) => ({
+    question: faq.question,
+    answer: faq.answer,
+    category: faq.category,
+    isHomeShown: faq.featured,
+    sourcePage: faq.sourcePage,
+  }));
+
+  if (cmsFaqItems.length > 0) {
+    return cmsFaqItems;
+  }
+
   const platformFaqItems: AdminFaqItem[] = Object.values(platformPages).flatMap((page) =>
     page.faqs.map((faq) => ({
       question: faq.question,
@@ -91,7 +104,7 @@ export function getAdminFaqItems() {
   );
 
   const geoArticleFaqItems: AdminFaqItem[] = geoArticles.flatMap((article) =>
-    article.faqs.map((faq) => ({
+    article.faq.map((faq) => ({
       question: faq.question,
       answer: faq.answer,
       category: article.category,
@@ -129,6 +142,17 @@ const categoryArticleMap: Record<string, GeoArticleCategory | "all"> = {
 };
 
 export function getAdminCategoryItems(): AdminCategoryItem[] {
+  const cmsCategories = getCmsCategoriesSync();
+
+  if (cmsCategories.length > 0) {
+    return cmsCategories.map((category) => ({
+      name: category.name,
+      path: category.path,
+      description: category.description,
+      recommendedArticleCount: category.path === "/articles" ? geoArticles.length : geoArticles.filter((article) => article.category.includes(category.name)).length,
+    }));
+  }
+
   return Object.values(platformPages).map((page) => {
     const mappedCategory = categoryArticleMap[page.path];
     const recommendedArticleCount =

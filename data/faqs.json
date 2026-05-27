@@ -1,0 +1,722 @@
+[
+  {
+    "id": "faq-001",
+    "question": "路径判断是不是正式评审结论？",
+    "answer": "不是。它是启动前的准备判断，用来减少范围、资源和顺序上的误判。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/path",
+    "featured": true,
+    "order": 0,
+    "status": "published"
+  },
+  {
+    "id": "faq-002",
+    "question": "刚开始了解阶段适合做路径判断吗？",
+    "answer": "适合。越早判断，越容易避免后续材料、设备和体系建设反复调整。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/path",
+    "featured": true,
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "id": "faq-003",
+    "question": "CNAS认可准备可以先做文件吗？",
+    "answer": "可以做，但不能只做文件。文件要和现场运行、人员设备和记录证据同步。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/prepare",
+    "featured": false,
+    "order": 100,
+    "status": "published"
+  },
+  {
+    "id": "faq-004",
+    "question": "准备阶段最容易漏什么？",
+    "answer": "最容易漏运行证据和人员设备对应关系，评审时这些往往比文件目录更关键。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/prepare",
+    "featured": false,
+    "order": 101,
+    "status": "published"
+  },
+  {
+    "id": "faq-005",
+    "question": "评审整改是不是把文件补齐就行？",
+    "answer": "不是。整改要证明问题原因被识别，纠正措施已经有效运行。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/review",
+    "featured": false,
+    "order": 200,
+    "status": "published"
+  },
+  {
+    "id": "faq-006",
+    "question": "评审前多久开始排查更合适？",
+    "answer": "建议在正式评审前预留足够时间做记录追溯和问题闭环，不要等到现场前才集中补。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/review",
+    "featured": false,
+    "order": 201,
+    "status": "published"
+  },
+  {
+    "id": "faq-007",
+    "question": "CNAS认可通过后还需要维护吗？",
+    "answer": "需要。认可状态依赖持续运行，不是拿到证书后就自然稳定。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/maintenance",
+    "featured": false,
+    "order": 300,
+    "status": "published"
+  },
+  {
+    "id": "faq-008",
+    "question": "维护重点应该放在哪里？",
+    "answer": "重点放在人员授权、设备状态、记录连续性、质量控制和问题整改闭环。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/maintenance",
+    "featured": false,
+    "order": 301,
+    "status": "published"
+  },
+  {
+    "id": "faq-009",
+    "question": "现在只是了解阶段，适合看 FAQ 吗？",
+    "answer": "适合。先看常见问题可以帮助你判断下一步应该看流程、准备还是风险。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/faq",
+    "featured": true,
+    "order": 400,
+    "status": "published"
+  },
+  {
+    "id": "faq-010",
+    "question": "FAQ 能不能替代正式路径判断？",
+    "answer": "不能。FAQ 适合快速理解问题，具体路径仍要结合实验室实际情况判断。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/faq",
+    "featured": true,
+    "order": 401,
+    "status": "published"
+  },
+  {
+    "id": "faq-011",
+    "question": "这些文章是正式案例吗？",
+    "answer": "不是案例承诺，而是基础内容入口，用来帮助用户理解常见判断问题。",
+    "category": "最新行业内容",
+    "sourcePage": "/articles",
+    "featured": false,
+    "order": 500,
+    "status": "published"
+  },
+  {
+    "id": "faq-012",
+    "question": "后续能继续扩展文章吗？",
+    "answer": "可以。当前先保留基础版，后续再根据真实运营问题继续补充。",
+    "category": "最新行业内容",
+    "sourcePage": "/articles",
+    "featured": false,
+    "order": 501,
+    "status": "published"
+  },
+  {
+    "id": "faq-013",
+    "question": "路径判断应该在什么时候做？",
+    "answer": "建议在正式写体系文件和大额投入前做，越早判断越容易减少后续返工。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/why-path-judgment-before-cnas",
+    "featured": false,
+    "order": 1000,
+    "status": "published"
+  },
+  {
+    "id": "faq-014",
+    "question": "路径判断是不是越详细越好？",
+    "answer": "不一定。基础阶段先抓范围、资源、体系运行和启动时机，避免一开始就陷入细枝末节。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/why-path-judgment-before-cnas",
+    "featured": false,
+    "order": 1001,
+    "status": "published"
+  },
+  {
+    "id": "faq-015",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/why-path-judgment-before-cnas",
+    "featured": false,
+    "order": 1002,
+    "status": "published"
+  },
+  {
+    "id": "faq-016",
+    "question": "路径判断需要看费用吗？",
+    "answer": "需要，但费用应放在范围和资源判断之后，否则预算很容易失真。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/what-does-cnas-path-judgment-check",
+    "featured": false,
+    "order": 1010,
+    "status": "published"
+  },
+  {
+    "id": "faq-017",
+    "question": "路径判断能不能一次定完所有范围？",
+    "answer": "不建议。基础不足时更适合先定首批范围，再规划后续扩项。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/what-does-cnas-path-judgment-check",
+    "featured": false,
+    "order": 1011,
+    "status": "published"
+  },
+  {
+    "id": "faq-018",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/what-does-cnas-path-judgment-check",
+    "featured": false,
+    "order": 1012,
+    "status": "published"
+  },
+  {
+    "id": "faq-019",
+    "question": "实验室还没完全建好能启动吗？",
+    "answer": "可以先规划和判断，但不建议把未成熟状态直接当成申请准备状态。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/is-lab-ready-to-start-cnas",
+    "featured": false,
+    "order": 1020,
+    "status": "published"
+  },
+  {
+    "id": "faq-020",
+    "question": "如果条件不足，是不是不能做 CNAS认可？",
+    "answer": "不是。条件不足通常意味着要先补基础，再决定启动节奏。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/is-lab-ready-to-start-cnas",
+    "featured": false,
+    "order": 1021,
+    "status": "published"
+  },
+  {
+    "id": "faq-021",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/is-lab-ready-to-start-cnas",
+    "featured": false,
+    "order": 1022,
+    "status": "published"
+  },
+  {
+    "id": "faq-022",
+    "question": "模板有没有用？",
+    "answer": "模板可以参考结构，但不能替代实验室自身流程和能力证据。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/why-not-start-cnas-with-documents",
+    "featured": false,
+    "order": 1030,
+    "status": "published"
+  },
+  {
+    "id": "faq-023",
+    "question": "材料什么时候开始做比较合适？",
+    "answer": "在首批范围和基本运行流程明确后开始更稳。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/why-not-start-cnas-with-documents",
+    "featured": false,
+    "order": 1031,
+    "status": "published"
+  },
+  {
+    "id": "faq-024",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可路径判断",
+    "sourcePage": "/articles/why-not-start-cnas-with-documents",
+    "featured": false,
+    "order": 1032,
+    "status": "published"
+  },
+  {
+    "id": "faq-025",
+    "question": "准备周期长短由什么决定？",
+    "answer": "主要由实验室基础、范围复杂度和运行证据成熟度决定。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/what-is-included-in-cnas-preparation",
+    "featured": false,
+    "order": 1040,
+    "status": "published"
+  },
+  {
+    "id": "faq-026",
+    "question": "准备阶段能不能同时做多件事？",
+    "answer": "可以，但要先明确主线，避免各做各的造成后续返工。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/what-is-included-in-cnas-preparation",
+    "featured": false,
+    "order": 1041,
+    "status": "published"
+  },
+  {
+    "id": "faq-027",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/what-is-included-in-cnas-preparation",
+    "featured": false,
+    "order": 1042,
+    "status": "published"
+  },
+  {
+    "id": "faq-028",
+    "question": "首批范围越多越好吗？",
+    "answer": "不一定。首批范围应以稳定、可支撑、可运行为优先。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/how-to-define-cnas-scope",
+    "featured": false,
+    "order": 1050,
+    "status": "published"
+  },
+  {
+    "id": "faq-029",
+    "question": "范围后续能调整吗？",
+    "answer": "可以通过扩项或变更处理，但前提是先把当前范围稳定运行好。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/how-to-define-cnas-scope",
+    "featured": false,
+    "order": 1051,
+    "status": "published"
+  },
+  {
+    "id": "faq-030",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/how-to-define-cnas-scope",
+    "featured": false,
+    "order": 1052,
+    "status": "published"
+  },
+  {
+    "id": "faq-031",
+    "question": "模板能不能作为起点？",
+    "answer": "可以作为结构参考，但必须结合实验室实际流程重写。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/why-cnas-system-documents-should-not-use-template-only",
+    "featured": false,
+    "order": 1060,
+    "status": "published"
+  },
+  {
+    "id": "faq-032",
+    "question": "体系文件写完就算准备好吗？",
+    "answer": "不算。还要通过运行记录证明文件确实被执行。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/why-cnas-system-documents-should-not-use-template-only",
+    "featured": false,
+    "order": 1061,
+    "status": "published"
+  },
+  {
+    "id": "faq-033",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/why-cnas-system-documents-should-not-use-template-only",
+    "featured": false,
+    "order": 1062,
+    "status": "published"
+  },
+  {
+    "id": "faq-034",
+    "question": "人员有经验还需要授权记录吗？",
+    "answer": "需要。经验要通过培训、考核、授权和持续能力保持记录来证明。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/how-to-prepare-people-and-equipment-before-cnas",
+    "featured": false,
+    "order": 1070,
+    "status": "published"
+  },
+  {
+    "id": "faq-035",
+    "question": "设备买齐就够了吗？",
+    "answer": "不够。还要看校准状态、适用性、维护记录和质量控制结果。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/how-to-prepare-people-and-equipment-before-cnas",
+    "featured": false,
+    "order": 1071,
+    "status": "published"
+  },
+  {
+    "id": "faq-036",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可准备",
+    "sourcePage": "/articles/how-to-prepare-people-and-equipment-before-cnas",
+    "featured": false,
+    "order": 1072,
+    "status": "published"
+  },
+  {
+    "id": "faq-037",
+    "question": "评审前排查要不要全员参与？",
+    "answer": "关键岗位应参与，尤其是技术负责人、授权签字人和主要检测人员。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/common-overlooked-issues-before-cnas-review",
+    "featured": false,
+    "order": 1080,
+    "status": "published"
+  },
+  {
+    "id": "faq-038",
+    "question": "评审前最晚什么时候开始准备？",
+    "answer": "不建议等临近评审才准备，至少应预留整改和补证据的时间。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/common-overlooked-issues-before-cnas-review",
+    "featured": false,
+    "order": 1081,
+    "status": "published"
+  },
+  {
+    "id": "faq-039",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/common-overlooked-issues-before-cnas-review",
+    "featured": false,
+    "order": 1082,
+    "status": "published"
+  },
+  {
+    "id": "faq-040",
+    "question": "不符合项一定很严重吗？",
+    "answer": "不一定，但每一项都需要找到原因并完成有效整改。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/where-cnas-nonconformities-usually-come-from",
+    "featured": false,
+    "order": 1090,
+    "status": "published"
+  },
+  {
+    "id": "faq-041",
+    "question": "不符合项能提前发现吗？",
+    "answer": "很多可以通过评审前风险排查提前发现。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/where-cnas-nonconformities-usually-come-from",
+    "featured": false,
+    "order": 1091,
+    "status": "published"
+  },
+  {
+    "id": "faq-042",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/where-cnas-nonconformities-usually-come-from",
+    "featured": false,
+    "order": 1092,
+    "status": "published"
+  },
+  {
+    "id": "faq-043",
+    "question": "整改闭环需要多长时间？",
+    "answer": "取决于问题类型，运行类问题通常需要一定时间形成有效证据。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/how-to-close-cnas-corrections",
+    "featured": false,
+    "order": 1100,
+    "status": "published"
+  },
+  {
+    "id": "faq-044",
+    "question": "整改能不能只由质量负责人完成？",
+    "answer": "不建议。涉及技术能力的问题应由相关技术岗位共同参与。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/how-to-close-cnas-corrections",
+    "featured": false,
+    "order": 1101,
+    "status": "published"
+  },
+  {
+    "id": "faq-045",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/how-to-close-cnas-corrections",
+    "featured": false,
+    "order": 1102,
+    "status": "published"
+  },
+  {
+    "id": "faq-046",
+    "question": "风险排查是不是模拟评审？",
+    "answer": "可以接近模拟评审，但重点是发现问题和安排整改，不是走形式。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/why-risk-check-before-cnas-review",
+    "featured": false,
+    "order": 1110,
+    "status": "published"
+  },
+  {
+    "id": "faq-047",
+    "question": "风险排查后还要做什么？",
+    "answer": "要形成问题清单、整改责任和复核记录。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/why-risk-check-before-cnas-review",
+    "featured": false,
+    "order": 1111,
+    "status": "published"
+  },
+  {
+    "id": "faq-048",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS评审整改",
+    "sourcePage": "/articles/why-risk-check-before-cnas-review",
+    "featured": false,
+    "order": 1112,
+    "status": "published"
+  },
+  {
+    "id": "faq-049",
+    "question": "通过后可以暂停内审吗？",
+    "answer": "不建议。内审和管理评审是持续运行的重要证据。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/what-maintenance-after-cnas-approval",
+    "featured": false,
+    "order": 1120,
+    "status": "published"
+  },
+  {
+    "id": "faq-050",
+    "question": "维护工作谁负责？",
+    "answer": "通常需要质量、技术和管理层共同参与，而不是只由一个岗位承担。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/what-maintenance-after-cnas-approval",
+    "featured": false,
+    "order": 1121,
+    "status": "published"
+  },
+  {
+    "id": "faq-051",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/what-maintenance-after-cnas-approval",
+    "featured": false,
+    "order": 1122,
+    "status": "published"
+  },
+  {
+    "id": "faq-052",
+    "question": "监督评审前才准备来得及吗？",
+    "answer": "如果平时运行稳定，可以集中整理；如果平时缺记录，临时准备风险较高。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/what-to-prepare-before-cnas-surveillance",
+    "featured": false,
+    "order": 1130,
+    "status": "published"
+  },
+  {
+    "id": "faq-053",
+    "question": "监督评审会看扩项内容吗？",
+    "answer": "如果涉及扩项或变更，应准备对应能力和运行证据。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/what-to-prepare-before-cnas-surveillance",
+    "featured": false,
+    "order": 1131,
+    "status": "published"
+  },
+  {
+    "id": "faq-054",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/what-to-prepare-before-cnas-surveillance",
+    "featured": false,
+    "order": 1132,
+    "status": "published"
+  },
+  {
+    "id": "faq-055",
+    "question": "复评审是不是比首次评审简单？",
+    "answer": "不一定。复评审更看持续运行，历史问题和变化管理反而更重要。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/difference-between-cnas-reassessment-and-first-assessment",
+    "featured": false,
+    "order": 1140,
+    "status": "published"
+  },
+  {
+    "id": "faq-056",
+    "question": "复评审前最该先看什么？",
+    "answer": "建议先看上周期内的问题、变更和持续改进记录。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/difference-between-cnas-reassessment-and-first-assessment",
+    "featured": false,
+    "order": 1141,
+    "status": "published"
+  },
+  {
+    "id": "faq-057",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/difference-between-cnas-reassessment-and-first-assessment",
+    "featured": false,
+    "order": 1142,
+    "status": "published"
+  },
+  {
+    "id": "faq-058",
+    "question": "扩项可以和复评审一起考虑吗？",
+    "answer": "可以结合节奏规划，但要确保扩项能力证据已经成熟。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/how-to-handle-cnas-extension-and-change",
+    "featured": false,
+    "order": 1150,
+    "status": "published"
+  },
+  {
+    "id": "faq-059",
+    "question": "小变更也要记录吗？",
+    "answer": "只要影响能力、结果或体系运行，就应按受控要求记录和评估。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/how-to-handle-cnas-extension-and-change",
+    "featured": false,
+    "order": 1151,
+    "status": "published"
+  },
+  {
+    "id": "faq-060",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS认可后维护",
+    "sourcePage": "/articles/how-to-handle-cnas-extension-and-change",
+    "featured": false,
+    "order": 1152,
+    "status": "published"
+  },
+  {
+    "id": "faq-061",
+    "question": "用户说 CNAS认证 是不是完全不能理解？",
+    "answer": "可以理解为口语搜索表达，但正式内容和项目沟通中建议改为 CNAS认可。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/difference-between-cnas-recognition-and-certification",
+    "featured": false,
+    "order": 1160,
+    "status": "published"
+  },
+  {
+    "id": "faq-062",
+    "question": "为什么要区分这两个说法？",
+    "answer": "因为不同概念对应的管理逻辑和评审对象不同，混用容易影响后续判断。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/difference-between-cnas-recognition-and-certification",
+    "featured": false,
+    "order": 1161,
+    "status": "published"
+  },
+  {
+    "id": "faq-063",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/difference-between-cnas-recognition-and-certification",
+    "featured": false,
+    "order": 1162,
+    "status": "published"
+  },
+  {
+    "id": "faq-064",
+    "question": "周期能不能只看申请排期？",
+    "answer": "不能。准备和整改往往更影响整体周期。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/how-long-does-cnas-recognition-take",
+    "featured": false,
+    "order": 1170,
+    "status": "published"
+  },
+  {
+    "id": "faq-065",
+    "question": "想缩短周期应该先做什么？",
+    "answer": "先明确范围和补齐基础条件，比单纯催进度更有效。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/how-long-does-cnas-recognition-take",
+    "featured": false,
+    "order": 1171,
+    "status": "published"
+  },
+  {
+    "id": "faq-066",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/how-long-does-cnas-recognition-take",
+    "featured": false,
+    "order": 1172,
+    "status": "published"
+  },
+  {
+    "id": "faq-067",
+    "question": "费用能不能先给一个固定数？",
+    "answer": "不建议脱离范围和基础条件给固定判断，否则容易失真。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/why-cnas-cost-varies-so-much",
+    "featured": false,
+    "order": 1180,
+    "status": "published"
+  },
+  {
+    "id": "faq-068",
+    "question": "控制费用是不是少做项目？",
+    "answer": "不是简单少做，而是先做成熟且高价值的范围，减少返工。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/why-cnas-cost-varies-so-much",
+    "featured": false,
+    "order": 1181,
+    "status": "published"
+  },
+  {
+    "id": "faq-069",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/why-cnas-cost-varies-so-much",
+    "featured": false,
+    "order": 1182,
+    "status": "published"
+  },
+  {
+    "id": "faq-070",
+    "question": "企业内检实验室一定要做 CNAS认可吗？",
+    "answer": "不一定。要看检测结果用途和企业是否需要外部认可支撑。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/is-internal-lab-suitable-for-cnas",
+    "featured": false,
+    "order": 1190,
+    "status": "published"
+  },
+  {
+    "id": "faq-071",
+    "question": "内检实验室首批范围怎么选？",
+    "answer": "建议从稳定、高价值、资源能支撑的检测项目开始。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/is-internal-lab-suitable-for-cnas",
+    "featured": false,
+    "order": 1191,
+    "status": "published"
+  },
+  {
+    "id": "faq-072",
+    "question": "这篇文章能替代正式咨询或评审结论吗？",
+    "answer": "不能。本文只提供基础判断框架，具体项目仍需结合实验室类型、认可范围、人员设备、体系运行和评审计划综合判断。",
+    "category": "CNAS常见问题",
+    "sourcePage": "/articles/is-internal-lab-suitable-for-cnas",
+    "featured": false,
+    "order": 1192,
+    "status": "published"
+  }
+]

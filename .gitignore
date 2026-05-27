@@ -29,6 +29,10 @@ custom/tools/
 data/leads.json
 data/article-drafts.json
 data/*.json
+!data/articles.json
+!data/faqs.json
+!data/categories.json
+data/backups/
 *.png
 *.jpg
 *.jpeg

@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { TagList } from "@/components/TagList";
-import { geoArticles, getGeoArticleBySlug } from "@/lib/geo-articles";
+import { getCmsArticleBySlug } from "@/lib/cms-content";
 import { createPageMetadata } from "@/lib/seo";
 
 /*
@@ -18,15 +19,11 @@ import { createPageMetadata } from "@/lib/seo";
  */
 
 // ========== 第一部分：静态参数与元信息 ==========
-export function generateStaticParams() {
-  return geoArticles.map((article) => ({
-    slug: article.slug,
-  }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getGeoArticleBySlug(slug);
+  const article = getCmsArticleBySlug(slug);
 
   if (!article) {
     return createPageMetadata({
@@ -45,8 +42,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // ========== 第二部分：文章详情页主体 ==========
 export default async function GeoArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  noStore();
+
   const { slug } = await params;
-  const article = getGeoArticleBySlug(slug);
+  const article = getCmsArticleBySlug(slug);
 
   if (!article) {
     notFound();
@@ -117,7 +116,7 @@ export default async function GeoArticlePage({ params }: { params: Promise<{ slu
           <section className="mt-8">
             <h2 className="text-heading">常见问题</h2>
             <div className="mt-4 grid gap-3">
-              {article.faqs.map((faq) => (
+              {article.faq.map((faq) => (
                 <details key={faq.question} className="card">
                   <summary className="cursor-pointer text-body font-semibold text-ink">{faq.question}</summary>
                   <p className="mt-3 text-copy">{faq.answer}</p>

@@ -3,7 +3,7 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { faqs } from "@/lib/site-data";
+import { getPublishedCmsFaqsSync } from "@/lib/cms-content";
 
 /*
  * 文件说明：该文件实现 FAQ 聚合页组件。
@@ -15,6 +15,8 @@ import { faqs } from "@/lib/site-data";
 
 // ========== 第一部分：FaqLanding 组件 ==========
 export function FaqLanding() {
+  const faqs = getPublishedCmsFaqsSync();
+
   return (
     <main className="min-h-screen bg-white text-ink">
       <Header />
@@ -25,11 +27,11 @@ export function FaqLanding() {
       />
       <section className="site-shell grid max-w-4xl gap-3 py-6 md:gap-4 md:py-8">
         {faqs.map((faq) => (
-          <article key={`${faq.articleSlug}-${faq.question}`} className="card">
+          <article key={faq.id} className="card">
             <h2 className="text-body font-semibold text-ink">{faq.question}</h2>
             <p className="mt-2 text-copy">{faq.answer}</p>
-            <Link href={`/knowledge/${faq.articleSlug}`} className="mt-3 inline-flex text-meta font-semibold text-primary">
-              来源：{faq.articleTitle}
+            <Link href={faq.sourcePage} className="mt-3 inline-flex text-meta font-semibold text-primary">
+              来源：{faq.sourcePage}
             </Link>
           </article>
         ))}

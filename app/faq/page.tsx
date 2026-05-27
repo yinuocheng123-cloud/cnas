@@ -1,5 +1,5 @@
-import { PlatformFoundationPage } from "@/components/PlatformFoundationPage";
-import { platformPages } from "@/lib/platform-pages";
+import { FaqLanding } from "@/components/FaqLanding";
+import { unstable_noStore as noStore } from "next/cache";
 import { createPageMetadata } from "@/lib/seo";
 
 /*
@@ -19,5 +19,7 @@ export const metadata = createPageMetadata({
 
 // ========== 第二部分：页面主体 ==========
 export default function FaqPage() {
-  return <PlatformFoundationPage content={platformPages.faq} />;
+  noStore();
+
+  return <FaqLanding />;
 }

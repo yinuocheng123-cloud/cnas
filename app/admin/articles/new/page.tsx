@@ -1,37 +1,32 @@
 /*
- * 文件说明：该文件实现 CMS v1.1 新建文章草稿页面。
- * 功能说明：在后台登录保护下展示文章草稿表单，提交后保存到非 Git 跟踪草稿文件。
+ * 文件说明：该文件实现 CMS v1.2 新增正式文章页面。
+ * 功能说明：展示写入 data/articles.json 的文章表单，不再作为草稿新建入口。
  *
  * 结构概览：
  *   第一部分：导入依赖
- *   第二部分：新建草稿页面
+ *   第二部分：新增文章页面
  */
 
 // ========== 第一部分：导入依赖 ==========
 import { unstable_noStore as noStore } from "next/cache";
 import { AdminShell } from "@/components/admin/AdminShell";
-import { ArticleDraftForm } from "@/components/admin/ArticleDraftForm";
+import { CmsArticleForm } from "@/components/admin/CmsArticleForm";
 import { ensureAdminAccess } from "@/lib/admin";
 
-// ========== 第二部分：新建草稿页面 ==========
-export default async function AdminNewArticleDraftPage({
+// ========== 第二部分：新增文章页面 ==========
+export default async function AdminNewArticlePage({
   searchParams,
 }: {
-  searchParams: Promise<{ key?: string }>;
+  searchParams: Promise<{ key?: string; error?: string }>;
 }) {
   noStore();
 
-  const { key } = await searchParams;
-  const access = await ensureAdminAccess(key);
+  const params = await searchParams;
+  const access = await ensureAdminAccess(params.key);
 
   return (
-    <AdminShell
-      active="articles"
-      adminKey={access.adminKey}
-      title="新建文章草稿"
-      description="草稿只保存到 data/article-drafts.json，不会覆盖现有 20 篇正式文章。正文可粘贴 Word 文本，保存时做基础段落清洗。"
-    >
-      <ArticleDraftForm action="/admin/articles/draft-actions" adminKey={access.adminKey} />
+    <AdminShell active="articles" adminKey={access.adminKey} title="新增文章" description="新增文章会写入 data/articles.json。建议先保存为 draft 或 archived，确认后再改为 published。">
+      <CmsArticleForm action="/admin/articles/actions" adminKey={access.adminKey} error={params.error} />
     </AdminShell>
   );
 }
