@@ -24,7 +24,8 @@ ADMIN_PASSWORD=后台密码
 服务器部署后如修改账号密码，需要重启 PM2：
 
 ```bash
-pm2 restart cnas-main --update-env
+pm2 restart cnas-main-3100 --update-env
+pm2 save
 ```
 
 历史兼容方式 `ADMIN_KEY` 仍保留，但日常使用建议走账号密码登录。

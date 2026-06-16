@@ -98,7 +98,8 @@ cp data/backups/manual/categories-YYYYMMDD-HHmmss.json data/categories.json
 
 ```bash
 npm run build
-pm2 restart cnas-main --update-env
+pm2 restart cnas-main-3100 --update-env
+pm2 save
 ```
 
 最后验证：
