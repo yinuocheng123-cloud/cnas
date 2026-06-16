@@ -13,7 +13,7 @@ import Image from "next/image";
 const serviceItems = ["CNAS认可流程", "CNAS认可路径判断", "评审准备", "认可后维护"];
 
 // ========== 第二部分：Footer 组件 ==========
-export function Footer() {
+export function Footer({ showAdminEntry = false }: { showAdminEntry?: boolean }) {
   return (
     <footer className="bg-[#071e3f] text-white">
       <div className="site-shell grid gap-8 border-t border-white/10 py-10 md:grid-cols-[1.15fr_0.75fr_0.9fr] md:items-start md:py-12">
@@ -56,9 +56,19 @@ export function Footer() {
             返回首页
           </a>
         </nav>
-        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
-          浙ICP备2020044218号-3
-        </a>
+                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">
+            浙ICP备2020044218号-3
+          </a>
+          {showAdminEntry ? (
+            <>
+              <span className="text-slate-500">｜</span>
+              <a href="/admin/login" className="text-slate-400 transition hover:text-slate-200 hover:underline">
+                管理入口
+              </a>
+            </>
+          ) : null}
+        </div>
         <p className="mt-3 md:hidden">Copyright © CNAS认可指南</p>
       </div>
     </footer>

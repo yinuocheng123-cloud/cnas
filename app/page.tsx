@@ -439,7 +439,7 @@ export default function HomePage() {
       <div className="hidden md:block">
         <CtaBlock />
       </div>
-      <Footer />
+      <Footer showAdminEntry />
     </main>
   );
 }
